@@ -1,3 +1,30 @@
-title: "Wali Afghan Portfolio"
-description: "Android Developer | Jetpack Compose Enthusiast"
-theme: jekyll-theme-cayman
+# Site settings
+title: Mohammed Wali - Android Developer
+email: waliafghan22@gmail.com
+description: >- 
+  Android Developer specializing in Jetpack Compose and Kotlin.
+  Self-taught developer with 2 years of experience building modern Android applications.
+baseurl: ""
+url: "https://waliafghan22.github.io"
+github_username: waliafghan22
+linkedin_username: yourlinkedin
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"

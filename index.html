@@ -1,158 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wali Afghan - Android Developer</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">WA</div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+---
+layout: default
+---
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Hi, I'm Wali Afghan</h1>
-            <h2 class="hero-subtitle">Android Developer</h2>
-            <p class="hero-description">
-                Specializing in modern Android development with Jetpack Compose and Kotlin
-            </p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-            </div>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1 class="hero-title">Hi, I'm Wali Afghan</h1>
+        <h2 class="hero-subtitle">Android Developer</h2>
+        <p class="hero-description">
+            Specializing in modern Android development with Jetpack Compose and Kotlin
+        </p>
+        <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I'm a self-taught Android developer with 2 years of experience building native Android applications. 
-                        My journey into mobile development began with a passion for creating intuitive and beautiful user experiences.
-                    </p>
-                    <p>
-                        I specialize in modern Android development using Jetpack Compose and Kotlin, focusing on clean architecture, 
-                        performance optimization, and creating delightful user interfaces.
-                    </p>
-                    <div class="skills">
-                        <h3>Technical Skills</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Kotlin</span>
-                            <span class="skill-tag">Jetpack Compose</span>
-                            <span class="skill-tag">MVVM</span>
-                            <span class="skill-tag">Coroutines</span>
-                            <span class="skill-tag">Room Database</span>
-                            <span class="skill-tag">Retrofit</span>
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Firebase</span>
-                        </div>
+<!-- Projects Section -->
+<section id="projects" class="projects">
+    <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            {% for project in site.projects %}
+            <div class="project-card">
+                {% if project.image %}
+                <div class="project-image">
+                    <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+                </div>
+                {% endif %}
+                <div class="project-content">
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.description }}</p>
+                    <div class="project-tech">
+                        {% for tech in project.technologies %}
+                        <span>{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="project-links">
+                        {% if project.github %}
+                        <a href="{{ project.github }}" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        {% endif %}
+                        {% if project.demo %}
+                        <a href="{{ project.demo }}" class="project-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Demo
+                        </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250" alt="Project 1">
-                    </div>
-                    <div class="project-content">
-                        <h3>Project Name 1</h3>
-                        <p>Brief description of your project. What it does, key features, and technologies used.</p>
-                        <div class="project-tech">
-                            <span>Jetpack Compose</span>
-                            <span>Kotlin</span>
-                            <span>MVVM</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" class="project-link"><i class="fab fa-google-play"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250" alt="Project 2">
-                    </div>
-                    <div class="project-content">
-                        <h3>Project Name 2</h3>
-                        <p>Brief description of your project. What it does, key features, and technologies used.</p>
-                        <div class="project-tech">
-                            <span>Kotlin</span>
-                            <span>Room</span>
-                            <span>Coroutines</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Add more project cards as needed -->
-            </div>
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="contact-description">
+            I'm always interested in hearing about new projects and opportunities.
+        </p>
+        <div class="contact-info">
+            <a href="mailto:{{ site.email }}" class="contact-link">
+                <i class="fas fa-envelope"></i>
+                {{ site.email }}
+            </a>
+            <a href="https://github.com/{{ site.github_username }}" class="contact-link" target="_blank">
+                <i class="fab fa-github"></i>
+                GitHub
+            </a>
+            {% if site.linkedin_username %}
+            <a href="https://linkedin.com/in/{{ site.linkedin_username }}" class="contact-link" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                LinkedIn
+            </a>
+            {% endif %}
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-description">
-                I'm always interested in hearing about new projects and opportunities.
-            </p>
-            <div class="contact-info">
-                <a href="mailto:your.email@example.com" class="contact-link">
-                    <i class="fas fa-envelope"></i>
-                    your.email@example.com
-                </a>
-                <a href="https://github.com/waliafghan22" class="contact-link" target="_blank">
-                    <i class="fab fa-github"></i>
-                    GitHub
-                </a>
-                <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                    LinkedIn
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Wali Afghan. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    </div>
+</section>
