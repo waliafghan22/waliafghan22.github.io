@@ -1,72 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohammed Wali | Android Developer</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      background: #f5f7fa;
-      color: #333;
-    }
-    header {
-      background: #4CAF50;
-      color: white;
-      padding: 40px 20px;
-    }
-    h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    p {
-      font-size: 1.2em;
-    }
-    section {
-      padding: 40px 20px;
-    }
-    a {
-      color: #4CAF50;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    footer {
-      background: #222;
-      color: white;
-      padding: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wali Afghan - Android Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Mohammed Wali</h1>
-    <p>Self-Taught Android App Developer | Jetpack Compose Enthusiast</p>
-  </header>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">WA</div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-  <section>
-    <h2>About Me</h2>
-    <p>Hello! I'm Wali, a self-taught Android developer passionate about building apps with Jetpack Compose. I love creating modern mobile experiences and learning new technologies every day.</p>
-  </section>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Hi, I'm Wali Afghan</h1>
+            <h2 class="hero-subtitle">Android Developer</h2>
+            <p class="hero-description">
+                Specializing in modern Android development with Jetpack Compose and Kotlin
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
 
-  <section>
-    <h2>Projects</h2>
-    <p>📱 <strong>Notes App</strong> – A modern notes app with images, prices, and quantities.<br>
-    🎈 <strong>Kids Bubble Game</strong> – Fun letter-learning app for children with voices and animations.</p>
-    <p>More projects coming soon!</p>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a self-taught Android developer with 2 years of experience building native Android applications. 
+                        My journey into mobile development began with a passion for creating intuitive and beautiful user experiences.
+                    </p>
+                    <p>
+                        I specialize in modern Android development using Jetpack Compose and Kotlin, focusing on clean architecture, 
+                        performance optimization, and creating delightful user interfaces.
+                    </p>
+                    <div class="skills">
+                        <h3>Technical Skills</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Kotlin</span>
+                            <span class="skill-tag">Jetpack Compose</span>
+                            <span class="skill-tag">MVVM</span>
+                            <span class="skill-tag">Coroutines</span>
+                            <span class="skill-tag">Room Database</span>
+                            <span class="skill-tag">Retrofit</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:waliafghan22@gmail.com">waliafghan22@gmail.com</a><br>
-    GitHub: <a href="https://github.com/waliafghan22">waliafghan22</a><br>
-    Facebook: <a href="https://facebook.com/realwaliafghan">Facebook</a></p>
-  </section>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250" alt="Project 1">
+                    </div>
+                    <div class="project-content">
+                        <h3>Project Name 1</h3>
+                        <p>Brief description of your project. What it does, key features, and technologies used.</p>
+                        <div class="project-tech">
+                            <span>Jetpack Compose</span>
+                            <span>Kotlin</span>
+                            <span>MVVM</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link"><i class="fab fa-google-play"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
 
-  <footer>
-    <p>© 2025 Mohammed Wali. Built with ❤ and GitHub Pages.</p>
-  </footer>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250" alt="Project 2">
+                    </div>
+                    <div class="project-content">
+                        <h3>Project Name 2</h3>
+                        <p>Brief description of your project. What it does, key features, and technologies used.</p>
+                        <div class="project-tech">
+                            <span>Kotlin</span>
+                            <span>Room</span>
+                            <span>Coroutines</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more project cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-description">
+                I'm always interested in hearing about new projects and opportunities.
+            </p>
+            <div class="contact-info">
+                <a href="mailto:your.email@example.com" class="contact-link">
+                    <i class="fas fa-envelope"></i>
+                    your.email@example.com
+                </a>
+                <a href="https://github.com/waliafghan22" class="contact-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+                <a href="https://linkedin.com/in/yourprofile" class="contact-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Wali Afghan. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
