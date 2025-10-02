@@ -331,7 +331,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
+    padding: 20px 0;
     position: relative;
 }
 
@@ -342,17 +342,22 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.05);
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
     pointer-events: none;
 }
 
 .project-screenshots-preview img {
-    width: 100%;
     height: 100%;
-    object-fit: cover;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
     position: relative;
     z-index: 1;
     transition: transform 0.3s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
 }
 
 .project-card:hover .project-screenshots-preview img {
