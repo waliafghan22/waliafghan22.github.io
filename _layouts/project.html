@@ -33,19 +33,21 @@ layout: default
     </div>
   </header>
 
-  {% if page.screenshots %}
-  <section class="screenshots-section">
+  {% if page.screenshots and page.screenshots.size > 0 %}
+  <section class="screenshots-section" aria-labelledby="screenshots-title">
     <div class="container">
-      <h2 class="section-title">App Screenshots</h2>
-      <div class="screenshots-scroller" aria-label="App screenshots carousel">
+      <h2 id="screenshots-title" class="section-title">App Screenshots</h2>
+      <div class="screenshots-scroller" aria-label="App screenshots carousel" role="list">
         {% for shot in page.screenshots %}
-        <figure class="screenshot-card">
-          <img class="app-screenshot"
-               src="{{ shot | relative_url }}"
-               alt="{{ page.title }} screenshot {{ forloop.index }}"
-               loading="lazy"
-               onerror="this.style.display='none'" />
-        </figure>
+          {% if shot %}
+          <figure class="screenshot-card" role="listitem">
+            <img class="app-screenshot"
+                 src="{{ shot | relative_url }}"
+                 alt="{{ page.title }} screenshot {{ forloop.index }}"
+                 loading="lazy"
+                 onerror="this.style.display='none'" />
+          </figure>
+          {% endif %}
         {% endfor %}
       </div>
     </div>
