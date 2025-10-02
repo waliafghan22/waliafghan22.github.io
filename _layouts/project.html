@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<article class="project-detail">
+  <header class="project-header">
+    <div class="container">
+      <h1>{{ page.title }}</h1>
+      <p class="project-description">{{ page.description }}</p>
+      
+      <div class="project-meta">
+        {% if page.app_details %}
+        <span><i class="fas fa-code-branch"></i> v{{ page.app_details.version }}</span>
+        <span><i class="fas fa-calendar"></i> {{ page.date | date: "%B %Y" }}</span>
+        {% if page.app_details.downloads %}
+        <span><i class="fas fa-download"></i> {{ page.app_details.downloads }} downloads</span>
+        {% endif %}
+        {% endif %}
+      </div>
+
+      <div class="project-actions">
+        {% if page.github %}
+        <a href="{{ page.github }}" class="btn-action github" target="_blank">
+          <i class="fab fa-github"></i> View Source
+        </a>
+        {% endif %}
+        {% if page.apk_download %}
+        <a href="{{ page.apk_download }}" class="btn-action download">
+          <i class="fas fa-download"></i> Download APK
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  <div class="container project-content">
+    {{ content }}
+  </div>
+</article>
