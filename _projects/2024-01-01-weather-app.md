@@ -1,4 +1,6 @@
 ---
+layout: project
+thumb: /images/sample-app.png
 title: Sample Android App
 description: A sample Android application showcasing modern development practices with Jetpack Compose and clean architecture.
 image: /images/sample-app.png
