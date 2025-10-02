@@ -7,7 +7,7 @@ description: >-
 baseurl: ""
 url: "https://waliafghan22.github.io"
 github_username: waliafghan22
-linkedin_username: yourlinkedin
+linkedin_username: 
 
 # Build settings
 markdown: kramdown

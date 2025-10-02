@@ -70,6 +70,10 @@ body {
     color: var(--primary-color);
 }
 
+.nav-link.active {
+    color: var(--primary-color);
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
@@ -196,6 +200,36 @@ body {
     padding: 80px 0;
 }
 
+.project-filters {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    color: var(--text-primary);
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -222,13 +256,35 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .project-image img {
     width: auto;
     height: 100%;
     max-width: 100%;
-    object-fit: contain; /* Changed from cover to contain */
+    object-fit: contain;
+}
+
+.app-icon {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.9);
+    box-shadow: var(--card-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+}
+
+.app-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .project-content {
@@ -258,6 +314,24 @@ body {
     border-radius: 15px;
     font-size: 0.85rem;
     color: var(--text-secondary);
+}
+
+.badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.badge-open {
+    background: rgba(3, 218, 198, 0.2);
+    color: #00796B;
+}
+
+.badge-closed {
+    background: rgba(98, 0, 234, 0.15);
+    color: #4A00C4;
 }
 
 .project-links {

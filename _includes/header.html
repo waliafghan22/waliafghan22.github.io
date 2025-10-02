@@ -1,6 +1,17 @@
-<nav>
-  <a href="/">Home</a>
-  <a href="/#projects">Projects</a>
-  <a href="/about">About</a>
-  <a href="/#contact">Contact</a>
-</nav>
+<header class="navbar">
+  <div class="nav-container">
+    <nav>
+      <a class="nav-logo" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-menu">
+        <a class="nav-link" href="{{ '/#projects' | relative_url }}">Projects</a>
+        <a class="nav-link" href="{{ '/about/' | relative_url }}">About</a>
+        <a class="nav-link" href="{{ '/#contact' | relative_url }}">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>

@@ -20,12 +20,12 @@ layout: default
 
       <div class="project-actions">
         {% if page.github %}
-        <a href="{{ page.github }}" class="btn-action github" target="_blank">
+        <a href="{{ page.github }}" class="btn-action github" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-github"></i> View Source
         </a>
         {% endif %}
         {% if page.apk_download %}
-        <a href="{{ page.apk_download }}" class="btn-action download">
+        <a href="{{ page.apk_download }}" class="btn-action download" target="_blank" rel="noopener noreferrer">
           <i class="fas fa-download"></i> Download APK
         </a>
         {% endif %}
