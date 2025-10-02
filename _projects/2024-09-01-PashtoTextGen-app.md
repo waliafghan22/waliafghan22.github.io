@@ -9,6 +9,6 @@ technologies:
   - Coroutines
   - Koin
   - Material 3
-GitHub Apk: https://github.com/waliafghan22/PashtoTextGen/releases/tag/1.0.alpha
-GitHub Source code: https://github.com/waliafghan22/PashtoTextGen
+GitHub: https://github.com/waliafghan22/PashtoTextGen/releases/tag/1.0.alpha
+Demo: https://github.com/waliafghan22/PashtoTextGen
 ---
