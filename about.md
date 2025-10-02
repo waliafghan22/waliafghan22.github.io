@@ -8,7 +8,11 @@ permalink: /about/
 
 <div class="about-container">
   <div class="about-image">
-    <img src="/images/profile.jpg" alt="Mohammed Wali" />
+    <img src="https://avatars.githubusercontent.com/{{ site.github_username }}"
+         alt="Mohammed Wali"
+         loading="lazy"
+         referrerpolicy="no-referrer"
+         onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Mohammed+Wali&background=6200EA&color=fff&size=250';" />
   </div>
   
   <div class="about-content">
@@ -17,6 +21,14 @@ permalink: /about/
     <p class="lead">
       I'm a passionate <strong>Android Developer</strong> specializing in building beautiful, performant mobile applications using modern Android development tools and practices.
     </p>
+
+    <div class="skill-tags" style="margin: 1rem 0;">
+      <span>Kotlin</span>
+      <span>Jetpack Compose</span>
+      <span>MVVM</span>
+      <span>Coroutines</span>
+      <span>Material 3</span>
+    </div>
   </div>
 </div>
 
@@ -50,6 +62,13 @@ I create innovative Android applications that solve real-world problems, with a 
 - RESTful APIs
 - Gradle
 
+## 📌 Quick Facts
+
+- Based in: Afghanistan (open to remote collaboration)
+- Experience: 2+ years building Android apps
+- Focus: Compose-first development, clean code, performance
+- Open Source: Actively maintaining and contributing on GitHub
+
 ## 🎯 My Focus Areas
 
 ### Open Source Contributions
@@ -61,12 +80,12 @@ I'm particularly passionate about developing technology solutions for Pashto spe
 - Language learning applications
 - Localization efforts
 
-### Modern Android Development
-Staying up-to-date with the latest Android development trends:
-- Jetpack Compose for declarative UI
-- Kotlin Coroutines for async programming
-- Material You design system
-- Android 14+ features
+## 🌟 What Drives Me
+
+- **Innovation:** Creating apps that make a difference
+- **Quality:** Writing clean, maintainable, and efficient code
+- **User Experience:** Building intuitive and delightful interfaces
+- **Community:** Sharing knowledge and helping other developers
 
 ## 📚 Education & Learning
 
@@ -76,28 +95,16 @@ I'm constantly learning and improving my skills through:
 - Community conferences and meetups
 - Technical blogs and podcasts
 
-## 🌟 What Drives Me
-
-- **Innovation:** Creating apps that make a difference
-- **Quality:** Writing clean, maintainable, and efficient code
-- **User Experience:** Building intuitive and delightful interfaces
-- **Community:** Sharing knowledge and helping other developers
-
 ## 📫 Let's Connect
 
 I'm always interested in:
 - Collaborating on interesting projects
 - Discussing new Android development techniques
-- Contributing to open-source projects
-- Helping others learn Android development
-
-Feel free to reach out if you'd like to:
-- Discuss a project idea
-- Collaborate on open-source work
-- Get help with Android development
-- Just have a tech chat!
+- Collaborating on open-source work
+- Getting help with Android development
+- Just having a tech chat!
 
 <div class="about-cta">
-  <a href="/#contact" class="btn btn-primary">Get In Touch</a>
-  <a href="/#projects" class="btn btn-secondary">View My Projects</a>
+  <a href="{{ '/#contact' | relative_url }}" class="btn btn-primary">Get In Touch</a>
+  <a href="{{ '/#projects' | relative_url }}" class="btn btn-secondary">View My Projects</a>
 </div>
