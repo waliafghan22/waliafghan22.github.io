@@ -75,12 +75,87 @@ layout: default
             {% for project in site.projects %}
             {% assign card_image = project.thumb | default: project.image %}
             {% if card_image == nil and project.screenshots %}
-              {% assign card_image = first_shot %}
+              {% assign card_image = project.screenshots | first %}
             {% endif %}
             <div class="project-card" data-category="{% if project.open_source %}open-source{% else %}closed-source{% endif %}">
                 <a href="{{ project.url | relative_url }}" class="project-card-link">
                     <!-- App Header with Icon and Info -->
-            <!-- Skills Section -->
+                    <div class="project-app-header">
+                        {% if project.app_icon %}
+                        <div class="project-app-icon">
+                            <img src="{{ project.app_icon | relative_url }}" alt="{{ project.title }} icon" onerror="this.src='https://ui-avatars.com/api/?name={{ project.title | url_encode }}&background=6200EA&color=fff&size=80'">
+                        </div>
+                        {% endif %}
+                        <div class="project-app-info">
+                            <h3 class="project-app-name">{{ project.title }}</h3>
+                            <div class="project-badges">
+                                {% if project.open_source %}
+                                <span class="badge badge-open">Open Source</span>
+                                {% else %}
+                                <span class="badge badge-closed">Closed Source</span>
+                                {% endif %}
+                            </div>
+                            {% if project.app_details %}
+                            <div class="project-quick-stats">
+                                {% if project.app_details.version %}
+                                <span class="stat-pill">v{{ project.app_details.version }}</span>
+                                {% endif %}
+                                {% if project.app_details.rating %}
+                                <span class="stat-pill"><i class="fas fa-star"></i> {{ project.app_details.rating }}</span>
+                                {% endif %}
+                                {% if project.app_details.downloads %}
+                                <span class="stat-pill"><i class="fas fa-download"></i> {{ project.app_details.downloads }}</span>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- Screenshots Preview -->
+                    {% if card_image %}
+                    <div class="project-screenshots-preview">
+                        <img src="{{ card_image | relative_url }}" alt="{{ project.title }} preview" onerror="this.style.display='none'">
+                    </div>
+                    {% endif %}
+                    
+                    <div class="project-content">
+                        <p class="project-description">{{ project.description }}</p>
+                    
+                        <div class="project-tech">
+                            {% for tech in project.technologies %}
+                            <span class="tech-tag">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Action Buttons -->
+                <div class="project-actions">
+                    {% if project.github %}
+                    <a href="{{ project.github }}" class="project-action-btn github" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                    {% endif %}
+                    
+                    {% if project.playstore %}
+                    <a href="{{ project.playstore }}" class="project-action-btn playstore" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+                        <i class="fab fa-google-play"></i> Play Store
+                    </a>
+                    {% endif %}
+                    
+                    {% if project.apk_download %}
+                    <a href="{{ project.apk_download }}" class="project-action-btn apk" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+                        <i class="fas fa-download"></i> APK
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
 <section id="skills" class="skills">
     <div class="container">
         <div class="skills-header">
@@ -205,6 +280,74 @@ layout: default
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="contact-description">
+            I'm always interested in hearing about new projects and opportunities.
+        </p>
+
+        <div class="contact-cards">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <p>Let's discuss your next project</p>
+                <a href="mailto:{{ site.email }}" class="contact-button email-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Message
+                </a>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h3>GitHub</h3>
+                <p>Check out my open source projects</p>
+                <a href="https://github.com/{{ site.github_username }}" class="contact-button github-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                    View Profile
+                </a>
+            </div>
+
+            {% if site.linkedin_username %}
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-linkedin"></i>
+                </div>
+                <h3>LinkedIn</h3>
+                <p>Connect with me professionally</p>
+                <a href="https://linkedin.com/in/{{ site.linkedin_username }}" class="contact-button linkedin-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                    Connect
+                </a>
+            </div>
+            {% endif %}
+
+            {% if site.playstore_developer %}
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-google-play"></i>
+                </div>
+                <h3>Play Store</h3>
+                <p>See my published apps</p>
+                <a href="{{ site.playstore_developer }}" class="contact-button playstore-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-google-play"></i>
+                    View Apps
+                </a>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="contact-footer">
+            <p>Prefer a quick chat? Feel free to reach out through any of these channels!</p>
         </div>
     </div>
 </section>
