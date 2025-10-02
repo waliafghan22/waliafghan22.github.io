@@ -3,31 +3,86 @@ layout: default
 ---
 
 <article class="project-detail">
-  <header class="project-header">
+  <header class="project-detail-hero">
     <div class="container">
-      <h1>{{ page.title }}</h1>
-      <p class="project-description">{{ page.description }}</p>
-      
-      <div class="project-meta">
-        {% if page.app_details %}
-        <span><i class="fas fa-code-branch"></i> v{{ page.app_details.version }}</span>
-        <span><i class="fas fa-calendar"></i> {{ page.date | date: "%B %Y" }}</span>
-        {% if page.app_details.downloads %}
-        <span><i class="fas fa-download"></i> {{ page.app_details.downloads }} downloads</span>
-        {% endif %}
-        {% endif %}
-      </div>
+      <div class="detail-hero-content">
+        <!-- App Icon and Basic Info -->
+        <div class="detail-app-header">
+          {% if page.app_icon %}
+          <div class="detail-app-icon">
+            <img src="{{ page.app_icon | relative_url }}" alt="{{ page.title }} icon" onerror="this.src='https://ui-avatars.com/api/?name={{ page.title | url_encode }}&background=6200EA&color=fff&size=120'">
+          </div>
+          {% endif %}
+          <div class="detail-app-info">
+            <h1 class="detail-app-name">{{ page.title }}</h1>
+            <p class="detail-app-description">{{ page.description }}</p>
+            
+            {% if page.app_details %}
+            <div class="detail-app-meta">
+              {% if page.app_details.version %}
+              <span class="meta-item"><i class="fas fa-code-branch"></i> Version {{ page.app_details.version }}</span>
+              {% endif %}
+              {% if page.app_details.downloads %}
+              <span class="meta-item"><i class="fas fa-download"></i> {{ page.app_details.downloads }}+ Downloads</span>
+              {% endif %}
+              {% if page.app_details.rating %}
+              <span class="meta-item"><i class="fas fa-star"></i> {{ page.app_details.rating }}</span>
+              {% endif %}
+              {% if page.date %}
+              <span class="meta-item"><i class="fas fa-calendar"></i> {{ page.date | date: "%B %Y" }}</span>
+              {% endif %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
 
-      <div class="project-actions">
-        {% if page.github %}
-        <a href="{{ page.github }}" class="btn-action github" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-github"></i> View Source
-        </a>
-        {% endif %}
-        {% if page.apk_download %}
-        <a href="{{ page.apk_download }}" class="btn-action download" target="_blank" rel="noopener noreferrer">
-          <i class="fas fa-download"></i> Download APK
-        </a>
+        <!-- Action Buttons -->
+        <div class="detail-actions">
+          {% if page.github %}
+          <a href="{{ page.github }}" class="detail-btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i> View Source Code
+          </a>
+          {% endif %}
+          {% if page.apk_download %}
+          <a href="{{ page.apk_download }}" class="detail-btn btn-download" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-download"></i> Download APK
+          </a>
+          {% endif %}
+          {% if page.playstore %}
+          <a href="{{ page.playstore }}" class="detail-btn btn-playstore" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-google-play"></i> Get on Play Store
+          </a>
+          {% endif %}
+        </div>
+
+        <!-- App Details Grid -->
+        {% if page.app_details %}
+        <div class="detail-specs-grid">
+          {% if page.app_details.size %}
+          <div class="spec-item">
+            <span class="spec-label">Size</span>
+            <span class="spec-value">{{ page.app_details.size }}</span>
+          </div>
+          {% endif %}
+          {% if page.app_details.min_sdk %}
+          <div class="spec-item">
+            <span class="spec-label">Min SDK</span>
+            <span class="spec-value">{{ page.app_details.min_sdk }}</span>
+          </div>
+          {% endif %}
+          {% if page.app_details.target_sdk %}
+          <div class="spec-item">
+            <span class="spec-label">Target SDK</span>
+            <span class="spec-value">{{ page.app_details.target_sdk }}</span>
+          </div>
+          {% endif %}
+          {% if page.app_details.last_updated %}
+          <div class="spec-item">
+            <span class="spec-label">Updated</span>
+            <span class="spec-value">{{ page.app_details.last_updated }}</span>
+          </div>
+          {% endif %}
+        </div>
         {% endif %}
       </div>
     </div>
@@ -41,11 +96,17 @@ layout: default
         {% for shot in page.screenshots %}
           {% if shot %}
           <figure class="screenshot-card" role="listitem">
-            <img class="app-screenshot"
-                 src="{{ shot | relative_url }}"
-                 alt="{{ page.title }} screenshot {{ forloop.index }}"
-                 loading="lazy"
-                 onerror="this.style.display='none'" />
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <img class="app-screenshot"
+                     src="{{ shot | relative_url }}"
+                     alt="{{ page.title }} screenshot {{ forloop.index }}"
+                     loading="lazy"
+                     onerror="this.parentElement.parentElement.style.display='none'" />
+              </div>
+              <div class="phone-home-indicator"></div>
+            </div>
           </figure>
           {% endif %}
         {% endfor %}
