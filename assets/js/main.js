@@ -90,3 +90,39 @@ if (filterButtons.length && projectCards.length) {
         });
     });
 }
+
+// Scroll animations for sections
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+        }
+    });
+}, observerOptions);
+
+// Observe sections and project cards
+document.querySelectorAll('section, .project-card, .skill-category').forEach(el => {
+    el.classList.add('fade-out');
+    observer.observe(el);
+});
+
+// Add typing animation to hero title
+const heroTitle = document.querySelector('.hero-title');
+if (heroTitle) {
+    const text = heroTitle.textContent;
+    heroTitle.textContent = '';
+    let i = 0;
+    const typeWriter = () => {
+        if (i < text.length) {
+            heroTitle.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+        }
+    };
+    setTimeout(typeWriter, 500);
+}
