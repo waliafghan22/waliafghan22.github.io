@@ -14,44 +14,148 @@ layout: default
             <a href="#projects" class="btn btn-primary">View Projects</a>
             <a href="#contact" class="btn btn-secondary">Get In Touch</a>
         </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number">{{ site.projects.size }}</span>
+                <span class="stat-label">Apps Built</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">{{ site.projects | where: "open_source", true | size }}</span>
+                <span class="stat-label">Open Source</span>
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- Projects Section -->
 <section id="projects" class="projects">
     <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title">Android Applications</h2>
+        
+        <!-- Filter Buttons -->
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="open-source">Open Source</button>
+            <button class="filter-btn" data-filter="closed-source">Closed Source</button>
+        </div>
+
         <div class="projects-grid">
             {% for project in site.projects %}
-            <div class="project-card">
+            <div class="project-card" data-category="{% if project.open_source %}open-source{% else %}closed-source{% endif %}">
                 {% if project.image %}
                 <div class="project-image">
                     <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+                    {% if project.app_icon %}
+                    <div class="app-icon">
+                        <img src="{{ project.app_icon | relative_url }}" alt="{{ project.title }} icon">
+                    </div>
+                    {% endif %}
                 </div>
                 {% endif %}
+                
                 <div class="project-content">
-                    <h3>{{ project.title }}</h3>
-                    <p>{{ project.description }}</p>
+                    <div class="project-header">
+                        <h3>{{ project.title }}</h3>
+                        {% if project.open_source %}
+                        <span class="badge badge-open">Open Source</span>
+                        {% else %}
+                        <span class="badge badge-closed">Closed Source</span>
+                        {% endif %}
+                    </div>
+                    
+                    <p class="project-description">{{ project.description }}</p>
+                    
+                    <!-- App Details -->
+                    {% if project.app_details %}
+                    <div class="app-details">
+                        {% if project.app_details.version %}
+                        <span class="detail-item">
+                            <i class="fas fa-code-branch"></i> v{{ project.app_details.version }}
+                        </span>
+                        {% endif %}
+                        {% if project.app_details.downloads %}
+                        <span class="detail-item">
+                            <i class="fas fa-download"></i> {{ project.app_details.downloads }}+ downloads
+                        </span>
+                        {% endif %}
+                        {% if project.app_details.rating %}
+                        <span class="detail-item">
+                            <i class="fas fa-star"></i> {{ project.app_details.rating }}
+                        </span>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    
                     <div class="project-tech">
                         {% for tech in project.technologies %}
-                        <span>{{ tech }}</span>
+                        <span class="tech-tag">{{ tech }}</span>
                         {% endfor %}
                     </div>
+                    
                     <div class="project-links">
                         {% if project.github %}
-                        <a href="{{ project.github }}" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i> Code
+                        <a href="{{ project.github }}" class="project-link github" target="_blank">
+                            <i class="fab fa-github"></i> Source Code
                         </a>
                         {% endif %}
+                        
+                        {% if project.playstore %}
+                        <a href="{{ project.playstore }}" class="project-link playstore" target="_blank">
+                            <i class="fab fa-google-play"></i> Play Store
+                        </a>
+                        {% endif %}
+                        
+                        {% if project.apk_download %}
+                        <a href="{{ project.apk_download }}" class="project-link apk" download>
+                            <i class="fas fa-download"></i> Download APK
+                        </a>
+                        {% endif %}
+                        
                         {% if project.demo %}
-                        <a href="{{ project.demo }}" class="project-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Demo
+                        <a href="{{ project.demo }}" class="project-link demo" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
                         {% endif %}
                     </div>
                 </div>
             </div>
             {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills">
+    <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Languages</h3>
+                <div class="skill-tags">
+                    <span>Kotlin</span>
+                    <span>Java</span>
+                    <span>Python</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Android</h3>
+                <div class="skill-tags">
+                    <span>Jetpack Compose</span>
+                    <span>Room Database</span>
+                    <span>Retrofit</span>
+                    <span>Hilt/Dagger</span>
+                    <span>MVVM</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>Tools</h3>
+                <div class="skill-tags">
+                    <span>Android Studio</span>
+                    <span>Git</span>
+                    <span>Firebase</span>
+                    <span>Figma</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -76,6 +180,12 @@ layout: default
             <a href="https://linkedin.com/in/{{ site.linkedin_username }}" class="contact-link" target="_blank">
                 <i class="fab fa-linkedin"></i>
                 LinkedIn
+            </a>
+            {% endif %}
+            {% if site.playstore_developer %}
+            <a href="{{ site.playstore_developer }}" class="contact-link" target="_blank">
+                <i class="fab fa-google-play"></i>
+                Play Store
             </a>
             {% endif %}
         </div>
