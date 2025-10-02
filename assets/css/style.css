@@ -214,10 +214,21 @@ body {
     transform: translateY(-5px);
 }
 
-.project-image img {
+.project-image {
     width: 100%;
     height: 250px;
-    object-fit: cover;
+    overflow: hidden;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain; /* Changed from cover to contain */
 }
 
 .project-content {
