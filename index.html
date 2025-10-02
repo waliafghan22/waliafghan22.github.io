@@ -41,10 +41,15 @@ layout: default
 
         <div class="projects-grid">
             {% for project in site.projects %}
+            {% assign card_image = project.thumb | default: project.image %}
+            {% if card_image == nil and project.screenshots %}
+              {% assign first_shot = project.screenshots | first %}
+              {% assign card_image = first_shot %}
+            {% endif %}
             <div class="project-card" data-category="{% if project.open_source %}open-source{% else %}closed-source{% endif %}">
-                {% if project.image %}
+                {% if card_image %}
                 <div class="project-image">
-                    <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" onerror="this.style.display='none'">
+                    <img src="{{ card_image | relative_url }}" alt="{{ project.title }} thumbnail" onerror="this.style.display='none'">
                     {% if project.app_icon %}
                     <div class="app-icon">
                         <img src="{{ project.app_icon | relative_url }}" alt="{{ project.title }} icon" onerror="this.style.display='none'">

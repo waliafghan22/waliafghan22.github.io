@@ -4,6 +4,7 @@ title: "Pashto Text Generator"
 description: "A modern Android app built with Jetpack Compose, MVVM architecture, and Koin DI that generates Pashto sentences for various use cases."
 date: 2024-09-01
 image: /images/projects/pashto-text-gen-screen1.png
+thumb: /images/projects/pashto-text-gen-thumb.jpg
 app_icon: /images/projects/icons/pashto-text-gen-icon.png
 open_source: true
 featured: true
