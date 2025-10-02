@@ -15,9 +15,9 @@ app_details:
   rating: "New"
   min_sdk: "24"
   target_sdk: "34"
-  package_name: "com.waliafghan.pashtotextgen"
+  package_name: "com.wali.pashtotextgen"
   size: "4.5 MB"
-  last_updated: "September 2024"
+  last_updated: "September 2025"
 
 # Technologies used
 technologies:
@@ -30,7 +30,7 @@ technologies:
 
 # Links - Fixed the GitHub links
 github: https://github.com/waliafghan22/PashtoTextGen
-apk_download: https://github.com/waliafghan22/PashtoTextGen/releases/download/1.0.alpha/app-release.apk
+apk_download: https://github.com/waliafghan22/PashtoTextGen/releases/download/1.0.alpha/PashtoTextGen-v1.0-release.apk
 demo: https://github.com/waliafghan22/PashtoTextGen#demo
 
 # Categories
