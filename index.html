@@ -4,24 +4,56 @@ layout: default
 
 <!-- Hero Section -->
 <section id="hero" class="hero">
+    <div class="hero-bg">
+        <div class="hero-bg-pattern"></div>
+        <div class="hero-bg-gradient"></div>
+    </div>
     <div class="hero-content">
-        <h1 class="hero-title">Hi, I'm Mohammed Wali</h1>
-        <h2 class="hero-subtitle">Android Developer</h2>
-        <p class="hero-description">
-            Specializing in modern Android development with Jetpack Compose and Kotlin
-        </p>
-        <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">View Projects</a>
-            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-        </div>
-        <div class="hero-stats">
-            <div class="stat">
-                <span class="stat-number">{{ site.projects.size }}</span>
-                <span class="stat-label">Apps Built</span>
+        <div class="hero-text">
+            <div class="hero-badge">
+                <span class="badge-animation">👋 Hello! I'm</span>
             </div>
-            <div class="stat">
-                <span class="stat-number">{{ site.projects | where: "open_source", true | size }}</span>
-                <span class="stat-label">Open Source</span>
+            <h1 class="hero-title">
+                <span class="title-main">Mohammed Wali</span>
+                <span class="title-accent">Android Developer</span>
+            </h1>
+            <p class="hero-description">
+                Specializing in modern Android development with Jetpack Compose and Kotlin.
+                Passionate about creating beautiful, performant mobile applications.
+            </p>
+        </div>
+
+        <div class="hero-actions">
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary btn-large">
+                    <i class="fas fa-code"></i>
+                    View My Work
+                </a>
+                <a href="#contact" class="btn btn-secondary btn-large">
+                    <i class="fas fa-paper-plane"></i>
+                    Get In Touch
+                </a>
+            </div>
+            <a href="#about" class="hero-scroll-down">
+                <i class="fas fa-chevron-down"></i>
+                <span>Learn More</span>
+            </a>
+        </div>
+
+        <div class="hero-stats">
+            <div class="stat-item">
+                <div class="stat-number">{{ site.projects.size }}</div>
+                <div class="stat-label">Apps Built</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-number">{{ site.projects | where: "open_source", true | size }}</div>
+                <div class="stat-label">Open Source</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <div class="stat-number">2+</div>
+                <div class="stat-label">Years Experience</div>
             </div>
         </div>
     </div>
@@ -43,185 +75,136 @@ layout: default
             {% for project in site.projects %}
             {% assign card_image = project.thumb | default: project.image %}
             {% if card_image == nil and project.screenshots %}
-              {% assign first_shot = project.screenshots | first %}
               {% assign card_image = first_shot %}
             {% endif %}
             <div class="project-card" data-category="{% if project.open_source %}open-source{% else %}closed-source{% endif %}">
                 <a href="{{ project.url | relative_url }}" class="project-card-link">
                     <!-- App Header with Icon and Info -->
-                    <div class="project-app-header">
-                        {% if project.app_icon %}
-                        <div class="project-app-icon">
-                            <img src="{{ project.app_icon | relative_url }}" alt="{{ project.title }} icon" onerror="this.src='https://ui-avatars.com/api/?name={{ project.title | url_encode }}&background=6200EA&color=fff&size=80'">
-                        </div>
-                        {% endif %}
-                        <div class="project-app-info">
-                            <h3 class="project-app-name">{{ project.title }}</h3>
-                            <div class="project-badges">
-                                {% if project.open_source %}
-                                <span class="badge badge-open">Open Source</span>
-                                {% else %}
-                                <span class="badge badge-closed">Closed Source</span>
-                                {% endif %}
-                            </div>
-                            {% if project.app_details %}
-                            <div class="project-quick-stats">
-                                {% if project.app_details.version %}
-                                <span class="stat-pill">v{{ project.app_details.version }}</span>
-                                {% endif %}
-                                {% if project.app_details.rating %}
-                                <span class="stat-pill"><i class="fas fa-star"></i> {{ project.app_details.rating }}</span>
-                                {% endif %}
-                                {% if project.app_details.downloads %}
-                                <span class="stat-pill"><i class="fas fa-download"></i> {{ project.app_details.downloads }}</span>
-                                {% endif %}
-                            </div>
-                            {% endif %}
-                        </div>
-                    </div>
-
-                    <!-- Screenshots Preview -->
-                    {% if card_image %}
-                    <div class="project-screenshots-preview">
-                        <img src="{{ card_image | relative_url }}" alt="{{ project.title }} preview" onerror="this.style.display='none'">
-                    </div>
-                    {% endif %}
-                    
-                    <div class="project-content">
-                        <p class="project-description">{{ project.description }}</p>
-                    
-                        <div class="project-tech">
-                            {% for tech in project.technologies %}
-                            <span class="tech-tag">{{ tech }}</span>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </a>
-                
-                <!-- Action Buttons -->
-                <div class="project-actions">
-                    {% if project.github %}
-                    <a href="{{ project.github }}" class="project-action-btn github" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
-                        <i class="fab fa-github"></i> Code
-                    </a>
-                    {% endif %}
-                    
-                    {% if project.playstore %}
-                    <a href="{{ project.playstore }}" class="project-action-btn playstore" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
-                        <i class="fab fa-google-play"></i> Play Store
-                    </a>
-                    {% endif %}
-                    
-                    {% if project.apk_download %}
-                    <a href="{{ project.apk_download }}" class="project-action-btn apk" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
-                        <i class="fas fa-download"></i> APK
-                    </a>
-                    {% endif %}
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<!-- Skills Section -->
+            <!-- Skills Section -->
 <section id="skills" class="skills">
     <div class="container">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Languages</h3>
-                <div class="skill-tags">
-                    <span>Kotlin</span>
-                    <span>Java</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Android</h3>
-                <div class="skill-tags">
-                    <span>Jetpack Compose</span>
-                    <span>Room Database</span>
-                    <span>Retrofit</span>
-                    <span>Hilt/Dagger</span>
-                    <span>MVVM</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Tools</h3>
-                <div class="skill-tags">
-                    <span>Android Studio</span>
-                    <span>Git</span>
-                    <span>Firebase</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="contact">
-    <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="contact-description">
-            I'm always interested in hearing about new projects and opportunities.
-        </p>
-
-        <div class="contact-cards">
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <h3>Email</h3>
-                <p>Let's discuss your next project</p>
-                <a href="mailto:{{ site.email }}" class="contact-button email-btn">
-                    <i class="fas fa-paper-plane"></i>
-                    Send Message
-                </a>
-            </div>
-
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fab fa-github"></i>
-                </div>
-                <h3>GitHub</h3>
-                <p>Check out my open source projects</p>
-                <a href="https://github.com/{{ site.github_username }}" class="contact-button github-btn" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i>
-                    View Profile
-                </a>
-            </div>
-
-            {% if site.linkedin_username %}
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fab fa-linkedin"></i>
-                </div>
-                <h3>LinkedIn</h3>
-                <p>Connect with me professionally</p>
-                <a href="https://linkedin.com/in/{{ site.linkedin_username }}" class="contact-button linkedin-btn" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin"></i>
-                    Connect
-                </a>
-            </div>
-            {% endif %}
-
-            {% if site.playstore_developer %}
-            <div class="contact-card">
-                <div class="contact-icon">
-                    <i class="fab fa-google-play"></i>
-                </div>
-                <h3>Play Store</h3>
-                <p>See my published apps</p>
-                <a href="{{ site.playstore_developer }}" class="contact-button playstore-btn" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-google-play"></i>
-                    View Apps
-                </a>
-            </div>
-            {% endif %}
+        <div class="skills-header">
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="skills-subtitle">Technologies I work with to build amazing Android applications</p>
         </div>
 
-        <div class="contact-footer">
-            <p>Prefer a quick chat? Feel free to reach out through any of these channels!</p>
+        <div class="skills-container">
+            <div class="skill-category">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Languages</h3>
+                </div>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <span class="skill-name">Kotlin</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 95%"></div>
+                        </div>
+                        <span class="skill-percentage">95%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Java</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 85%"></div>
+                        </div>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Python</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 70%"></div>
+                        </div>
+                        <span class="skill-percentage">70%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Android</h3>
+                </div>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <span class="skill-name">Jetpack Compose</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 90%"></div>
+                        </div>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">MVVM Architecture</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 85%"></div>
+                        </div>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Room Database</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 80%"></div>
+                        </div>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Retrofit</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 75%"></div>
+                        </div>
+                        <span class="skill-percentage">75%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Hilt/Dagger</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 70%"></div>
+                        </div>
+                        <span class="skill-percentage">70%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <div class="skill-header">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Tools & Technologies</h3>
+                </div>
+                <div class="skill-items">
+                    <div class="skill-item">
+                        <span class="skill-name">Android Studio</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 90%"></div>
+                        </div>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Git & GitHub</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 85%"></div>
+                        </div>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Firebase</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 75%"></div>
+                        </div>
+                        <span class="skill-percentage">75%</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Figma</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 60%"></div>
+                        </div>
+                        <span class="skill-percentage">60%</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
