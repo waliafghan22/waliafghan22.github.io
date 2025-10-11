@@ -17,7 +17,7 @@ app_details:
   min_sdk: "24"
   target_sdk: "34"
   package_name: "com.wali.muslimautos"
-  size: "14.3 MB"
+  size: "2.51 MB"
   last_updated: "August 2025"
 
 # Technologies used
@@ -113,7 +113,7 @@ screenshots:
 - **Architecture**: MVVM with Clean Architecture + Repository Pattern
 - **Database**: Room with DAO pattern
 - **Dependency Injection**: Koin
-- **Size**: 14.3 MB
+- **Size**: 2.51 MB
 - **Open Source**: MIT License
 - **Status**: Active Development
 - **Languages**: English, Pashto

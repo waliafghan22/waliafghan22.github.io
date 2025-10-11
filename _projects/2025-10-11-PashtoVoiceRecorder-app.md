@@ -46,11 +46,11 @@ categories:
 
 # Screenshots
 screenshots:
-  - /images/projects/pashto-voice-recorder-Home.png
-  - /images/projects/pashto-voice-recorder-Recording.png
-  - /images/projects/pashto-voice-recorder-Review.png
-  - /images/projects/pashto-voice-recorder-Settings.png
-  - /images/projects/pashto-voice-recorder-About.png
+  - /images/projects/pashto-voice-recorder-home.png
+  - /images/projects/pashto-voice-recorder-recording.png
+  - /images/projects/pashto-voice-recorder-review.png
+  - /images/projects/pashto-voice-recorder-settings.png
+  - /images/projects/pashto-voice-recorder-about.png
 ---
 
 ## 📱 Overview
