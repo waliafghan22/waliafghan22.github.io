@@ -3,9 +3,9 @@ layout: project
 title: "Pashto Voice Recorder - Speech Dataset App"
 description: "A focused Android app for building high-quality Pashto speech datasets with streamlined recording, review, and session management features. Built with Jetpack Compose and Kotlin."
 date: 2025-10-11
-image: /images/projects/pashto-voice-recorder-home.png
-thumb: /images/projects/pashto-voice-recorder-home.png
-app_icon: /images/projects/icons/pashto-voice-recorder-icon.png
+image: /images/projects/pashto-voice-recorder-home.webp
+thumb: /images/projects/pashto-voice-recorder-home.webp
+app_icon: /images/projects/icons/pashto-voice-recorder-icon.webp
 open_source: false
 featured: true
 
@@ -59,11 +59,11 @@ categories:
 
 # Screenshots
 screenshots:
-  - /images/projects/pashto-voice-recorder-home.png
-  - /images/projects/pashto-voice-recorder-recording.png
-  - /images/projects/pashto-voice-recorder-review.png
-  - /images/projects/pashto-voice-recorder-settings.png
-  - /images/projects/pashto-voice-recorder-about.png
+  - /images/projects/pashto-voice-recorder-home.webp
+  - /images/projects/pashto-voice-recorder-recording.webp
+  - /images/projects/pashto-voice-recorder-review.webp
+  - /images/projects/pashto-voice-recorder-settings.webp
+  - /images/projects/pashto-voice-recorder-about.webp
 ---
 
 ## 📱 Overview

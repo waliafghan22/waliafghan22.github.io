@@ -3,9 +3,9 @@ layout: project
 title: "MuslimAutos - Inventory Management"
 description: "A modern Android inventory management app built with Jetpack Compose, MVVM architecture, and Koin DI, designed specifically for small shops and businesses."
 date: 2025-08-02
-image: /images/projects/muslimautos-home.png
-thumb: /images/projects/muslimautos-home.png
-app_icon: /images/projects/icons/muslimautos-icon.png
+image: /images/projects/muslimautos-home.webp
+thumb: /images/projects/muslimautos-home.webp
+app_icon: /images/projects/icons/muslimautos-icon.webp
 
 # Project Status
 open_source: false
@@ -60,10 +60,10 @@ categories:
 
 # Screenshots
 screenshots:
-  - /images/projects/muslimautos-home.png
-  - /images/projects/muslimautos-add-edit.png
-  - /images/projects/muslimautos-detail.png
-  - /images/projects/muslimautos-about.png
+  - /images/projects/muslimautos-home.webp
+  - /images/projects/muslimautos-add-edit.webp
+  - /images/projects/muslimautos-detail.webp
+  - /images/projects/muslimautos-about.webp
 ---
 
 ## 📱 Overview

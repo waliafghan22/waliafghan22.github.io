@@ -13,29 +13,29 @@
   "categories": ["portfolio", "developer", "android"],
   "icons": [
     {
-      "src": "/assets/images/icon-192.png",
+      "src": "/assets/images/icon-192.webp",
       "sizes": "192x192",
-      "type": "image/png",
+      "type": "image/webp",
       "purpose": "any maskable"
     },
     {
-      "src": "/assets/images/icon-512.png",
+      "src": "/assets/images/icon-512.webp",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/webp",
       "purpose": "any maskable"
     }
   ],
   "screenshots": [
     {
-      "src": "/assets/images/screenshot-desktop.png",
+      "src": "/assets/images/screenshot-desktop.webp",
       "sizes": "1280x720",
-      "type": "image/png",
+      "type": "image/webp",
       "form_factor": "wide"
     },
     {
-      "src": "/assets/images/screenshot-mobile.png",
+      "src": "/assets/images/screenshot-mobile.webp",
       "sizes": "750x1334",
-      "type": "image/png",
+      "type": "image/webp",
       "form_factor": "narrow"
     }
   ]
