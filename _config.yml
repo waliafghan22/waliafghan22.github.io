@@ -43,7 +43,7 @@ youtube_channel: ""    # Optional: YouTube channel URL
 playstore_developer: "" # Your Google Play Developer page URL
 
 # Resume/CV
-resume_url: "/assets/resume.pdf"  # Optional: Link to your resume PDF
+# resume_url: "/assets/resume.pdf"  # Optional: Link to your resume PDF
 
 # Social Links (for structured data)
 social:
@@ -60,8 +60,8 @@ lang: en
 locale: en_US
 
 # Logo and Images
-logo: /assets/images/logo.png
-og_image: /assets/images/og-image.png  # 1200x630px recommended for social sharing
+# logo: /assets/images/logo.png
+# og_image: /assets/images/og-image.png  # 1200x630px recommended for social sharing
 
 # Twitter Card Settings
 twitter:
@@ -382,7 +382,7 @@ custom:
   # Hero Section
   hero:
     tagline: "Crafting Exceptional Android Experiences"
-    background: "/assets/images/hero-bg.jpg"
+    # background: "/assets/images/hero-bg.jpg"
     
   # Projects
   projects_per_page: 6
