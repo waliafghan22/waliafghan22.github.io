@@ -1,21 +1,52 @@
-<header class="navbar">
-  <div class="nav-container">
-    <nav>
-      <a class="nav-logo" href="{{ '/' | relative_url }}">
-        <i class="fas fa-home"></i>
-        <span>Home</span>
-      </a>
-      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="nav-menu">
-        <a class="nav-link" href="{{ '/' | relative_url }}">Home</a>
-        <a class="nav-link" href="{{ '/#projects' | relative_url }}">Projects</a>
-        <a class="nav-link" href="{{ '/about/' | relative_url }}">About</a>
-        <a class="nav-link" href="{{ '/#contact' | relative_url }}">Contact</a>
-      </div>
+<header class="navbar" role="banner">
+    <nav class="nav-container" role="navigation" aria-label="Main navigation">
+        <!-- Logo -->
+        <a href="{{ '/' | relative_url }}" class="nav-logo" aria-label="Homepage">
+            <i class="fas fa-code"></i>
+            <span>{{ site.title | default: 'Portfolio' }}</span>
+        </a>
+
+        <!-- Hamburger Button (Mobile) -->
+        <button class="hamburger" 
+                aria-label="Toggle navigation" 
+                aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">
+                    Home
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ '/#projects' | relative_url }}" class="nav-link">
+                    Projects
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ '/#skills' | relative_url }}" class="nav-link">
+                    Skills
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ '/about/' | relative_url }}" class="nav-link {% if page.url contains '/about' %}active{% endif %}">
+                    About
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ '/#contact' | relative_url }}" class="nav-link">
+                    Contact
+                </a>
+            </li>
+            
+            <!-- Dark Mode Toggle (Added by JavaScript) -->
+        </ul>
+        
+        <!-- Mobile Overlay -->
+        <div class="nav-overlay"></div>
     </nav>
-  </div>
 </header>

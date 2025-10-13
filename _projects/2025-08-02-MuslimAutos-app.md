@@ -1,13 +1,28 @@
 ---
 layout: project
 title: "MuslimAutos - Inventory Management"
-description: "A modern Android inventory and note management app built with Jetpack Compose, MVVM architecture, and Koin DI for small shops like Muslim Autos."
+description: "A modern Android inventory management app built with Jetpack Compose, MVVM architecture, and Koin DI, designed specifically for small shops and businesses."
 date: 2025-08-02
 image: /images/projects/muslimautos-home.png
 thumb: /images/projects/muslimautos-home.png
 app_icon: /images/projects/icons/muslimautos-icon.png
+
+# Project Status
 open_source: false
 featured: true
+
+# SEO Keywords for this specific project
+keywords:
+  - "MuslimAutos Inventory Management"
+  - "Android Inventory App"
+  - "Business Management Android"
+  - "Small Business Inventory"
+  - "Jetpack Compose Business App"
+  - "Kotlin Inventory System"
+  - "Shop Management Android"
+  - "Business Inventory Software"
+  - "Android Point of Sale"
+  - "Retail Management App"
 
 # App Details
 app_details:
@@ -20,21 +35,22 @@ app_details:
   size: "2.51 MB"
   last_updated: "August 2025"
 
-# Technologies used
+# Technologies
 technologies:
   - Jetpack Compose
   - Kotlin
-  - MVVM
-  - Coroutines
-  - Koin
-  - Material 3
+  - MVVM Architecture
+  - Coroutines & Flow
+  - Koin DI
+  - Material Design 3
   - Room Database
   - Navigation Compose
 
 # Links
-github: https://github.com/waliafghan22/MuslimAutos-Apk
+# github: # Closed source - code not publicly available
+# playstore: https://play.google.com/store/apps/details?id=com.wali.muslimautos
 apk_download: https://github.com/waliafghan22/MuslimAutos-Apk/releases/download/1.0.2.alpha/MuslimAutos-v1.2-release.apk
-demo: https://github.com/waliafghan22/MuslimAutos#demo
+# demo: https://youtube.com/your-demo-video
 
 # Categories
 categories:
@@ -52,72 +68,221 @@ screenshots:
 
 ## 📱 Overview
 
-**MuslimAutos** is a lightweight inventory and note management Android app tailored for small shops like Muslim Autos. Built with modern Android best practices, it lets you manage items with comprehensive details including title, description, category, image, price, quantity, and tags. The app features real-time search, filtering, sorting, and a clean Material 3 UI.
+**MuslimAutos** is a lightweight, professional inventory and note management solution designed specifically for small shops and businesses. Built from the ground up using modern Android development practices, this app demonstrates advanced implementation of Jetpack Compose, MVVM architecture, and reactive programming patterns.
+
+The application provides comprehensive item management capabilities, allowing business owners to track their inventory with detailed information including title, description, category, pricing, quantity, images, and custom tags. With real-time search, intelligent filtering, and flexible sorting options, MuslimAutos makes inventory management effortless.
+
+---
 
 ## ✨ Key Features
 
 ### 🎯 Core Functionality
-- **Robust Item Model** - Manage items with title, description, image, price, quantity, and tags
-- **Category Management** - Organize items with color-coded categories and icons
-- **Auto Timestamping** - Automatic creation and modification timestamps
-- **Real-time Search** - Search across title, content, and tags instantly
-- **Advanced Filtering** - Filter by category with intuitive chips
-- **Flexible Sorting** - Sort by newest/oldest or alphabetically
+
+**Comprehensive Item Management**
+- Create and edit items with rich details (title, description, images, pricing)
+- Categorize items with color-coded categories and custom icons
+- Add unlimited tags for flexible organization
+- Track quantity levels for stock management
+- Auto-timestamping for creation and modification tracking
+
+**Advanced Search & Filtering**
+- Real-time search across titles, descriptions, and tags
+- Category-based filtering with intuitive chip interface
+- Flexible sorting options (newest/oldest, alphabetical)
+- Instant results with reactive state management
+
+**Category System**
+- Pre-defined categories with custom colors and icons
+- Visual organization for quick item identification
+- Filter inventory by specific categories
+- Easy category assignment during item creation
 
 ### 🎨 User Experience
-- **Material Design 3** - Modern, clean interface following Google's guidelines
-- **Multilingual Support** - English and Pashto language support
-- **Responsive Design** - Optimized for various screen sizes
-- **Intuitive Navigation** - Easy to use for shop owners and managers
 
-## 🛠️ Technical Stack
+**Modern Material Design 3 Interface**
+- Clean, intuitive UI following Google's latest design guidelines
+- Smooth animations and transitions using Jetpack Compose
+- Responsive layouts optimized for various screen sizes
+- Touch-friendly controls designed for real-world use
 
-**Modern Android Architecture:**
-- **Jetpack Compose** - Declarative UI framework
-- **MVVM Pattern** - Clean separation of concerns
-- **Kotlin Coroutines & Flow** - Asynchronous programming and reactive state
-- **Koin DI** - Lightweight dependency injection
-- **Room Database** - Local persistence with DAO pattern
+**Multilingual Support**
+- Full English and Pashto language support
+- Runtime language switching without app restart
+- Localized across all API levels (21+)
+- Cultural accessibility for Afghan business owners
+
+**Optimized Performance**
+- Fast, responsive interface with smooth scrolling
+- Efficient image loading and caching with Coil
+- Minimal battery and memory footprint
+- Offline-first architecture with Room database
+
+---
+
+## 🛠️ Technical Implementation
+
+### Architecture & Design Patterns
+
+**Clean Architecture with MVVM**
+- UI Layer (Compose)
+- ViewModel Layer (Business Logic)
+- Repository Layer (Data Management)
+- Room Database (Local Persistence)
+
+**Key Technical Decisions:**
+- **Jetpack Compose** - Modern declarative UI framework for rapid development
+- **MVVM Pattern** - Clear separation of concerns and testability
+- **Kotlin Coroutines & Flow** - Asynchronous operations and reactive state
+- **Koin Dependency Injection** - Lightweight DI for clean component wiring
+- **Room Database** - Type-safe local persistence with DAO pattern
 - **Navigation Compose** - Type-safe navigation with kotlinx.serialization
-- **Material 3** - Google's latest design system
-- **Coil** - Image loading and caching
+
+### Core Technologies
+
+**Frontend:**
+- Jetpack Compose for 100% declarative UI
+- Material 3 components and theming
+- Custom composables for reusable UI elements
+- State management with StateFlow and ViewModel
+
+**Backend & Data:**
+- Room Database for offline-first data persistence
+- Repository pattern for data access abstraction
+- Kotlin Flow for reactive data streams
+- DAO pattern for type-safe database queries
+
+**Supporting Libraries:**
+- Coil for efficient image loading and caching
+- kotlinx.serialization for type-safe navigation
+- Kotlin Coroutines for asynchronous programming
+- Material Icons for consistent iconography
+
+---
 
 ## 🌟 Project Highlights
 
 ### Technical Achievements
-- **Clean Architecture** implementation with proper layer separation (UI, ViewModel, Repository, Room)
-- **Modern Android Development** practices with Jetpack Compose and Material 3
-- **Performance Optimized** for smooth user experience with reactive state management
-- **Multilingual Support** with runtime language switching across all API levels
-- **Type-safe Navigation** using kotlinx.serialization for compile-time safety
+
+✅ **Production-Ready Architecture**
+- Implemented Clean Architecture with proper layer separation
+- Follows Android best practices and official guidelines
+- Scalable codebase ready for future feature additions
+- Proper error handling and edge case management
+
+✅ **Modern Development Stack**
+- 100% Kotlin codebase
+- Latest Jetpack libraries (Compose, Navigation, Room)
+- Material Design 3 theming system
+- Type-safe navigation and compile-time safety
+
+✅ **Performance Optimized**
+- Efficient database queries with Room
+- Lazy loading and pagination ready
+- Image optimization with Coil
+- Minimal memory footprint
+
+✅ **Accessibility & Localization**
+- Multilingual support (English/Pashto)
+- Right-to-left (RTL) layout support
+- Runtime language switching
+- Cultural localization for Afghan users
 
 ### Business Impact
-- **Inventory Management** solution for small shops and businesses
-- **Digital Transformation** helping traditional shops modernize their operations
-- **Open Source Contribution** to Android developer community
-- **Localized Experience** with Pashto language support for Afghan users
 
-## 🚀 Key Technical Features
+🎯 **Solving Real Problems**
+- Addresses inventory management needs for small Afghan businesses
+- Eliminates paper-based tracking systems
+- Reduces human error in stock management
+- Provides professional tools for traditional shops
 
-- **Add/Edit Flow** - Create and modify items with comprehensive details
-- **Detail View** - View complete item information with edit and delete actions
-- **Reactive Lists** - Real-time updates using Kotlin Flow and StateFlow
-- **Repository Pattern** - Clean data access layer with Room database
-- **Dependency Injection** - Koin module for proper component wiring
-- **Image Management** - Handle item images with Coil for efficient loading
-- **Language Management** - Sophisticated locale handling across API levels
-
-## 📊 Project Stats
-
-- **Framework**: Jetpack Compose + Kotlin
-- **Architecture**: MVVM with Clean Architecture + Repository Pattern
-- **Database**: Room with DAO pattern
-- **Dependency Injection**: Koin
-- **Size**: 2.51 MB
-- **Open Source**: MIT License
-- **Status**: Active Development
-- **Languages**: English, Pashto
+🌍 **Digital Transformation**
+- Brings modern technology to underserved markets
+- Empowers small business owners with digital tools
+- Bridges technology gap with local language support
+- Demonstrates practical Android development skills
 
 ---
 
-*This project demonstrates modern Android development practices while serving small businesses with an efficient inventory management solution.*
+## 🚀 Technical Features
+
+### Data Management
+- Full CRUD operations (Create, Read, Update, Delete)
+- Real-time data updates using Kotlin Flow
+- Type-safe database operations with Room DAO
+- Automatic data validation and error handling
+
+### Image Handling
+- Efficient image loading with Coil library
+- Image caching for improved performance
+- Placeholder and error state handling
+- Support for various image sources
+
+### State Management
+- Reactive state updates with StateFlow
+- Unidirectional data flow architecture
+- Proper lifecycle-aware data handling
+- Optimistic UI updates for better UX
+
+### Navigation
+- Type-safe navigation using kotlinx.serialization
+- Proper back stack management
+- Deep linking support ready
+- Smooth screen transitions
+
+---
+
+## 📊 Project Statistics
+
+| Metric | Value |
+|--------|-------|
+| **Framework** | Jetpack Compose |
+| **Language** | Kotlin 100% |
+| **Architecture** | MVVM + Clean Architecture |
+| **Min SDK** | API 24 (Android 7.0) |
+| **Target SDK** | API 34 (Android 14) |
+| **App Size** | 2.51 MB |
+| **Database** | Room with DAO |
+| **DI Framework** | Koin |
+| **Languages** | English, Pashto |
+| **Status** | Active Development |
+
+---
+
+## 🎓 What I Learned
+
+Building MuslimAutos provided valuable hands-on experience with:
+
+- **Jetpack Compose** - Mastered declarative UI development and state management
+- **Clean Architecture** - Implemented proper separation of concerns and dependency rules
+- **Kotlin Flow** - Learned reactive programming patterns and asynchronous data handling
+- **Room Database** - Gained expertise in local data persistence and migration strategies
+- **Koin DI** - Understood dependency injection principles and module organization
+- **Material Design 3** - Applied modern design principles and theming systems
+- **Localization** - Implemented multi-language support across different API levels
+
+---
+
+## 🔐 License & Source Code
+
+This is a **proprietary project**. The source code is not publicly available to protect the intellectual property and business logic.
+
+However, the app demonstrates professional Android development practices and can be showcased as part of a technical portfolio.
+
+---
+
+## 📞 Interested in This Project?
+
+If you're interested in discussing:
+- Custom Android app development
+- Kotlin and Jetpack Compose expertise
+- Business management applications
+- Technical consulting for mobile projects
+- Modern Android development practices
+
+**[Get in touch]({{ '/#contact' | relative_url }})** - I'd love to hear from you!
+
+---
+
+<div class="project-note">
+  <p><strong>Note:</strong> This project is actively maintained and regularly updated with new features and improvements. Screenshots and features shown may vary from the current version.</p>
+</div>

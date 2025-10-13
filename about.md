@@ -2,9 +2,24 @@
 layout: page
 title: About Me
 permalink: /about/
+description: "Learn about Mohammed Wali, a passionate Android Developer from Afghanistan specializing in Jetpack Compose, Kotlin, and modern mobile development."
+
+# SEO Keywords for About page
+keywords:
+  - "About Mohammed Wali"
+  - "wali afghan"
+  - "waliafghan22"
+  - "Android Developer Biography"
+  - "Kotlin Developer Afghanistan"
+  - "Jetpack Compose Expert Profile"
+  - "Mobile App Developer Portfolio"
+  - "Self-taught Android Developer"
+  - "Afghanistan Software Developer"
+  - "Modern Android Development Skills"
+  - "Portfolio Developer Experience"
+  - "Android Development Journey"
 ---
 
-# About Me
 
 <div class="about-hero">
   <div class="about-image">
@@ -18,43 +33,47 @@ permalink: /about/
   <div class="about-intro">
     <h2>Hi, I'm Mohammed Wali 👋</h2>
     <p class="lead">
-      A passionate <strong>Android Developer</strong> from Afghanistan who loves creating innovative mobile solutions that make a difference in people's lives.
+      A passionate <strong>Android Developer</strong> from Afghanistan who loves creating innovative mobile solutions that make a real difference in people's lives. I specialize in building modern, user-centric applications using cutting-edge technologies like Jetpack Compose and Kotlin.
     </p>
 
     <div class="key-highlights">
       <div class="highlight-item">
         <i class="fas fa-code"></i>
-        <span>2+ Years Experience</span>
+        <span>2+ Years of Experience</span>
       </div>
       <div class="highlight-item">
         <i class="fab fa-android"></i>
-        <span>Modern Android Dev</span>
+        <span>Modern Android Stack</span>
       </div>
       <div class="highlight-item">
         <i class="fas fa-globe"></i>
-        <span>Pashto Language Tech</span>
+        <span>Multilingual Solutions</span>
       </div>
     </div>
   </div>
 </div>
 
+---
+
 ## 🚀 What I Do
 
-I specialize in crafting exceptional Android applications using cutting-edge technologies. My approach combines **modern development practices** with **user-centered design** to deliver apps that not only work flawlessly but also provide delightful user experiences.
+I specialize in crafting **exceptional Android applications** using cutting-edge technologies and modern development practices. My approach combines clean architecture, intuitive design, and performance optimization to deliver apps that provide delightful user experiences.
 
-**Core Specializations:**
-- **Native Android Development** with Kotlin & Java
-- **Modern UI/UX** using Jetpack Compose & Material Design 3
-- **Clean Architecture** with MVVM, MVI & Repository patterns
-- **Performance Optimization** for smooth, responsive apps
-- **Pashto Language Integration** - bridging technology with local languages
+**Core Expertise:**
+- 📱 **Native Android Development** - Kotlin, Java, Jetpack Compose
+- 🎨 **Modern UI/UX** - Material Design 3, Custom Components
+- 🏗️ **Clean Architecture** - MVVM, Repository patterns, Dependency Injection
+- ⚡ **Performance Optimization** - Smooth, responsive applications
+- 🌍 **Localization** - Pashto & Dari language solutions
 
-## 💻 Technical Expertise
+---
 
-### **Languages & Frameworks**
+## 💻 Technical Stack
+
+### **Core Technologies**
 <div class="expertise-grid">
   <div class="expertise-category">
-    <h4>🚀 Primary Languages</h4>
+    <h4>🚀 Languages</h4>
     <div class="tech-tags">
       <span class="tech-tag primary">Kotlin</span>
       <span class="tech-tag">Java</span>
@@ -65,22 +84,31 @@ I specialize in crafting exceptional Android applications using cutting-edge tec
     <h4>🎨 UI & Architecture</h4>
     <div class="tech-tags">
       <span class="tech-tag">Jetpack Compose</span>
+      <span class="tech-tag">Material Design 3</span>
       <span class="tech-tag">MVVM</span>
-      <span class="tech-tag">Clean Architecture</span>
     </div>
   </div>
 
   <div class="expertise-category">
     <h4>⚡ Modern Android</h4>
     <div class="tech-tags">
-      <span class="tech-tag">Coroutines</span>
-      <span class="tech-tag">Flow</span>
-      <span class="tech-tag">Material 3</span>
+      <span class="tech-tag">Coroutines & Flow</span>
+      <span class="tech-tag">Room Database</span>
+      <span class="tech-tag">Navigation</span>
+    </div>
+  </div>
+
+  <div class="expertise-category">
+    <h4>🔧 Tools & Services</h4>
+    <div class="tech-tags">
+      <span class="tech-tag">Hilt/Koin</span>
+      <span class="tech-tag">Firebase</span>
+      <span class="tech-tag">REST APIs</span>
     </div>
   </div>
 </div>
 
-### **Tools & Technologies**
+### **Development Tools**
 <div class="tools-grid">
   <div class="tool-item">
     <i class="fas fa-code"></i>
@@ -92,92 +120,112 @@ I specialize in crafting exceptional Android applications using cutting-edge tec
   </div>
   <div class="tool-item">
     <i class="fas fa-fire"></i>
-    <span>Firebase</span>
+    <span>Firebase Suite</span>
   </div>
   <div class="tool-item">
     <i class="fab fa-google-play"></i>
     <span>Play Console</span>
   </div>
-  <div class="tool-item">
-    <i class="fas fa-network-wired"></i>
-    <span>REST APIs</span>
-  </div>
-  <div class="tool-item">
-    <i class="fas fa-robot"></i>
-    <span>CI/CD</span>
-  </div>
 </div>
 
-## 🌟 My Mission
+---
 
-> *"Technology should be accessible to everyone, regardless of language or location. I'm committed to building apps that not only solve problems but also bring people together through innovative mobile experiences."*
+## 🌟 My Philosophy
 
-### **Open Source Philosophy**
-I believe in the power of collaborative development. Most of my projects are open-source, allowing fellow developers to learn, contribute, and build upon them.
+### **User-Centered Design**
+Great apps start with understanding user needs. Every feature I build prioritizes intuitive interfaces and smooth experiences.
 
-### **Pashto Language Innovation**
-I'm particularly passionate about creating technology solutions for Pashto speakers:
-- **Text Generation Tools** for content creation
-- **Language Learning Applications** for education
-- **Localization Services** for broader accessibility
+### **Clean Code & Performance**
+I write maintainable, scalable code using industry best practices. Performance optimization ensures smooth experiences even on lower-end devices.
 
-## 🎯 Professional Focus
+### **Continuous Learning**
+Technology evolves rapidly, and so do I. I stay current with Android developments and constantly refine my skills through hands-on projects.
 
-**Current Priorities:**
-- Compose-first development approach
-- Performance-driven architecture decisions
-- User experience optimization
-- Community contribution and knowledge sharing
+---
 
-**Open to:**
-- Remote collaboration opportunities
-- Open source contributions
-- Android development consulting
-- Tech community involvement
+## 🎯 Mission & Impact
 
-## 📚 Continuous Learning
+> *"Technology should be accessible to everyone, regardless of language or location. I'm committed to building apps that solve real problems and bring people together through innovative mobile experiences."*
 
-I stay current with the rapidly evolving Android ecosystem through:
+### **Bridging Language Gaps**
+As a developer from Afghanistan, I'm passionate about creating technology solutions for Pashto and Dari speakers:
+- 🗣️ **Content Creation Tools** - Making digital creation accessible
+- 📚 **Language Learning Apps** - Facilitating education and literacy
+- 🌐 **Localization Services** - Bringing global apps to local languages
 
-- **Official Documentation** - Google's Android & Kotlin resources
-- **Community Engagement** - conferences, meetups, and forums
-- **Hands-on Experimentation** - building proof-of-concepts and prototypes
-- **Code Review & Mentorship** - learning from and teaching others
+### **Empowering Communities**
+My projects focus on helping small businesses adopt digital solutions, bringing modern technology to traditional industries.
+
+---
+
+## 🏆 What Sets Me Apart
+
+- **Self-Taught & Motivated**: Learned Android development independently through dedication and practice
+- **Multilingual Capabilities**: Fluent in English, Pashto, and Dari for truly localized experiences
+- **Real-World Problem Solver**: Projects solve actual problems for real users
+- **Modern Stack Expertise**: Passionate about Jetpack Compose, Kotlin, and Clean Architecture
+
+---
 
 ## 📫 Let's Connect
 
 I'm always excited to discuss:
-
-- **Project Collaborations** - interesting Android development opportunities
-- **Technology Trends** - latest developments in mobile development
-- **Open Source Work** - contributing to or starting new projects
-- **Career Opportunities** - full-time, freelance, or consulting work
-- **Knowledge Sharing** - mentoring or being mentored
+- 💼 **Career Opportunities** - Full-time, freelance, or consulting positions
+- 🤝 **Project Collaborations** - Interesting Android development challenges
+- 💡 **Technology Discussions** - Latest trends in mobile development
+- 🌟 **Open Source Work** - Contributing to or starting new projects
 
 <div class="about-cta">
-  <a href="{{ '/#contact' | relative_url }}" class="btn btn-primary">
+  <a href="{{ '/#contact' | relative_url }}" class="btn btn-primary btn-large">
     <i class="fas fa-paper-plane"></i>
-    Start a Conversation
+    <span>Start a Conversation</span>
   </a>
-  <a href="{{ '/#projects' | relative_url }}" class="btn btn-secondary">
+  <a href="{{ '/#projects' | relative_url }}" class="btn btn-secondary btn-large">
     <i class="fas fa-code"></i>
-    Explore My Work
+    <span>Explore My Work</span>
   </a>
 </div>
 
 ---
 
+## 📊 Portfolio Stats
+
 <div class="about-stats">
   <div class="stat-card">
-    <div class="stat-number">{{ site.projects.size }}</div>
-    <div class="stat-label">Projects Built</div>
+    <div class="stat-icon">
+      <i class="fas fa-mobile-alt"></i>
+    </div>
+    <div class="stat-number">{{ site.projects.size }}+</div>
+    <div class="stat-label">Apps Built</div>
   </div>
+
   <div class="stat-card">
+    <div class="stat-icon">
+      <i class="fas fa-code-branch"></i>
+    </div>
     <div class="stat-number">{{ site.projects | where: "open_source", true | size }}</div>
     <div class="stat-label">Open Source</div>
   </div>
+
   <div class="stat-card">
+    <div class="stat-icon">
+      <i class="fas fa-calendar"></i>
+    </div>
     <div class="stat-number">2+</div>
     <div class="stat-label">Years Experience</div>
   </div>
+
+  <div class="stat-card">
+    <div class="stat-icon">
+      <i class="fas fa-globe"></i>
+    </div>
+    <div class="stat-number">3</div>
+    <div class="stat-label">Languages</div>
+  </div>
+</div>
+
+---
+
+<div class="about-footer-note">
+  <p><em>💡 Always learning, always building, always improving. Let's create something amazing together!</em></p>
 </div>

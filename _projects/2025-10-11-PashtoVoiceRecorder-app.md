@@ -1,13 +1,26 @@
 ---
 layout: project
 title: "Pashto Voice Recorder - Speech Dataset App"
-description: "A focused Android app for building high-quality Pashto speech datasets with streamlined recording, review, and session management features."
+description: "A focused Android app for building high-quality Pashto speech datasets with streamlined recording, review, and session management features. Built with Jetpack Compose and Kotlin."
 date: 2025-10-11
 image: /images/projects/pashto-voice-recorder-home.png
 thumb: /images/projects/pashto-voice-recorder-home.png
 app_icon: /images/projects/icons/pashto-voice-recorder-icon.png
 open_source: false
 featured: true
+
+# SEO Keywords for this specific project
+keywords:
+  - "Pashto Voice Recorder"
+  - "Speech Dataset Collection"
+  - "Android Audio Recording App"
+  - "Jetpack Compose Audio App"
+  - "Kotlin Voice Recording"
+  - "Pashto Language Technology"
+  - "AI Training Dataset Tools"
+  - "Mobile Speech Collection"
+  - "Android Linguistic Tools"
+  - "Voice Dataset Android App"
 
 # App Details
 app_details:
@@ -33,9 +46,9 @@ technologies:
   - OpenCSV
 
 # Links
-github: https://github.com/waliafghan22/PashtoVoiceRecorder-Apk
+# github: https://github.com/waliafghan22/PashtoVoiceRecorder-Apk
 apk_download: https://github.com/waliafghan22/PashtoVoiceRecorder-Apk/releases/download/v1.0.3/PashtoVoiceRecorder-v1.0.3-release.apk
-demo: https://github.com/waliafghan22/PashtoVoiceRecorder-Apk/releases
+# demo: https://github.com/waliafghan22/PashtoVoiceRecorder-Apk/releases
 
 # Categories
 categories:
@@ -118,9 +131,29 @@ screenshots:
 - **SDK Requirements**: minSdk 24, targetSdk 36
 - **Dependency Injection**: Koin
 - **Size**: 3.39 MB
-- **Open Source**: No
 - **Status**: Active Development
 - **Languages**: English, Pashto, Urdu, Dari
+
+---
+
+## 🔐 License & Source Code
+
+This is a **proprietary project**. The source code is not publicly available to protect the intellectual property and business logic.
+
+However, the app demonstrates professional Android development practices and can be showcased as part of a technical portfolio.
+
+---
+
+## 📞 Interested in This Project?
+
+If you're interested in discussing:
+- Custom Android app development
+- Kotlin and Jetpack Compose expertise
+- Speech recognition and audio processing apps
+- AI and machine learning mobile applications
+- Technical consulting for similar projects
+
+**[Get in touch]({{ '/#contact' | relative_url }})** - I'd love to hear from you!
 
 ---
 

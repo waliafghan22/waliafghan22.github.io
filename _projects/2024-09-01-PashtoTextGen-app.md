@@ -9,6 +9,19 @@ app_icon: /images/projects/icons/pashto-text-gen-icon.png
 open_source: true
 featured: true
 
+# SEO Keywords for this specific project
+keywords:
+  - "Pashto Text Generator"
+  - "Pashto Language Learning App"
+  - "Android Text Generation Tool"
+  - "Jetpack Compose Educational App"
+  - "Kotlin Language Learning"
+  - "Pashto Sentence Generator"
+  - "Android Language Education"
+  - "MVVM Architecture Example"
+  - "Open Source Android Project"
+  - "Pashto Educational Technology"
+
 # App Details
 app_details:
   version: "1.0-alpha"
@@ -101,6 +114,18 @@ screenshots:
 - **Size**: 8.5 MB
 - **Open Source**: MIT License
 - **Status**: Active Development
+
+---
+
+## 📞 Interested in This Project?
+
+If you're interested in discussing:
+- Custom Android app development
+- Kotlin and Jetpack Compose projects
+- Educational technology solutions
+- Open source collaboration opportunities
+
+**[Get in touch]({{ '/#contact' | relative_url }})** - I'd love to hear from you!
 
 ---
 

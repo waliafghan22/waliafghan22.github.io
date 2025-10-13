@@ -3,6 +3,9 @@ layout: default
 ---
 
 <article class="project-detail">
+  <!-- ========================================
+       PROJECT HERO SECTION
+       ======================================== -->
   <header class="project-detail-hero">
     <div class="container">
       <div class="detail-hero-content">
@@ -10,26 +13,61 @@ layout: default
         <div class="detail-app-header">
           {% if page.app_icon %}
           <div class="detail-app-icon">
-            <img src="{{ page.app_icon | relative_url }}" alt="{{ page.title }} icon" onerror="this.src='https://ui-avatars.com/api/?name={{ page.title | url_encode }}&background=6200EA&color=fff&size=120'">
+            <img src="{{ page.app_icon | relative_url }}" 
+                 alt="{{ page.title }} icon" 
+                 loading="eager"
+                 onerror="this.src='https://ui-avatars.com/api/?name={{ page.title | url_encode }}&background=6200EA&color=fff&size=120'">
           </div>
           {% endif %}
+          
           <div class="detail-app-info">
             <h1 class="detail-app-name">{{ page.title }}</h1>
             <p class="detail-app-description">{{ page.description }}</p>
             
+            <!-- Badge -->
+            <div class="detail-badges">
+              {% if page.open_source %}
+              <span class="detail-badge badge-open">
+                <i class="fas fa-code-branch"></i> Open Source
+              </span>
+              {% else %}
+              <span class="detail-badge badge-closed">
+                <i class="fas fa-lock"></i> Closed Source
+              </span>
+              {% endif %}
+              
+              {% if page.featured %}
+              <span class="detail-badge badge-featured">
+                <i class="fas fa-star"></i> Featured
+              </span>
+              {% endif %}
+            </div>
+            
             {% if page.app_details %}
             <div class="detail-app-meta">
               {% if page.app_details.version %}
-              <span class="meta-item"><i class="fas fa-code-branch"></i> Version {{ page.app_details.version }}</span>
+              <span class="meta-item">
+                <i class="fas fa-code-branch"></i> 
+                <span>Version {{ page.app_details.version }}</span>
+              </span>
               {% endif %}
               {% if page.app_details.downloads %}
-              <span class="meta-item"><i class="fas fa-download"></i> {{ page.app_details.downloads }}+ Downloads</span>
+              <span class="meta-item">
+                <i class="fas fa-download"></i> 
+                <span>{{ page.app_details.downloads }}+ Downloads</span>
+              </span>
               {% endif %}
               {% if page.app_details.rating %}
-              <span class="meta-item"><i class="fas fa-star"></i> {{ page.app_details.rating }}</span>
+              <span class="meta-item">
+                <i class="fas fa-star"></i> 
+                <span>{{ page.app_details.rating }}</span>
+              </span>
               {% endif %}
               {% if page.date %}
-              <span class="meta-item"><i class="fas fa-calendar"></i> {{ page.date | date: "%B %Y" }}</span>
+              <span class="meta-item">
+                <i class="fas fa-calendar"></i> 
+                <span>{{ page.date | date: "%B %Y" }}</span>
+              </span>
               {% endif %}
             </div>
             {% endif %}
@@ -39,18 +77,34 @@ layout: default
         <!-- Action Buttons -->
         <div class="detail-actions">
           {% if page.github %}
-          <a href="{{ page.github }}" class="detail-btn btn-primary" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i> View Source Code
+          <a href="{{ page.github }}" 
+             class="detail-btn btn-github" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             aria-label="View source code on GitHub">
+            <i class="fab fa-github"></i> 
+            <span>View Source Code</span>
           </a>
           {% endif %}
-          {% if page.apk_download %}
-          <a href="{{ page.apk_download }}" class="detail-btn btn-download" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-download"></i> Download APK
-          </a>
-          {% endif %}
+          
           {% if page.playstore %}
-          <a href="{{ page.playstore }}" class="detail-btn btn-playstore" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-google-play"></i> Get on Play Store
+          <a href="{{ page.playstore }}" 
+             class="detail-btn btn-playstore" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             aria-label="Get on Google Play Store">
+            <i class="fab fa-google-play"></i> 
+            <span>Get on Play Store</span>
+          </a>
+          {% endif %}
+          
+          {% if page.apk_download %}
+          <a href="{{ page.apk_download }}" 
+             class="detail-btn btn-download" 
+             download
+             aria-label="Download APK file">
+            <i class="fas fa-download"></i> 
+            <span>Download APK</span>
           </a>
           {% endif %}
         </div>
@@ -60,26 +114,41 @@ layout: default
         <div class="detail-specs-grid">
           {% if page.app_details.size %}
           <div class="spec-item">
-            <span class="spec-label">Size</span>
-            <span class="spec-value">{{ page.app_details.size }}</span>
+            <i class="fas fa-hdd spec-icon"></i>
+            <div class="spec-content">
+              <span class="spec-label">Size</span>
+              <span class="spec-value">{{ page.app_details.size }}</span>
+            </div>
           </div>
           {% endif %}
+          
           {% if page.app_details.min_sdk %}
           <div class="spec-item">
-            <span class="spec-label">Min SDK</span>
-            <span class="spec-value">{{ page.app_details.min_sdk }}</span>
+            <i class="fab fa-android spec-icon"></i>
+            <div class="spec-content">
+              <span class="spec-label">Min SDK</span>
+              <span class="spec-value">{{ page.app_details.min_sdk }}</span>
+            </div>
           </div>
           {% endif %}
+          
           {% if page.app_details.target_sdk %}
           <div class="spec-item">
-            <span class="spec-label">Target SDK</span>
-            <span class="spec-value">{{ page.app_details.target_sdk }}</span>
+            <i class="fas fa-bullseye spec-icon"></i>
+            <div class="spec-content">
+              <span class="spec-label">Target SDK</span>
+              <span class="spec-value">{{ page.app_details.target_sdk }}</span>
+            </div>
           </div>
           {% endif %}
+          
           {% if page.app_details.last_updated %}
           <div class="spec-item">
-            <span class="spec-label">Updated</span>
-            <span class="spec-value">{{ page.app_details.last_updated }}</span>
+            <i class="fas fa-clock spec-icon"></i>
+            <div class="spec-content">
+              <span class="spec-label">Updated</span>
+              <span class="spec-value">{{ page.app_details.last_updated }}</span>
+            </div>
           </div>
           {% endif %}
         </div>
@@ -88,10 +157,35 @@ layout: default
     </div>
   </header>
 
+  <!-- ========================================
+       TECHNOLOGIES SECTION
+       ======================================== -->
+  {% if page.technologies and page.technologies.size > 0 %}
+  <section class="detail-tech-section">
+    <div class="container">
+      <h2 class="section-title">
+        <i class="fas fa-tools"></i> Technologies Used
+      </h2>
+      <div class="detail-tech-tags">
+        {% for tech in page.technologies %}
+        <span class="tech-tag-detail">{{ tech }}</span>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- ========================================
+       SCREENSHOTS SECTION
+       ======================================== -->
   {% if page.screenshots and page.screenshots.size > 0 %}
   <section class="screenshots-section" aria-labelledby="screenshots-title">
     <div class="container">
-      <h2 id="screenshots-title" class="section-title">App Screenshots</h2>
+      <h2 id="screenshots-title" class="section-title">
+        <i class="fas fa-images"></i> App Screenshots
+      </h2>
+      <p class="section-subtitle">Swipe to view more screenshots</p>
+      
       <div class="screenshots-scroller" aria-label="App screenshots carousel" role="list">
         {% for shot in page.screenshots %}
           {% if shot %}
@@ -103,19 +197,75 @@ layout: default
                      src="{{ shot | relative_url }}"
                      alt="{{ page.title }} screenshot {{ forloop.index }}"
                      loading="lazy"
-                     onerror="this.parentElement.parentElement.style.display='none'" />
+                     onerror="this.parentElement.parentElement.parentElement.style.display='none'" />
               </div>
               <div class="phone-home-indicator"></div>
             </div>
+            <figcaption class="screenshot-caption">Screenshot {{ forloop.index }}</figcaption>
           </figure>
           {% endif %}
+        {% endfor %}
+      </div>
+      
+      <!-- Navigation Dots -->
+      <div class="screenshots-dots" role="tablist" aria-label="Screenshot navigation">
+        {% for shot in page.screenshots %}
+        <button class="screenshot-dot {% if forloop.first %}active{% endif %}" 
+                role="tab" 
+                aria-label="View screenshot {{ forloop.index }}"
+                data-index="{{ forloop.index0 }}"></button>
         {% endfor %}
       </div>
     </div>
   </section>
   {% endif %}
 
-  <div class="container project-content">
-    {{ content }}
-  </div>
+  <!-- ========================================
+       FEATURES SECTION
+       ======================================== -->
+  {% if page.features and page.features.size > 0 %}
+  <section class="features-section">
+    <div class="container">
+      <h2 class="section-title">
+        <i class="fas fa-sparkles"></i> Key Features
+      </h2>
+      <div class="features-grid">
+        {% for feature in page.features %}
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3 class="feature-title">{{ feature.title | default: feature }}</h3>
+          {% if feature.description %}
+          <p class="feature-description">{{ feature.description }}</p>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- ========================================
+       CONTENT SECTION
+       ======================================== -->
+  <section class="project-content-section">
+    <div class="container">
+      <div class="project-content">
+        {{ content }}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       BACK TO PROJECTS
+       ======================================== -->
+  <section class="back-to-projects">
+    <div class="container">
+      <a href="{{ '/#projects' | relative_url }}" class="btn btn-back">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to All Projects</span>
+      </a>
+    </div>
+  </section>
 </article>

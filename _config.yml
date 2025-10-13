@@ -1,30 +1,474 @@
-# Site settings
+# ========================================
+# SITE SETTINGS
+# ========================================
 title: Mohammed Wali - Android Developer
-email: waliafghan22@gmail.com
-description: >- 
-  Android Developer specializing in Jetpack Compose and Kotlin.
-  Self-taught developer with 2 years of experience building modern Android applications.
-baseurl: ""
-url: "https://waliafghan22.github.io"
-github_username: waliafghan22
-linkedin_username: 
+tagline: Building Beautiful Android Apps with Jetpack Compose
+description: >-
+  Android Developer from Afghanistan specializing in Jetpack Compose and Kotlin.
+  Self-taught developer with 2+ years of experience building modern, performant 
+  mobile applications. Passionate about creating intuitive user experiences and 
+  writing clean, maintainable code.
 
-# Build settings
+# Author Information
+author:
+  name: Mohammed Wali
+  email: waliafghan22@gmail.com
+  bio: "Android Developer specializing in Jetpack Compose, Kotlin, and modern mobile development"
+  location: "Afghanistan"
+  avatar: "https://avatars.githubusercontent.com/waliafghan22"
+
+email: waliafghan22@gmail.com
+timezone: Asia/Kabul
+
+# ========================================
+# URL SETTINGS
+# ========================================
+url: "https://waliafghan22.github.io"
+baseurl: ""
+permalink: /blog/:year/:month/:day/:title/
+
+# ========================================
+# SOCIAL MEDIA & CONTACT
+# ========================================
+github_username: waliafghan22
+linkedin_username: waliafghan22
+twitter_username: waliafghan22
+instagram_username: "" # Optional
+stackoverflow_id: ""   # Optional: Your Stack Overflow user ID
+medium_username: ""    # Optional: Medium blog username
+dev_username: ""       # Optional: dev.to username
+youtube_channel: ""    # Optional: YouTube channel URL
+
+# Google Play Developer
+playstore_developer: "" # Your Google Play Developer page URL
+
+# Resume/CV
+resume_url: "/assets/resume.pdf"  # Optional: Link to your resume PDF
+
+# Social Links (for structured data)
+social:
+  name: Mohammed Wali
+  links:
+    - https://github.com/waliafghan22
+    - https://linkedin.com/in/waliafghan22
+    - https://x.com/waliafghan22
+
+# ========================================
+# SEO & METADATA
+# ========================================
+lang: en
+locale: en_US
+
+# Logo and Images
+logo: /assets/images/logo.png
+og_image: /assets/images/og-image.png  # 1200x630px recommended for social sharing
+
+# Twitter Card Settings
+twitter:
+  username: "waliafghan22"  # Your Twitter username (without @)
+  card: summary_large_image
+
+# Facebook App ID (Optional)
+# facebook:
+#   app_id: your-facebook-app-id
+#   publisher: your-facebook-page-url
+
+# Keywords for SEO
+keywords: 
+  - "Mohammed Wali"
+  - "wali afghan"
+  - "waliafghan22"
+  - "Android Developer Afghanistan"
+  - "Kotlin Developer"
+  - "Jetpack Compose Expert"
+  - "Android App Developer"
+  - "Mobile App Development"
+  - "MVVM Architecture"
+  - "Material Design 3"
+  - "Firebase Developer"
+  - "Android Studio Expert"
+  - "Pashto Language Apps"
+  - "Dari Language Technology"
+  - "Afghanistan Developer Portfolio"
+  - "Self-taught Android Developer"
+  - "Modern Android Development"
+  - "Clean Architecture Android"
+  - "Room Database Expert"
+  - "Coroutines Flow Kotlin"
+  - "Hilt Dependency Injection"
+  - "Koin DI Framework"
+
+# Google Analytics (Optional)
+# Get your tracking ID from https://analytics.google.com
+# google_analytics: ""  # e.g., G-XXXXXXXXXX or UA-XXXXXXXXX-X
+
+# Google Search Console (Optional)
+# google_site_verification: ""
+
+# Disqus Comments (Optional)
+# disqus:
+#   shortname: your-disqus-shortname
+
+# ========================================
+# BUILD SETTINGS
+# ========================================
 markdown: kramdown
+highlighter: rouge
+
+# Kramdown Settings
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    block:
+      line_numbers: false
+
+# Sass/SCSS Settings
+sass:
+  sass_dir: _sass
+  style: compressed  # compressed for production, expanded for development
+
+# ========================================
+# PLUGINS
+# ========================================
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-mentions
+  - jekyll-redirect-from
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-relative-links
 
-# Collections
+# Sitemap Settings
+sitemap:
+  exclude:
+    - '/404.html'
+    - '/feed.xml'
+    - '/manifest.json'
+    - '/robots.txt'
+  changefreq: daily
+  priority: 1.0
+
+# Feed Settings
+feed:
+  path: feed.xml
+  excerpt_only: true
+
+# Pagination Settings
+paginate: 9
+paginate_path: "/blog/page:num/"
+
+# ========================================
+# COLLECTIONS
+# ========================================
 collections:
   projects:
     output: true
-    permalink: /projects/:name
+    permalink: /projects/:name/
+    sort_by: date
 
-# Defaults
+# You can add more collections if needed
+# posts:
+#   output: true
+#   permalink: /blog/:year/:month/:day/:title/
+
+# ========================================
+# DEFAULTS
+# ========================================
 defaults:
+  # Projects
   - scope:
       path: ""
       type: "projects"
     values:
       layout: "project"
+      author: "Mohammed Wali"
+      comments: false
+      share: true
+      
+  # Pages
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      author: "Mohammed Wali"
+      
+  # Posts (if you add a blog)
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Mohammed Wali"
+      comments: false
+      share: true
+
+# ========================================
+# NAVIGATION MENU
+# ========================================
+navigation:
+  main:
+    - title: Home
+      url: /
+      icon: fas fa-home
+    - title: Projects
+      url: /#projects
+      icon: fas fa-folder-open
+    - title: Skills
+      url: /#skills
+      icon: fas fa-code-branch
+    - title: About
+      url: /about/
+      icon: fas fa-user
+    - title: Contact
+      url: /#contact
+      icon: fas fa-envelope
+
+# Footer Navigation
+footer_links:
+  - title: Privacy Policy
+    url: /privacy/
+  - title: Terms of Use
+    url: /terms/
+  - title: Sitemap
+    url: /sitemap.xml
+
+# ========================================
+# PROJECT CATEGORIES
+# ========================================
+project_categories:
+  - Open Source
+  - Closed Source
+  - Personal
+  - Client Work
+  - Experimental
+
+# ========================================
+# TECHNOLOGIES/SKILLS
+# ========================================
+technologies:
+  languages:
+    - name: Kotlin
+      level: 95
+      icon: fab fa-android
+      color: "#7C4DFF"
+    - name: Java
+      level: 85
+      icon: fab fa-java
+      color: "#E76F00"
+  
+  frameworks:
+    - name: Jetpack Compose
+      level: 90
+    - name: MVVM Architecture
+      level: 85
+    - name: Clean Architecture
+      level: 80
+  
+  android:
+    - name: Room Database
+      level: 80
+    - name: Retrofit
+      level: 75
+    - name: Coroutines & Flow
+      level: 85
+    - name: Hilt/Dagger
+      level: 70
+    - name: Koin DI
+      level: 75
+    - name: Material Design 3
+      level: 85
+  
+  tools:
+    - name: Android Studio
+      level: 90
+    - name: Git & GitHub
+      level: 85
+    - name: Firebase
+      level: 75
+    - name: Gradle
+      level: 70
+    - name: Play Console
+      level: 80
+
+# ========================================
+# JEKYLL SETTINGS
+# ========================================
+# Conversion
+incremental: true
+strict_front_matter: false
+
+# Outputting
+excerpt_separator: <!--more-->
+show_excerpts: true
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+  - _redirects
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - .bundle/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - README.md
+  - LICENSE
+  - package.json
+  - package-lock.json
+  - yarn.lock
+  - .git/
+  - .github/
+  - .vscode/
+  - .idea/
+  - "*.bak"
+  - "*.tmp"
+  - "*.old"
+  - "*.log"
+  - ".DS_Store"
+
+keep_files:
+  - .git
+  - .svn
+
+# ========================================
+# COMPRESSION & PERFORMANCE
+# ========================================
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
+
+# ========================================
+# LIQUID SETTINGS
+# ========================================
+liquid:
+  error_mode: warn
+  strict_filters: false
+  strict_variables: false
+
+# ========================================
+# REPOSITORY SETTINGS
+# ========================================
+repository: waliafghan22/waliafghan22.github.io
+
+# ========================================
+# PWA SETTINGS (Progressive Web App)
+# ========================================
+pwa:
+  enabled: true
+  theme_color: "#6200EA"
+  background_color: "#ffffff"
+  display: standalone
+  orientation: portrait
+
+# ========================================
+# CUSTOM VARIABLES
+# ========================================
+custom:
+  # Hero Section
+  hero:
+    tagline: "Crafting Exceptional Android Experiences"
+    background: "/assets/images/hero-bg.jpg"
+    
+  # Projects
+  projects_per_page: 6
+  show_project_stats: true
+  
+  # Stats
+  stats:
+    years_experience: 2
+    projects_completed: 10
+    open_source_contributions: 5
+    
+  # Features
+  features:
+    dark_mode: true
+    search: false
+    analytics: false
+    sitemap: true
+    blog: false
+    comments: false
+    
+  # Contact Form (if you add one)
+  contact_form:
+    enabled: false
+    # formspree_id: ""  # Your Formspree form ID
+    # netlify: true     # If hosting on Netlify
+    
+  # Newsletter (Optional)
+  newsletter:
+    enabled: false
+    # provider: "mailchimp"
+    # action_url: ""
+    
+  # Testimonials
+  testimonials_enabled: false
+  
+  # Colors (can be used in templates)
+  colors:
+    primary: "#6200EA"
+    secondary: "#03DAC6"
+    accent: "#FF6B6B"
+    dark: "#1A1A1A"
+    light: "#FFFFFF"
+
+# ========================================
+# DEVELOPMENT SETTINGS
+# ========================================
+# Show drafts, future posts, and unpublished in development
+show_drafts: false
+future: false
+unpublished: false
+
+# Disable disk cache in development (uncomment for dev)
+# disable_disk_cache: true
+
+# Watch for changes (default: true)
+# watch: true
+
+# Live reload (requires jekyll-watch)
+# livereload: true
+
+# ========================================
+# ADDITIONAL METADATA
+# ========================================
+webmaster_verifications:
+  google: "" # Google Search Console verification code
+  bing: ""   # Bing Webmaster verification code
+  alexa: ""  # Alexa verification code
+  yandex: ""  # Yandex verification code
+
+# Locale & Language Settings
+available_languages:
+  - en
+  - ps  # Pashto (if you want multi-language support)
+
+# Copyright
+copyright: "© 2024 Mohammed Wali. All rights reserved."
+license_name: "MIT"
+license_url: "https://opensource.org/licenses/MIT"
+
+# ========================================
+# JEKYLL ENVIRONMENT
+# ========================================
+# This is set by Jekyll automatically
+# development, production, etc.
+# JEKYLL_ENV: production
+
+# ========================================
+# END OF CONFIGURATION
+# ========================================

@@ -1,15 +1,29 @@
 source "https://rubygems.org"
 
+# Core
 gem "jekyll", "~> 4.3.2"
-gem "jekyll-feed", "~> 0.12"
-gem "jekyll-seo-tag", "~> 2.8"
+gem "webrick", "~> 1.8"
 
-# Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
-# and associated library.
-platforms :mingw, :x64_mingw, :mswin, :jruby do
-  gem "tzinfo", ">= 1", "< 3"
-  gem "tzinfo-data"
+# Ruby 3.4+ compatibility
+gem "csv"
+gem "logger"
+gem "base64"
+
+# Jekyll plugins (ALL from your _config.yml)
+group :jekyll_plugins do
+  gem "jekyll-feed", "~> 0.17"
+  gem "jekyll-seo-tag", "~> 2.8"
+  gem "jekyll-sitemap", "~> 1.4"
+  gem "jekyll-paginate", "~> 1.1"
+  gem "jekyll-mentions"
+  gem "jekyll-redirect-from"
+  gem "jekyll-optional-front-matter"
+  gem "jekyll-readme-index"
+  gem "jekyll-relative-links"
 end
 
-# Performance-booster for watching directories on Windows
-gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+# Windows support
+platforms :windows do
+  gem "tzinfo-data"
+  gem "wdm", "~> 0.1"
+end

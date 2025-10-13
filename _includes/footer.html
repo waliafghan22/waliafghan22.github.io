@@ -1,3 +1,221 @@
-<footer class="footer">
-    <p>&copy; 2024 {{ site.title }}. All rights reserved.</p>
+<!-- ========================================
+     FOOTER
+     ======================================== -->
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <!-- Main Footer Content -->
+        <div class="footer-content">
+            <!-- About Section -->
+            <div class="footer-section footer-about">
+                <div class="footer-logo">
+                    <span class="logo-icon">
+                        <i class="fas fa-code"></i>
+                    </span>
+                    <span class="logo-text">{{ site.title | default: 'Portfolio' }}</span>
+                </div>
+                <p class="footer-description">
+                    {{ site.description | default: 'Android Developer specializing in Jetpack Compose and Kotlin. Building beautiful, performant mobile applications.' | truncate: 150 }}
+                </p>
+                
+                <!-- Social Links (Condensed) -->
+                <div class="footer-social">
+                    {% if site.github_username %}
+                    <a href="https://github.com/{{ site.github_username }}" 
+                       class="social-link social-github" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="GitHub Profile"
+                       title="View my GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    {% endif %}
+                    
+                    {% if site.linkedin_username %}
+                    <a href="https://linkedin.com/in/{{ site.linkedin_username }}" 
+                       class="social-link social-linkedin" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="LinkedIn Profile"
+                       title="Connect on LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    {% endif %}
+                    
+                    {% if site.email %}
+                    <a href="mailto:{{ site.email }}" 
+                       class="social-link social-email"
+                       aria-label="Send Email"
+                       title="Send me an email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section footer-links">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-nav">
+                    <li>
+                        <a href="{{ '/' | relative_url }}">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ '/#projects' | relative_url }}">
+                            <i class="fas fa-folder-open"></i>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ '/#skills' | relative_url }}">
+                            <i class="fas fa-code-branch"></i>
+                            <span>Skills</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ '/about/' | relative_url }}">
+                            <i class="fas fa-user"></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ '/#contact' | relative_url }}">
+                            <i class="fas fa-envelope"></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Featured Projects -->
+            <div class="footer-section footer-projects">
+                <h3 class="footer-title">Featured Projects</h3>
+                <ul class="footer-nav">
+                    {% assign featured_projects = site.projects | where: "featured", true | limit: 4 %}
+                    {% if featured_projects.size > 0 %}
+                        {% for project in featured_projects %}
+                        <li>
+                            <a href="{{ project.url | relative_url }}">
+                                <i class="fab fa-android"></i>
+                                <span>{{ project.title }}</span>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    {% else %}
+                        {% for project in site.projects limit: 4 %}
+                        <li>
+                            <a href="{{ project.url | relative_url }}">
+                                <i class="fab fa-android"></i>
+                                <span>{{ project.title }}</span>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    {% endif %}
+                    
+                    {% if site.projects.size > 4 %}
+                    <li>
+                        <a href="{{ '/#projects' | relative_url }}" class="view-all">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>View All Projects</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-section footer-contact">
+                <h3 class="footer-title">Get In Touch</h3>
+                <ul class="footer-contact-list">
+                    {% if site.email %}
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+                    </li>
+                    {% endif %}
+                    
+                    {% if site.author.location %}
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>{{ site.author.location }}</span>
+                    </li>
+                    {% endif %}
+                    
+                    <li>
+                        <i class="fas fa-globe"></i>
+                        <a href="{{ site.url }}">{{ site.url | remove: "https://" | remove: "http://" }}</a>
+                    </li>
+                </ul>
+                
+                <!-- Tech Stack Badge -->
+                <div class="footer-tech-badge">
+                    <span class="tech-badge-label">Built with</span>
+                    <div class="tech-badges">
+                        <span class="tech-badge" title="Jekyll Static Site Generator">
+                            <i class="fas fa-gem"></i> Jekyll
+                        </span>
+                        <span class="tech-badge" title="Hosted on GitHub Pages">
+                            <i class="fab fa-github"></i> GitHub Pages
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <!-- Copyright -->
+                <div class="footer-copyright">
+                    <p>
+                        &copy; {{ 'now' | date: "%Y" }} 
+                        <strong>{{ site.author.name | default: site.title }}</strong>. 
+                        All rights reserved.
+                    </p>
+                </div>
+
+                <!-- Credits -->
+                <div class="footer-credits">
+                    <p>
+                        Made with 
+                        <i class="fas fa-heart" aria-label="love"></i> 
+                        and 
+                        <i class="fas fa-coffee" aria-label="coffee"></i>
+                        by <strong>{{ site.author.name | default: 'Mohammed Wali' }}</strong>
+                    </p>
+                </div>
+
+                <!-- Meta Links (Simplified) -->
+                <div class="footer-meta">
+                    <a href="/sitemap.xml" class="footer-meta-link" target="_blank">
+                        Sitemap
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional: License Info -->
+        {% if site.license_name %}
+        <div class="footer-license">
+            <p>
+                <i class="fas fa-balance-scale"></i>
+                Licensed under 
+                {% if site.license_url %}
+                <a href="{{ site.license_url }}" target="_blank" rel="noopener noreferrer">
+                    {{ site.license_name }}
+                </a>
+                {% else %}
+                {{ site.license_name }}
+                {% endif %}
+            </p>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Background Decoration -->
+    <div class="footer-bg-decoration">
+        <div class="footer-wave"></div>
+    </div>
 </footer>

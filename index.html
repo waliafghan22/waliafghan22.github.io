@@ -8,7 +8,7 @@ layout: default
         <div class="hero-bg-pattern"></div>
         <div class="hero-bg-gradient"></div>
     </div>
-    <div class="hero-content">
+    <div class="hero-content container">
         <div class="hero-text">
             <div class="hero-badge">
                 <span class="badge-animation">👋 Hello! I'm</span>
@@ -26,14 +26,14 @@ layout: default
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary btn-large">
                     <i class="fas fa-code"></i>
-                    View My Work
+                    <span>View My Work</span>
                 </a>
                 <a href="#contact" class="btn btn-secondary btn-large">
                     <i class="fas fa-paper-plane"></i>
-                    Get In Touch
+                    <span>Get In Touch</span>
                 </a>
             </div>
-            <a href="/about/" class="hero-scroll-down">
+            <a href="/about/" class="hero-scroll-down" aria-label="Learn more about me">
                 <i class="fas fa-chevron-down"></i>
                 <span>Learn More</span>
             </a>
@@ -61,13 +61,22 @@ layout: default
 <!-- Projects Section -->
 <section id="projects" class="projects">
     <div class="container">
-        <h2 class="section-title">Android Applications</h2>
+        <div class="section-header">
+            <h2 class="section-title">Android Applications</h2>
+            <p class="section-subtitle">Explore my portfolio of mobile applications</p>
+        </div>
         
         <!-- Filter Buttons -->
         <div class="project-filters">
-            <button class="filter-btn active" data-filter="all">All Projects</button>
-            <button class="filter-btn" data-filter="open-source">Open Source</button>
-            <button class="filter-btn" data-filter="closed-source">Closed Source</button>
+            <button class="filter-btn active" data-filter="all">
+                <span>All Projects</span>
+            </button>
+            <button class="filter-btn" data-filter="open-source">
+                <span>Open Source</span>
+            </button>
+            <button class="filter-btn" data-filter="closed-source">
+                <span>Closed Source</span>
+            </button>
         </div>
 
         <div class="projects-grid">
@@ -76,13 +85,16 @@ layout: default
             {% if card_image == nil and project.screenshots %}
               {% assign card_image = project.screenshots | first %}
             {% endif %}
-            <div class="project-card" data-category="{% if project.open_source %}open-source{% else %}closed-source{% endif %}">
-                <a href="{{ project.url | relative_url }}" class="project-card-link">
+            <article class="project-card" data-category="{% if project.open_source %}open-source{% else %}closed-source{% endif %}">
+                <a href="{{ project.url | relative_url }}" class="project-card-link" aria-label="View {{ project.title }} details">
                     <!-- App Header with Icon and Info -->
                     <div class="project-app-header">
                         {% if project.app_icon %}
                         <div class="project-app-icon">
-                            <img src="{{ project.app_icon | relative_url }}" alt="{{ project.title }} icon" onerror="this.src='https://ui-avatars.com/api/?name={{ project.title | url_encode }}&background=6200EA&color=fff&size=80'">
+                            <img src="{{ project.app_icon | relative_url }}" 
+                                 alt="{{ project.title }} icon" 
+                                 loading="lazy"
+                                 onerror="this.src='https://ui-avatars.com/api/?name={{ project.title | url_encode }}&background=6200EA&color=fff&size=80'">
                         </div>
                         {% endif %}
                         <div class="project-app-info">
@@ -100,10 +112,14 @@ layout: default
                                 <span class="stat-pill">v{{ project.app_details.version }}</span>
                                 {% endif %}
                                 {% if project.app_details.rating %}
-                                <span class="stat-pill"><i class="fas fa-star"></i> {{ project.app_details.rating }}</span>
+                                <span class="stat-pill">
+                                    <i class="fas fa-star"></i> {{ project.app_details.rating }}
+                                </span>
                                 {% endif %}
                                 {% if project.app_details.downloads %}
-                                <span class="stat-pill"><i class="fas fa-download"></i> {{ project.app_details.downloads }}</span>
+                                <span class="stat-pill">
+                                    <i class="fas fa-download"></i> {{ project.app_details.downloads }}
+                                </span>
                                 {% endif %}
                             </div>
                             {% endif %}
@@ -113,7 +129,10 @@ layout: default
                     <!-- Screenshots Preview -->
                     {% if card_image %}
                     <div class="project-screenshots-preview">
-                        <img src="{{ card_image | relative_url }}" alt="{{ project.title }} preview" onerror="this.style.display='none'">
+                        <img src="{{ card_image | relative_url }}" 
+                             alt="{{ project.title }} preview" 
+                             loading="lazy"
+                             onerror="this.style.display='none'">
                     </div>
                     {% endif %}
                     
@@ -131,24 +150,42 @@ layout: default
                 <!-- Action Buttons -->
                 <div class="project-actions">
                     {% if project.github %}
-                    <a href="{{ project.github }}" class="project-action-btn github" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
-                        <i class="fab fa-github"></i> Code
+                    <a href="{{ project.github }}" 
+                       class="project-action-btn github" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       onclick="event.stopPropagation()"
+                       aria-label="View source code on GitHub">
+                        <i class="fab fa-github"></i> 
+                        <span>Code</span>
                     </a>
                     {% endif %}
                     
                     {% if project.playstore %}
-                    <a href="{{ project.playstore }}" class="project-action-btn playstore" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
-                        <i class="fab fa-google-play"></i> Play Store
+                    <a href="{{ project.playstore }}" 
+                       class="project-action-btn playstore" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       onclick="event.stopPropagation()"
+                       aria-label="Download from Play Store">
+                        <i class="fab fa-google-play"></i> 
+                        <span>Play Store</span>
                     </a>
                     {% endif %}
                     
                     {% if project.apk_download %}
-                    <a href="{{ project.apk_download }}" class="project-action-btn apk" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
-                        <i class="fas fa-download"></i> APK
+                    <a href="{{ project.apk_download }}" 
+                       class="project-action-btn apk" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       onclick="event.stopPropagation()"
+                       aria-label="Download APK">
+                        <i class="fas fa-download"></i> 
+                        <span>APK</span>
                     </a>
                     {% endif %}
                 </div>
-            </div>
+            </article>
             {% endfor %}
         </div>
     </div>
@@ -172,18 +209,22 @@ layout: default
                 </div>
                 <div class="skill-items">
                     <div class="skill-item">
-                        <span class="skill-name">Kotlin</span>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="--progress: 95%"></div>
+                        <div class="skill-info">
+                            <span class="skill-name">Kotlin</span>
+                            <span class="skill-percentage">95%</span>
                         </div>
-                        <span class="skill-percentage">95%</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 95%" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Java</span>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="--progress: 85%"></div>
+                        <div class="skill-info">
+                            <span class="skill-name">Java</span>
+                            <span class="skill-percentage">85%</span>
                         </div>
-                        <span class="skill-percentage">85%</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 85%" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -197,39 +238,49 @@ layout: default
                 </div>
                 <div class="skill-items">
                     <div class="skill-item">
-                        <span class="skill-name">Jetpack Compose</span>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="--progress: 90%"></div>
+                        <div class="skill-info">
+                            <span class="skill-name">Jetpack Compose</span>
+                            <span class="skill-percentage">90%</span>
                         </div>
-                        <span class="skill-percentage">90%</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 90%" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">MVVM Architecture</span>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="--progress: 85%"></div>
+                        <div class="skill-info">
+                            <span class="skill-name">MVVM Architecture</span>
+                            <span class="skill-percentage">85%</span>
                         </div>
-                        <span class="skill-percentage">85%</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 85%" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Room Database</span>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="--progress: 80%"></div>
+                        <div class="skill-info">
+                            <span class="skill-name">Room Database</span>
+                            <span class="skill-percentage">80%</span>
                         </div>
-                        <span class="skill-percentage">80%</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 80%" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Retrofit</span>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="--progress: 75%"></div>
+                        <div class="skill-info">
+                            <span class="skill-name">Retrofit</span>
+                            <span class="skill-percentage">75%</span>
                         </div>
-                        <span class="skill-percentage">75%</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 75%" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Hilt/Dagger & Koin DI</span>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="--progress: 70%"></div>
+                        <div class="skill-info">
+                            <span class="skill-name">Hilt/Dagger & Koin DI</span>
+                            <span class="skill-percentage">70%</span>
                         </div>
-                        <span class="skill-percentage">70%</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 70%" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -243,25 +294,31 @@ layout: default
                 </div>
                 <div class="skill-items">
                     <div class="skill-item">
-                        <span class="skill-name">Android Studio</span>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="--progress: 90%"></div>
+                        <div class="skill-info">
+                            <span class="skill-name">Android Studio</span>
+                            <span class="skill-percentage">90%</span>
                         </div>
-                        <span class="skill-percentage">90%</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 90%" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Git & GitHub</span>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="--progress: 85%"></div>
+                        <div class="skill-info">
+                            <span class="skill-name">Git & GitHub</span>
+                            <span class="skill-percentage">85%</span>
                         </div>
-                        <span class="skill-percentage">85%</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 85%" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Firebase</span>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" style="--progress: 75%"></div>
+                        <div class="skill-info">
+                            <span class="skill-name">Firebase</span>
+                            <span class="skill-percentage">75%</span>
                         </div>
-                        <span class="skill-percentage">75%</span>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="--progress: 75%" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -272,10 +329,12 @@ layout: default
 <!-- Contact Section -->
 <section id="contact" class="contact">
     <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="contact-description">
-            I'm always interested in hearing about new projects and opportunities.
-        </p>
+        <div class="section-header">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-description">
+                I'm always interested in hearing about new projects and opportunities.
+            </p>
+        </div>
 
         <div class="contact-cards">
             <div class="contact-card">
@@ -286,7 +345,7 @@ layout: default
                 <p>Let's discuss your next project</p>
                 <a href="mailto:{{ site.email }}" class="contact-button email-btn">
                     <i class="fas fa-paper-plane"></i>
-                    Send Message
+                    <span>Send Message</span>
                 </a>
             </div>
 
@@ -298,7 +357,7 @@ layout: default
                 <p>Check out my open source projects</p>
                 <a href="https://github.com/{{ site.github_username }}" class="contact-button github-btn" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-github"></i>
-                    View Profile
+                    <span>View Profile</span>
                 </a>
             </div>
 
@@ -311,11 +370,27 @@ layout: default
                 <p>Connect with me professionally</p>
                 <a href="https://linkedin.com/in/{{ site.linkedin_username }}" class="contact-button linkedin-btn" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-linkedin"></i>
-                    Connect
+                    <span>Connect</span>
                 </a>
             </div>
             {% endif %}
 
+            {% if site.twitter_username %}
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <h3>X (Twitter)</h3>
+                <p>Follow me for updates</p>
+                <a href="https://twitter.com/{{ site.twitter_username }}" class="contact-button twitter-btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter"></i>
+                    <span>Follow @{{ site.twitter_username }}</span>
+                </a>
+            </div>
+            {% endif %}
+
+            <!-- Play Store Section - Commented out until account is available -->
+            <!--
             {% if site.playstore_developer %}
             <div class="contact-card">
                 <div class="contact-icon">
@@ -325,10 +400,11 @@ layout: default
                 <p>See my published apps</p>
                 <a href="{{ site.playstore_developer }}" class="contact-button playstore-btn" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-google-play"></i>
-                    View Apps
+                    <span>View Apps</span>
                 </a>
             </div>
             {% endif %}
+            -->
         </div>
 
         <div class="contact-footer">
