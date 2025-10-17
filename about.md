@@ -20,7 +20,6 @@ keywords:
   - "Android Development Journey"
 ---
 
-
 <div class="about-hero">
   <div class="about-image">
     <img src="https://avatars.githubusercontent.com/{{ site.github_username }}"
@@ -53,7 +52,6 @@ keywords:
   </div>
 </div>
 
----
 
 ## 🚀 What I Do
 
@@ -66,7 +64,6 @@ I specialize in crafting **exceptional Android applications** using cutting-edge
 - ⚡ **Performance Optimization** - Smooth, responsive applications
 - 🌍 **Localization** - Pashto & Dari language solutions
 
----
 
 ## 💻 Technical Stack
 
@@ -128,7 +125,6 @@ I specialize in crafting **exceptional Android applications** using cutting-edge
   </div>
 </div>
 
----
 
 ## 🌟 My Philosophy
 
@@ -141,7 +137,6 @@ I write maintainable, scalable code using industry best practices. Performance o
 ### **Continuous Learning**
 Technology evolves rapidly, and so do I. I stay current with Android developments and constantly refine my skills through hands-on projects.
 
----
 
 ## 🎯 Mission & Impact
 
@@ -156,7 +151,6 @@ As a developer from Afghanistan, I'm passionate about creating technology soluti
 ### **Empowering Communities**
 My projects focus on helping small businesses adopt digital solutions, bringing modern technology to traditional industries.
 
----
 
 ## 🏆 What Sets Me Apart
 
@@ -165,7 +159,6 @@ My projects focus on helping small businesses adopt digital solutions, bringing 
 - **Real-World Problem Solver**: Projects solve actual problems for real users
 - **Modern Stack Expertise**: Passionate about Jetpack Compose, Kotlin, and Clean Architecture
 
----
 
 ## 📫 Let's Connect
 
@@ -186,7 +179,6 @@ I'm always excited to discuss:
   </a>
 </div>
 
----
 
 ## 📊 Portfolio Stats
 
@@ -215,16 +207,8 @@ I'm always excited to discuss:
     <div class="stat-label">Years Experience</div>
   </div>
 
-  <div class="stat-card">
-    <div class="stat-icon">
-      <i class="fas fa-globe"></i>
-    </div>
-    <div class="stat-number">3</div>
-    <div class="stat-label">Languages</div>
-  </div>
 </div>
 
----
 
 <div class="about-footer-note">
   <p><em>💡 Always learning, always building, always improving. Let's create something amazing together!</em></p>
