@@ -60,8 +60,8 @@ lang: en
 locale: en_US
 
 # Logo and Images
-# logo: /assets/images/logo.png
-# og_image: /assets/images/og-image.png  # 1200x630px recommended for social sharing
+logo: /assets/images/logo.png
+og_image: /images/profile.webp  # 1200x630px recommended for social sharing
 
 # Twitter Card Settings
 twitter:
@@ -98,9 +98,9 @@ keywords:
   - "Hilt Dependency Injection"
   - "Koin DI Framework"
 
-# Google Analytics (Optional)
-# Get your tracking ID from https://analytics.google.com
-# google_analytics: ""  # e.g., G-XXXXXXXXXX or UA-XXXXXXXXX-X
+# Google Analytics (GA4)
+# Set to your Measurement ID to enable tracking in production
+google_analytics: "G-PERZ6PGN07"
 
 # Google Search Console (Optional)
 # google_site_verification: ""
@@ -447,10 +447,9 @@ unpublished: false
 # ADDITIONAL METADATA
 # ========================================
 webmaster_verifications:
-  google: "" # Google Search Console verification code
-  bing: ""   # Bing Webmaster verification code
-  alexa: ""  # Alexa verification code
-  yandex: ""  # Yandex verification code
+  google: "" # e.g. google-site-verification code from Search Console
+  bing: ""   # e.g. msvalidate.01 code from Bing Webmaster Tools
+  yandex: "" # optional
 
 # Locale & Language Settings
 available_languages:
