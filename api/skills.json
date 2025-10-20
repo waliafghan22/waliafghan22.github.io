@@ -3,7 +3,7 @@
     "id": "1",
     "name": "Kotlin",
     "category": "LANGUAGE",
-    "proficiency": 90,
+    "proficiency": 95,
     "years_of_experience": 3.5,
     "icon": "kotlin"
   },
@@ -11,8 +11,88 @@
     "id": "2",
     "name": "Jetpack Compose",
     "category": "FRAMEWORK",
-    "proficiency": 85,
+    "proficiency": 90,
     "years_of_experience": 2.0,
     "icon": "compose"
+  },
+  {
+    "id": "3",
+    "name": "MVVM Architecture",
+    "category": "ARCHITECTURE",
+    "proficiency": 85,
+    "years_of_experience": 2.5,
+    "icon": "architecture"
+  },
+  {
+    "id": "4",
+    "name": "Room Database",
+    "category": "DATABASE",
+    "proficiency": 80,
+    "years_of_experience": 2.0,
+    "icon": "database"
+  },
+  {
+    "id": "5",
+    "name": "Kotlin Coroutines & Flow",
+    "category": "ASYNC",
+    "proficiency": 85,
+    "years_of_experience": 2.5,
+    "icon": "coroutines"
+  },
+  {
+    "id": "6",
+    "name": "Koin Dependency Injection",
+    "category": "FRAMEWORK",
+    "proficiency": 80,
+    "years_of_experience": 2.0,
+    "icon": "dependency-injection"
+  },
+  {
+    "id": "7",
+    "name": "Material Design 3",
+    "category": "UI_DESIGN",
+    "proficiency": 85,
+    "years_of_experience": 2.0,
+    "icon": "material-design"
+  },
+  {
+    "id": "8",
+    "name": "Android Development",
+    "category": "PLATFORM",
+    "proficiency": 90,
+    "years_of_experience": 3.0,
+    "icon": "android"
+  },
+  {
+    "id": "9",
+    "name": "Clean Architecture",
+    "category": "ARCHITECTURE",
+    "proficiency": 75,
+    "years_of_experience": 1.5,
+    "icon": "architecture"
+  },
+  {
+    "id": "10",
+    "name": "Navigation Compose",
+    "category": "NAVIGATION",
+    "proficiency": 80,
+    "years_of_experience": 1.5,
+    "icon": "navigation"
+  },
+  {
+    "id": "11",
+    "name": "DataStore Preferences",
+    "category": "STORAGE",
+    "proficiency": 75,
+    "years_of_experience": 1.0,
+    "icon": "storage"
+  },
+  {
+    "id": "12",
+    "name": "Git & Version Control",
+    "category": "TOOLS",
+    "proficiency": 80,
+    "years_of_experience": 3.0,
+    "icon": "git"
   }
 ]

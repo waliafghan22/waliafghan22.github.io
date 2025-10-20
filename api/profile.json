@@ -2,10 +2,10 @@
   "id": "1",
   "name": "Mohammed Wali",
   "title": "Android Developer | Kotlin Expert",
-  "bio": "Passionate mobile developer specializing in Android applications with modern architecture patterns.",
-  "avatar_url": "https://avatars.githubusercontent.com/u/YOUR_GITHUB_ID?v=4",
+  "bio": "Android Developer specializing in Jetpack Compose, Kotlin, and modern mobile development",
+  "avatar_url": "https://avatars.githubusercontent.com/u/waliafghan22?v=4",
   "email": "waliafghan22@gmail.com",
-  "location": "Lashkargha, Afghanistan",
+  "location": "Afghanistan",
   "resume_url": "https://waliafghan22.github.io/resume.pdf",
   "social_links": {
     "github": "https://github.com/waliafghan22",
@@ -13,5 +13,5 @@
     "twitter": "https://x.com/waliafghan22",
     "website": "https://waliafghan22.github.io"
   },
-  "last_updated": 1704067200000
+  "last_updated": 1727740800000
 }
