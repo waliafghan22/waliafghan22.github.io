@@ -155,7 +155,7 @@ My projects focus on helping small businesses adopt digital solutions, bringing 
 ## 🏆 What Sets Me Apart
 
 - **Self-Taught & Motivated**: Learned Android development independently through dedication and practice
-- **Multilingual Capabilities**: Fluent in English, Pashto, and Dari for truly localized experiences
+- **Multilingual Capabilities**: Fluent in Pashto, Urdu, and beginner level English, for truly localized experiences
 - **Real-World Problem Solver**: Projects solve actual problems for real users
 - **Modern Stack Expertise**: Passionate about Jetpack Compose, Kotlin, and Clean Architecture
 

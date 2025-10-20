@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "MuslimAutos",
+    "description": "Short description of your project",
+    "long_description": "Detailed description explaining features, technologies, and your role in the project.",
+    "image_url": "https://your-username.github.io/images/project1.png",
+    "demo_url": "https://play.google.com/store/apps/details?id=com.yourapp",
+    "github_url": "https://github.com/your-username/project-repo",
+    "technologies": ["Kotlin", "Jetpack Compose", "Room", "Retrofit"],
+    "category": "ANDROID",
+    "featured": true,
+    "start_date": 1704067200000,
+    "end_date": null,
+    "screenshots": [
+      "/images/project1-screen1.png",
+      "images/project1-screen2.png"
+    ]
+  }
+]
