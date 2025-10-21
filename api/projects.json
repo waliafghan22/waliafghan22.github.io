@@ -58,5 +58,27 @@
       "https://waliafghan22.github.io/images/projects/pashto-text-gen-screen2.webp",
       "https://waliafghan22.github.io/images/projects/pashto-text-gen-screen3.webp"
     ]
+  },
+  {
+    "id": "4",
+    "name": "Rozana - Daily Wage Worker Management App",
+    "description": "An Android app that helps contractors and site managers replace pen-and-paper records for daily wage workers. Streamlined worker management, attendance tracking, wage calculations, and payment recording.",
+    "long_description": "An Android application designed to digitize traditional pen-and-paper record-keeping for daily wage workers. It enables contractors and site managers to efficiently manage worker profiles, track attendance, calculate wages, and record payments with accuracy and speed. Features include worker CRUD operations, attendance state management, payment transaction systems, report generation with PDF export, localization for multiple languages including Pashto, Dari, and Urdu, and full RTL support. Built using Jetpack Compose, Kotlin, MVVM architecture, Clean Architecture, Room Database, and Koin DI, ensuring a modern, maintainable, and offline-first experience.",
+    "image_url": "https://waliafghan22.github.io/images/projects/rozana-home.webp",
+    "demo_url": "https://github.com/waliafghan22/Rozana-Apk/releases/download/v1.1.3/Rozana-v1.1.3-release.apk",
+    "github_url": "https://github.com/waliafghan22/Rozana-Apk",
+    "technologies": ["Jetpack Compose", "Kotlin", "MVVM Architecture", "Clean Architecture", "Room Database", "Koin DI", "Navigation Component", "Material Design 3"],
+    "category": "BUSINESS",
+    "featured": true,
+    "start_date": 1727740800000,
+    "end_date": null,
+    "screenshots": [
+      "https://waliafghan22.github.io/images/projects/rozana-home.webp",
+      "https://waliafghan22.github.io/images/projects/rozana-workers.webp",
+      "https://waliafghan22.github.io/images/projects/rozana-attendance.webp",
+      "https://waliafghan22.github.io/images/projects/rozana-payments.webp",
+      "https://waliafghan22.github.io/images/projects/rozana-reports.webp",
+      "https://waliafghan22.github.io/images/projects/rozana-settings.webp"
+    ]
   }
 ]
