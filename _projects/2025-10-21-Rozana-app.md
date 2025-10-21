@@ -45,8 +45,8 @@ technologies:
   - Material Design 3
 
 # Links
-  github: https://github.com/waliafghan22/Rozana-Apk
- apk_download: https://github.com/waliafghan22/Rozana-Apk/releases/download/v1.1.3/Rozana-v1.1.3-release.apk
+github: https://github.com/waliafghan22/Rozana-Apk
+apk_download: https://github.com/waliafghan22/Rozana-Apk/releases/download/v1.1.3/Rozana-v1.1.3-release.apk
 
 # Categories
 categories:
