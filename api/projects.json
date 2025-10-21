@@ -10,7 +10,7 @@
     "technologies": ["Jetpack Compose", "Kotlin", "MVVM Architecture", "Coroutines & Flow", "Koin DI", "Material Design 3", "Room Database", "Navigation Compose"],
     "category": "ANDROID",
     "featured": true,
-    "start_date": 1727740800000,
+    "start_date": 1754139840000,
     "end_date": null,
     "screenshots": [
       "https://waliafghan22.github.io/images/projects/muslimautos-home.webp",
@@ -30,7 +30,7 @@
     "technologies": ["Jetpack Compose", "Kotlin", "Koin DI", "Room Database", "Navigation Compose", "Material 3", "DataStore Preferences", "Accompanist Permissions", "OpenCSV"],
     "category": "ANDROID",
     "featured": true,
-    "start_date": 1727740800000,
+    "start_date": 1760198940000,
     "end_date": null,
     "screenshots": [
       "https://waliafghan22.github.io/images/projects/pashto-voice-recorder-home.webp",
@@ -70,7 +70,7 @@
     "technologies": ["Jetpack Compose", "Kotlin", "MVVM Architecture", "Clean Architecture", "Room Database", "Koin DI", "Navigation Component", "Material Design 3"],
     "category": "ANDROID",
     "featured": true,
-    "start_date": 1727740800000,
+    "start_date": 1761070320000,
     "end_date": null,
     "screenshots": [
       "https://waliafghan22.github.io/images/projects/rozana-home.webp",
