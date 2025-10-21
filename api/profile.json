@@ -3,15 +3,67 @@
   "name": "Mohammed Wali",
   "title": "Android Developer | Kotlin Expert",
   "bio": "Android Developer specializing in Jetpack Compose, Kotlin, and modern mobile development",
-  "avatar_url": "https://avatars.githubusercontent.com/u/waliafghan22?v=4",
+  "avatar_url": "/images/profile.webp",
   "email": "waliafghan22@gmail.com",
   "location": "Afghanistan",
   "resume_url": "https://waliafghan22.github.io/resume.pdf",
+  "phone": "",
+  "website": "https://waliafghan22.github.io",
+  "tagline": "Building Beautiful Android Apps with Jetpack Compose",
+  "description": "Android Developer from Afghanistan specializing in Jetpack Compose and Kotlin. Self-taught developer with 2+ years of experience building modern, performant mobile applications. Passionate about creating intuitive user experiences and writing clean, maintainable code.",
+  "skills": [
+    "Kotlin",
+    "Java",
+    "Jetpack Compose",
+    "MVVM Architecture",
+    "Room Database",
+    "Coroutines & Flow",
+    "Hilt/Koin DI",
+    "Material Design 3",
+    "Firebase",
+    "REST APIs",
+    "Git & GitHub",
+    "Android Studio"
+  ],
+  "experience": [
+    {
+      "title": "Android Developer",
+      "company": "Self-Employed/Freelance",
+      "period": "2022 - Present",
+      "description": "Developing modern Android applications using Jetpack Compose and Kotlin, focusing on clean architecture and performance optimization."
+    }
+  ],
+  "education": [
+    {
+      "degree": "Self-Taught Android Developer",
+      "institution": "Independent Learning",
+      "year": "2022 - Present",
+      "description": "Continuous learning through hands-on projects, online courses, and community resources."
+    }
+  ],
+  "languages": [
+    "Pashto (Native)",
+    "Urdu (Fluent)",
+    "English (Beginner)"
+  ],
+  "interests": [
+    "Mobile App Development",
+    "Open Source Projects",
+    "UI/UX Design",
+    "Performance Optimization",
+    "Localization & Accessibility"
+  ],
   "social_links": {
     "github": "https://github.com/waliafghan22",
     "linkedin": "https://linkedin.com/in/waliafghan22",
     "twitter": "https://x.com/waliafghan22",
     "website": "https://waliafghan22.github.io"
   },
+  "certifications": [],
+  "achievements": [
+    "Built multiple production-ready Android applications",
+    "Specialized in Pashto and Dari language app development",
+    "Active contributor to open source Android projects"
+  ],
   "last_updated": 1727740800000
 }
