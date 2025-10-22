@@ -3,7 +3,7 @@
     "id": "1",
     "name": "Kotlin",
     "category": "LANGUAGE",
-    "proficiency": 90,
+    "proficiency": 95,
     "years_of_experience": 3.5,
     "icon": "kotlin"
   },
@@ -11,7 +11,7 @@
     "id": "2",
     "name": "Jetpack Compose",
     "category": "FRAMEWORK",
-    "proficiency": 85,
+    "proficiency": 90,
     "years_of_experience": 2.0,
     "icon": "compose"
   },
