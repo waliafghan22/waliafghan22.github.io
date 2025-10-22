@@ -61,7 +61,7 @@
   },
   {
     "id": "4",
-    "name": "Rozana - Daily Wage Worker Management App Test",
+    "name": "Rozana - Daily Wage Worker Management App",
     "description": "An Android app that helps contractors and site managers replace pen-and-paper records for daily wage workers. Streamlined worker management, attendance tracking, wage calculations, and payment recording.",
     "long_description": "An Android application designed to digitize traditional pen-and-paper record-keeping for daily wage workers. It enables contractors and site managers to efficiently manage worker profiles, track attendance, calculate wages, and record payments with accuracy and speed. Features include worker CRUD operations, attendance state management, payment transaction systems, report generation with PDF export, localization for multiple languages including Pashto, Dari, and Urdu, and full RTL support. Built using Jetpack Compose, Kotlin, MVVM architecture, Clean Architecture, Room Database, and Koin DI, ensuring a modern, maintainable, and offline-first experience.",
     "image_url": "https://waliafghan22.github.io/images/projects/rozana-home.webp",
