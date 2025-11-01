@@ -37,7 +37,7 @@ instagram_username: "" # Optional
 stackoverflow_id: ""   # Optional: Your Stack Overflow user ID
 medium_username: ""    # Optional: Medium blog username
 dev_username: ""       # Optional: dev.to username
-youtube_channel: ""    # Optional: YouTube channel URL
+youtube_channel: waliafghan22    # Optional: YouTube channel URL
 
 # Google Play Developer
 playstore_developer: "" # Your Google Play Developer page URL
@@ -75,8 +75,8 @@ twitter:
 
 # Keywords for SEO
 keywords: 
-  - "Mohammed Wali"
-  - "wali afghan"
+  - "Mohammed_Wali"
+  - "waliafghan"
   - "waliafghan22"
   - "Android Developer Afghanistan"
   - "Kotlin Developer"
@@ -103,7 +103,7 @@ keywords:
 google_analytics: "G-PERZ6PGN07"
 
 # Google Search Console (Optional)
-# google_site_verification: ""
+google_site_verification: "google709d2a2e0a98756b.html"
 
 # Disqus Comments (Optional)
 # disqus:
@@ -447,8 +447,8 @@ unpublished: false
 # ADDITIONAL METADATA
 # ========================================
 webmaster_verifications:
-  google: "" # e.g. google-site-verification code from Search Console
-  bing: ""   # e.g. msvalidate.01 code from Bing Webmaster Tools
+  google: "google709d2a2e0a98756b.html" # e.g. google-site-verification code from Search Console
+  bing: "F9DFDA30E5D939637F76B4ED44998BE8"   # e.g. msvalidate.01 code from Bing Webmaster Tools
   yandex: "" # optional
 
 # Locale & Language Settings
@@ -457,7 +457,7 @@ available_languages:
   - ps  # Pashto (if you want multi-language support)
 
 # Copyright
-copyright: "© 2024 Mohammed Wali. All rights reserved."
+copyright: "© 2025 Mohammed Wali. All rights reserved."
 license_name: "MIT"
 license_url: "https://opensource.org/licenses/MIT"
 

@@ -11,7 +11,7 @@ featured: true
 
 # SEO Keywords for this specific project
 keywords:
-  - "Pashto Text Generator"
+  - "Pashto_Text_Generator"
   - "Pashto Language Learning App"
   - "Android Text Generation Tool"
   - "Jetpack Compose Educational App"

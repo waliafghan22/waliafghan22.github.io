@@ -11,7 +11,8 @@ featured: true
 
 # SEO Keywords for this specific project
 keywords:
-  - "Rozana App"
+  - "rozana"
+  - "Rozana_App"
   - "Daily Wage Worker Management"
   - "Contractor Management App"
   - "Attendance Tracking Android"
@@ -20,7 +21,7 @@ keywords:
   - "Construction Site Management"
   - "Mobile Payroll App"
   - "Afghanistan Contractor Tools"
-  - "Pashto Business App"
+  - "Pashto_Business_App"
 
 # App Details
 app_details:

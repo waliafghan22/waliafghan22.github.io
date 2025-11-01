@@ -13,6 +13,8 @@ featured: true
 
 # SEO Keywords for this specific project
 keywords:
+  - "MuslimAutos_App"
+  - "MuslimAutos"
   - "MuslimAutos Inventory Management"
   - "Android Inventory App"
   - "Business Management Android"

@@ -11,7 +11,8 @@ featured: true
 
 # SEO Keywords for this specific project
 keywords:
-  - "Pashto Voice Recorder"
+  - "PashtoVoiceRecorder"
+  - "Pashto_Voice_Recorder_App"
   - "Speech Dataset Collection"
   - "Android Audio Recording App"
   - "Jetpack Compose Audio App"
