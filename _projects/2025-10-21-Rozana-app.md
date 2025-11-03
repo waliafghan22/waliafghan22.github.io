@@ -156,6 +156,26 @@ screenshots:
 - **Status**: Active Development
 - **Localization**: Full RTL support for right-to-left languages
 
+## 📄 Legal & Documentation
+
+- **[Privacy Policy]({{ '/legal/rozana/privacy-policy/' | relative_url }})** - How we protect your data
+- **[Terms of Service]({{ '/legal/rozana/terms-of-service/' | relative_url }})** - Terms of use
+- **Open Source:** Proprietary (source code not public)
+- **License:** Personal and commercial use allowed
+
+---
+
+## 🔐 Privacy & Security
+
+Rozana is a **fully offline application**:
+- ✅ All data stored locally on your device
+- ✅ No internet connection required
+- ✅ No data transmitted to servers
+- ✅ No analytics or tracking
+- ✅ You have complete control over your data
+
+Read our **[Privacy Policy]({{ '/legal/rozana/privacy-policy/' | relative_url }})** for complete details.
+
 ---
 
 ## 🔐 License & Source Code
