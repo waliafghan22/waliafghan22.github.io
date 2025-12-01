@@ -1,0 +1,38 @@
+---
+layout: null
+sitemap:
+  priority: 0.7
+  changefreq: 'weekly'
+  lastmod: site.time
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for page in site.pages %}
+    {% unless page.sitemap == false %}
+    <url>
+      <loc>{{ site.url }}{{ page.url | remove: 'index.html' }}</loc>
+      <lastmod>{% if page.last_modified_at %}{{ page.last_modified_at | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}</lastmod>
+      <changefreq>{% if page.sitemap.changefreq %}{{ page.sitemap.changefreq }}{% else %}monthly{% endif %}</changefreq>
+      <priority>{% if page.sitemap.priority %}{{ page.sitemap.priority }}{% else %}0.5{% endif %}</priority>
+    </url>
+    {% endunless %}
+  {% endfor %}
+  
+  {% for post in site.posts %}
+    <url>
+      <loc>{{ site.url }}{{ post.url | remove: 'index.html' }}</loc>
+      <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  {% endfor %}
+  
+  {% for project in site.projects %}
+    <url>
+      <loc>{{ site.url }}{{ project.url | remove: 'index.html' }}</loc>
+      <lastmod>{% if project.last_modified_at %}{{ project.last_modified_at | date_to_xmlschema }}{% else %}{{ project.date | date_to_xmlschema }}{% endif %}</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+    </url>
+  {% endfor %}
+</urlset>

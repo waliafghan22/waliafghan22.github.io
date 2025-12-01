@@ -9,6 +9,42 @@ description: >-
   mobile applications. Passionate about creating intuitive user experiences and 
   writing clean, maintainable code.
 
+# ========================================
+# SEO & META SETTINGS
+# ========================================
+# Site Settings
+url: "https://waliafghan22.github.io"  # the base hostname & protocol for your site
+baseurl: ""  # the subpath of your site, e.g. /blog
+
+# SEO Settings
+seo:
+  title: "Mohammed Wali - Android Developer"
+  description: "Android Developer specializing in Jetpack Compose, Kotlin, and modern mobile development"
+  keywords: "android developer, kotlin, jetpack compose, mobile app development, afghanistan"
+  author: "Mohammed Wali"
+  locale: "en_US"
+  type: "website"
+  twitter_username: "waliafghan22"
+  og_image: "/images/og-image.jpg"  # Add your Open Graph image
+  twitter_card: "summary_large_image"
+
+# Verification
+google_site_verification: ""  # Add your Google Search Console verification code
+bing_site_verification: ""     # Add your Bing Webmaster Tools verification code
+yandex_verification: ""        # Add Yandex Webmaster verification code
+
+# Sitemap
+sitemap:
+  enabled: true
+  priority: 0.7
+  changefreq: 'weekly'
+  exclude: ['robots.txt', 'sitemap.xml', 'feed.xml', '*.pdf']
+
+# Robots
+robots:
+  allow_all: true
+  sitemap: "https://waliafghan22.github.io/sitemap.xml"
+
 # Author Information
 author:
   name: Mohammed Wali

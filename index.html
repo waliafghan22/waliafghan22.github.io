@@ -92,7 +92,8 @@ keywords:
         </div>
 
         <div class="projects-grid">
-            {% for project in site.projects %}
+            {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+            {% for project in sorted_projects %}
             {% assign card_image = project.thumb | default: project.image %}
             {% if card_image == nil and project.screenshots %}
               {% assign card_image = project.screenshots | first %}
