@@ -68,12 +68,14 @@ categories:
 
 # Screenshots
 screenshots:
+  - /images/projects/rozana-onboarding.webp
   - /images/projects/rozana-home.webp
   - /images/projects/rozana-workers.webp
   - /images/projects/rozana-attendance.webp
   - /images/projects/rozana-payments.webp
   - /images/projects/rozana-reports.webp
   - /images/projects/rozana-settings.webp
+  - /images/projects/rozana-settings-second.webp
 ---
 
 ## 📱 Overview

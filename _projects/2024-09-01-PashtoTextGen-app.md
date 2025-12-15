@@ -24,14 +24,14 @@ keywords:
 
 # App Details
 app_details:
-  version: "1.0-alpha"
-  downloads: "100+"
-  rating: "New"
+  version: "2.0.1"
+  downloads: "500+"
+  rating: "4.5"
   min_sdk: "24"
   target_sdk: "34"
   package_name: "com.wali.pashtotextgen"
-  size: "8.5 MB"
-  last_updated: "September 2025"
+  size: "1.81 MB"
+  last_updated: "December 2025"
 
 # Technologies used
 technologies:
@@ -44,7 +44,7 @@ technologies:
 
 # Links
 github: https://github.com/waliafghan22/PashtoTextGen
-apk_download: https://github.com/waliafghan22/PashtoTextGen/releases/download/1.0.alpha/PashtoTextGen-v1.0-release.apk
+apk_download: https://github.com/waliafghan22/PashtoTextGen/releases/download/v2.0.1/PashtoTextGen-v2.0.1-release.apk
 demo: https://github.com/waliafghan22/PashtoTextGen#demo
 
 # Categories
@@ -111,7 +111,7 @@ screenshots:
 
 - **Framework**: Jetpack Compose + Kotlin
 - **Architecture**: MVVM with Clean Architecture
-- **Size**: 8.5 MB
+- **Size**: 1.81 MB
 - **Open Source**: MIT License
 - **Status**: Active Development
 
