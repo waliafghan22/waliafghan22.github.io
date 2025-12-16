@@ -25,14 +25,14 @@ keywords:
 
 # App Details
 app_details:
-  version: "1.0.3"
+  version: "1.0.4"
   downloads: "New"
   rating: "New"
   min_sdk: "24"
   target_sdk: "36"
   package_name: "com.wali.pashtovoicerecorder"
-  size: "3.39 MB"
-  last_updated: "October 2025"
+  size: "3.5 MB"
+  last_updated: "December 2025"
 
 # Technologies used
 technologies:
@@ -48,7 +48,7 @@ technologies:
 
 # Links
 # github: https://github.com/waliafghan22/PashtoVoiceRecorder-Apk
-apk_download: https://github.com/waliafghan22/PashtoVoiceRecorder-Apk/releases/download/v1.0.3/PashtoVoiceRecorder-v1.0.3-release.apk
+apk_download: https://github.com/waliafghan22/PashtoVoiceRecorder-Apk/releases/download/v1.0.4/PashtoVoiceRecorder-v1.0.4-release.apk
 # demo: https://github.com/waliafghan22/PashtoVoiceRecorder-Apk/releases
 
 # Categories
@@ -124,6 +124,26 @@ screenshots:
 - **File Management** - Android SAF DocumentFile for persisted tree URIs
 - **CSV Integration** - OpenCSV for parsing dataset prompt files
 
+## 🔄 Changelog
+
+### Version 1.0.4 (December 2025)
+- **Storage Access Framework (SAF) Implementation**
+  - Added support for custom folder selection in device storage
+  - Improved file management with better permission handling
+  - Enhanced data portability and backup capabilities
+
+- **Performance & Stability**
+  - Optimized app size (now 3.5MB)
+  - Fixed various bugs reported by users
+  - Improved memory management during long recording sessions
+  - Enhanced app stability and crash reporting
+
+- **User Experience**
+  - Smoother audio recording and playback
+  - Better error handling and user feedback
+  - Improved UI responsiveness
+  - Added more detailed logging for troubleshooting
+
 ## 📊 Project Stats
 
 - **Framework**: Jetpack Compose + Kotlin
@@ -131,7 +151,7 @@ screenshots:
 - **Language Support**: Kotlin 2.0.21
 - **SDK Requirements**: minSdk 24, targetSdk 36
 - **Dependency Injection**: Koin
-- **Size**: 3.39 MB
+- **Size**: 3.5 MB
 - **Status**: Active Development
 - **Languages**: English, Pashto, Urdu, Dari
 
