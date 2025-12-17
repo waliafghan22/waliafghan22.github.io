@@ -478,32 +478,156 @@ const animateCounter = (element, target, originalText) => {
 };
 
 /* ========================================
-   SCREENSHOT NAVIGATION (Project Detail Pages)
+   SCREENSHOT CAROUSEL (Project Detail Pages)
    ======================================== */
 
 const initScreenshotNavigation = () => {
     const scroller = document.querySelector('.screenshots-scroller');
     const dots = document.querySelectorAll('.screenshot-dot');
     const screenshots = document.querySelectorAll('.screenshot-card');
+    const modal = document.createElement('div');
+    modal.className = 'screenshot-modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img class="modal-image" src="" alt="Full size screenshot">
+        </div>
+    `;
+    document.body.appendChild(modal);
     
     if (!scroller || !dots.length || !screenshots.length) return;
     
-    // Dot click navigation
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            const screenshot = screenshots[index];
-            if (screenshot) {
-                screenshot.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'nearest',
-                    inline: 'center'
-                });
+    // Variables for drag functionality
+    let isDragging = false;
+    let startPos = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID = 0;
+    let currentIndex = 0;
+
+    // Add event listeners for drag functionality
+    scroller.addEventListener('mousedown', dragStart);
+    scroller.addEventListener('touchstart', dragStart, { passive: true });
+    scroller.addEventListener('mouseup', dragEnd);
+    scroller.addEventListener('touchend', dragEnd, { passive: true });
+    scroller.addEventListener('mousemove', drag);
+    scroller.addEventListener('touchmove', drag, { passive: false });
+    scroller.addEventListener('mouseleave', dragEnd);
+    
+    // Prevent default drag behavior for images
+    const images = scroller.querySelectorAll('img');
+    images.forEach(img => {
+        img.addEventListener('dragstart', (e) => e.preventDefault());
+        
+        // Click to zoom
+        img.addEventListener('click', (e) => {
+            if (!isDragging) {
+                const modalImg = modal.querySelector('.modal-image');
+                modalImg.src = img.src.replace('-thumb', ''); // Remove -thumb if present
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
             }
         });
     });
     
+    // Close modal functionality
+    const closeModal = modal.querySelector('.close-modal');
+    closeModal.addEventListener('click', () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+    
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Dot click navigation
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+        });
+    });
+    
+    // Drag functions
+    function dragStart(e) {
+        if (e.type === 'touchstart') {
+            startPos = e.touches[0].clientX;
+        } else {
+            startPos = e.clientX;
+            e.preventDefault();
+        }
+        
+        isDragging = true;
+        scroller.style.scrollBehavior = 'auto';
+        
+        // Get current scroll position
+        currentTranslate = scroller.scrollLeft;
+        
+        // Start animation
+        animationID = requestAnimationFrame(animation);
+    }
+    
+    function drag(e) {
+        if (!isDragging) return;
+        
+        let currentPosition;
+        if (e.type === 'touchmove') {
+            currentPosition = e.touches[0].clientX;
+            e.preventDefault();
+        } else {
+            currentPosition = e.clientX;
+        }
+        
+        const diff = startPos - currentPosition;
+        scroller.scrollLeft = currentTranslate + diff;
+    }
+    
+    function dragEnd() {
+        if (!isDragging) return;
+        
+        isDragging = false;
+        cancelAnimationFrame(animationID);
+        
+        // Get current scroll position and width
+        const scrollLeft = scroller.scrollLeft;
+        const scrollWidth = scroller.scrollWidth;
+        const clientWidth = scroller.clientWidth;
+        
+        // Calculate current index based on scroll position
+        currentIndex = Math.round((scrollLeft / (scrollWidth - clientWidth)) * (screenshots.length - 1));
+        
+        // Smooth scroll to the nearest slide
+        goToSlide(currentIndex);
+    }
+    
+    function animation() {
+        if (isDragging) {
+            animationID = requestAnimationFrame(animation);
+        }
+    }
+    
+    function goToSlide(index) {
+        if (index < 0) index = 0;
+        if (index >= screenshots.length) index = screenshots.length - 1;
+        
+        const scrollLeft = (scroller.scrollWidth / screenshots.length) * index;
+        
+        scroller.style.scrollBehavior = 'smooth';
+        scroller.scrollLeft = scrollLeft;
+        
+        // Update active dot
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+    
     // Update active dot on scroll
     const updateActiveDot = () => {
+        if (isDragging) return;
+        
         const scrollLeft = scroller.scrollLeft;
         const scrollWidth = scroller.scrollWidth;
         const clientWidth = scroller.clientWidth;
