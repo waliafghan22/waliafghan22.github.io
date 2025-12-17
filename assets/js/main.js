@@ -485,163 +485,153 @@ const initScreenshotNavigation = () => {
     const scroller = document.querySelector('.screenshots-scroller');
     const dots = document.querySelectorAll('.screenshot-dot');
     const screenshots = document.querySelectorAll('.screenshot-card');
-    const modal = document.createElement('div');
-    modal.className = 'screenshot-modal';
-    modal.innerHTML = `
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <img class="modal-image" src="" alt="Full size screenshot">
-        </div>
-    `;
-    document.body.appendChild(modal);
     
     if (!scroller || !dots.length || !screenshots.length) return;
-    
-    // Variables for drag functionality
-    let isDragging = false;
-    let startPos = 0;
-    let currentTranslate = 0;
-    let prevTranslate = 0;
-    let animationID = 0;
-    let currentIndex = 0;
 
-    // Add event listeners for drag functionality
-    scroller.addEventListener('mousedown', dragStart);
-    scroller.addEventListener('touchstart', dragStart, { passive: true });
-    scroller.addEventListener('mouseup', dragEnd);
-    scroller.addEventListener('touchend', dragEnd, { passive: true });
-    scroller.addEventListener('mousemove', drag);
-    scroller.addEventListener('touchmove', drag, { passive: false });
-    scroller.addEventListener('mouseleave', dragEnd);
-    
-    // Prevent default drag behavior for images
-    const images = scroller.querySelectorAll('img');
-    images.forEach(img => {
+    let modal = document.querySelector('.screenshot-modal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.className = 'screenshot-modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <button class="close-modal" aria-label="Close full screen screenshot">&times;</button>
+                <img class="modal-image" src="" alt="Full size screenshot">
+            </div>
+        `;
+        document.body.appendChild(modal);
+    }
+
+    const modalImg = modal.querySelector('.modal-image');
+    const closeModalBtn = modal.querySelector('.close-modal');
+
+    // Drag state
+    let isDragging = false;
+    let startX = 0;
+    let scrollStart = 0;
+    let startTime = 0;
+    let isClick = true;
+
+    const setBodySelection = (value) => {
+        document.body.style.userSelect = value ? '' : 'none';
+    };
+
+    const closeModal = () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    // Attach drag listeners
+    scroller.addEventListener('mousedown', handleDragStart);
+    scroller.addEventListener('touchstart', handleDragStart, { passive: false });
+    scroller.addEventListener('mousemove', handleDrag);
+    scroller.addEventListener('touchmove', handleDrag, { passive: false });
+    scroller.addEventListener('mouseup', handleDragEnd);
+    scroller.addEventListener('touchend', handleDragEnd);
+    scroller.addEventListener('mouseleave', handleDragEnd);
+
+    // Prevent default dragging on images + zoom
+    scroller.querySelectorAll('img').forEach((img) => {
         img.addEventListener('dragstart', (e) => e.preventDefault());
-        
-        // Click to zoom
-        img.addEventListener('click', (e) => {
-            if (!isDragging) {
-                const modalImg = modal.querySelector('.modal-image');
-                modalImg.src = img.src.replace('-thumb', ''); // Remove -thumb if present
+        img.addEventListener('click', () => {
+            if (!isDragging && isClick) {
+                modalImg.src = img.src.replace('-thumb', '');
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }
         });
     });
-    
-    // Close modal functionality
-    const closeModal = modal.querySelector('.close-modal');
-    closeModal.addEventListener('click', () => {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    });
-    
+
+    closeModalBtn?.addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
+        if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
         }
     });
-    
-    // Dot click navigation
+
+    // Dot navigation
     dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            goToSlide(index);
-        });
+        dot.addEventListener('click', () => goToSlide(index));
     });
-    
-    // Drag functions
-    function dragStart(e) {
-        if (e.type === 'touchstart') {
-            startPos = e.touches[0].clientX;
-        } else {
-            startPos = e.clientX;
-            e.preventDefault();
-        }
-        
+
+    function handleDragStart(e) {
         isDragging = true;
+        isClick = true;
+        startTime = Date.now();
+        startX = (e.pageX || e.touches?.[0].pageX || 0) - scroller.offsetLeft;
+        scrollStart = scroller.scrollLeft;
         scroller.style.scrollBehavior = 'auto';
-        
-        // Get current scroll position
-        currentTranslate = scroller.scrollLeft;
-        
-        // Start animation
-        animationID = requestAnimationFrame(animation);
+        scroller.classList.add('is-dragging');
+        setBodySelection(false);
     }
-    
-    function drag(e) {
+
+    function handleDrag(e) {
         if (!isDragging) return;
-        
-        let currentPosition;
-        if (e.type === 'touchmove') {
-            currentPosition = e.touches[0].clientX;
-            e.preventDefault();
-        } else {
-            currentPosition = e.clientX;
+        e.preventDefault();
+        const currentPosition = (e.pageX || e.touches?.[0].pageX || 0) - scroller.offsetLeft;
+        const walk = (currentPosition - startX) * 1.4;
+        scroller.scrollLeft = scrollStart - walk;
+        if (Math.abs(walk) > 5) {
+            isClick = false;
         }
-        
-        const diff = startPos - currentPosition;
-        scroller.scrollLeft = currentTranslate + diff;
+        updateActiveDot();
     }
-    
-    function dragEnd() {
+
+    function handleDragEnd() {
         if (!isDragging) return;
-        
+        const dragDuration = Date.now() - startTime;
         isDragging = false;
-        cancelAnimationFrame(animationID);
-        
-        // Get current scroll position and width
-        const scrollLeft = scroller.scrollLeft;
-        const scrollWidth = scroller.scrollWidth;
-        const clientWidth = scroller.clientWidth;
-        
-        // Calculate current index based on scroll position
-        currentIndex = Math.round((scrollLeft / (scrollWidth - clientWidth)) * (screenshots.length - 1));
-        
-        // Smooth scroll to the nearest slide
-        goToSlide(currentIndex);
-    }
-    
-    function animation() {
-        if (isDragging) {
-            animationID = requestAnimationFrame(animation);
+        scroller.classList.remove('is-dragging');
+        setBodySelection(true);
+
+        if (dragDuration < 150 && isClick) {
+            return;
         }
+
+        const positions = Array.from(screenshots).map((card) => card.offsetLeft);
+        const targetIndex = positions.reduce((closestIndex, currentPos, index) => {
+            const currentDiff = Math.abs(currentPos - scroller.scrollLeft);
+            const closestDiff = Math.abs(positions[closestIndex] - scroller.scrollLeft);
+            return currentDiff < closestDiff ? index : closestIndex;
+        }, 0);
+
+        goToSlide(targetIndex);
     }
-    
+
     function goToSlide(index) {
-        if (index < 0) index = 0;
-        if (index >= screenshots.length) index = screenshots.length - 1;
-        
-        const scrollLeft = (scroller.scrollWidth / screenshots.length) * index;
-        
+        const safeIndex = Math.max(0, Math.min(index, screenshots.length - 1));
+        const targetCard = screenshots[safeIndex];
+        if (!targetCard) return;
+
         scroller.style.scrollBehavior = 'smooth';
-        scroller.scrollLeft = scrollLeft;
-        
-        // Update active dot
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === index);
+        scroller.scrollTo({
+            left: targetCard.offsetLeft,
+            behavior: 'smooth'
+        });
+        updateActiveDot(safeIndex);
+    }
+
+    function updateActiveDot(forcedIndex) {
+        let activeIndex = forcedIndex;
+        if (typeof activeIndex !== 'number') {
+            const scrollLeft = scroller.scrollLeft;
+            const positions = Array.from(screenshots).map((card) => card.offsetLeft);
+            activeIndex = positions.reduce((closestIndex, currentPos, index) => {
+                const currentDiff = Math.abs(currentPos - scrollLeft);
+                const closestDiff = Math.abs(positions[closestIndex] - scrollLeft);
+                return currentDiff < closestDiff ? index : closestIndex;
+            }, 0);
+        }
+
+        dots.forEach((dot, dotIndex) => {
+            dot.classList.toggle('active', dotIndex === activeIndex);
         });
     }
-    
-    // Update active dot on scroll
-    const updateActiveDot = () => {
-        if (isDragging) return;
-        
-        const scrollLeft = scroller.scrollLeft;
-        const scrollWidth = scroller.scrollWidth;
-        const clientWidth = scroller.clientWidth;
-        
-        const scrollPercentage = scrollLeft / (scrollWidth - clientWidth);
-        const activeIndex = Math.round(scrollPercentage * (screenshots.length - 1));
-        
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === activeIndex);
-        });
-    };
-    
-    scroller.addEventListener('scroll', debounce(updateActiveDot, 100), { passive: true });
-    updateActiveDot(); // Initial call
+
+    updateActiveDot(0);
+    scroller.addEventListener('scroll', debounce(() => updateActiveDot(), 120), { passive: true });
 };
 
 /* ========================================
