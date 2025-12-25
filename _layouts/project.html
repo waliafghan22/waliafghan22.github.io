@@ -110,6 +110,17 @@ layout: default
             <span>Download APK</span>
           </a>
           {% endif %}
+          
+          {% if page.demo_video %}
+          <a href="{{ page.demo_video }}" 
+             class="detail-btn btn-youtube" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             aria-label="Watch Tutorial">
+            <i class="fab fa-youtube"></i> 
+            <span>How to Use, Watch Tutorial</span>
+          </a>
+          {% endif %}
         </div>
 
         <!-- App Details Grid -->

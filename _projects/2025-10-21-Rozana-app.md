@@ -58,6 +58,7 @@ technologies:
 # Links
 # github: https://github.com/waliafghan22/Rozana-Apk
 apk_download: https://github.com/waliafghan22/Rozana-Apk/releases/download/v1.4.4/Rozana-v1.4.4-release.apk
+demo_video: https://www.youtube.com/playlist?list=PLtq-YE0HHyLGizrBVNzaZjUo_u0d7QS8N
 
 # Categories
 categories:
