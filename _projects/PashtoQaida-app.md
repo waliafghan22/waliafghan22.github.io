@@ -131,28 +131,13 @@ screenshots:
 - **Jetpack Compose** - Modern declarative UI framework
 - **MVVM Architecture** - Clean separation of concerns
 - **Clean Architecture** - Maintainable and testable code
-- **Room Database** - Local data persistence
 - **Koin** - Lightweight dependency injection
 - **MediaPlayer** - For audio playback
 - **Lottie** - Beautiful animations
-- **Coil** - Efficient image loading
 - **Coroutines & Flow** - Asynchronous programming
-- **DataStore** - For preferences and settings
-- **AndroidX Security** - Secure data storage
 
 ---
 
-## 📥 Download
-
-### Android
-[<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=com.walia.pashtoqaida)
-
-Or download the APK directly from our [GitHub Releases](https://github.com/waliafghan22/Pashto-Qaida/releases/latest)
-
-### iOS
-Coming soon to the App Store
-
----
 
 ## 🛠️ Services
 
