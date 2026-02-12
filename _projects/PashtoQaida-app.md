@@ -1,0 +1,178 @@
+---
+layout: project
+title: "Pashto Qaida - Learn Pashto Alphabet"
+description: "An interactive educational app that helps children learn the Pashto alphabet through engaging activities, writing practice, and fun quizzes. Perfect for kids aged 4-10 to learn Pashto in an enjoyable way."
+date: 2026-02-12
+image: /images/projects/pashto-qaida-banner.webp
+thumb: /images/projects/pashto-qaida-thumb.webp
+app_icon: /images/projects/icons/pashto-qaida-icon.webp
+open_source: false
+featured: true
+
+# SEO Keywords for this specific project
+keywords:
+  - "Pashto Qaida"
+  - "Learn Pashto"
+  - "Pashto Alphabet"
+  - "Pashto for Kids"
+  - "Educational App"
+  - "Pashto Learning"
+  - "Pashto Language"
+  - "Kids Education"
+  - "Pashto Letters"
+  - "Pashto Writing"
+  - "Pashto Pronunciation"
+
+# App Details
+app_details:
+  version: "1.2.0"
+  downloads: "New"
+  rating: "4.8"
+  min_sdk: "24"
+  target_sdk: "36"
+  package_name: "com.walia.pashtoqaida"
+  size: "9.5 MB"
+  last_updated: "February 2026"
+
+# Technologies used
+technologies:
+  - Kotlin 2.3.10
+  - Jetpack Compose 1.10.1
+  - MVVM Architecture
+  - Clean Architecture
+  - SQLDelight 2.2.1 (Database)
+  - Koin 4.1.1 (Dependency Injection)
+  - Kotlin Coroutines 1.10.2
+  - Kotlinx Serialization 1.10.0
+  - Kotlinx Datetime 0.7.1
+  - AndroidX Navigation 2.9.1
+  - Material3 Adaptive 1.2.0
+  - Compottie 2.0.2 (Animations)
+
+# Links
+apk_download: https://example.com/downloads/pashto-qaida/latest
+
+demo_video: https://www.youtube.com/watch?v=YOUR_VIDEO_ID
+
+# Categories
+categories:
+  - Education
+  - Kids
+  - Language Learning
+  - Pashto
+
+# Screenshots
+screenshots:
+  - /images/projects/pashto-qaida-1.webp
+  - /images/projects/pashto-qaida-2.webp
+  - /images/projects/pashto-qaida-3.webp
+  - /images/projects/pashto-qaida-4.webp
+  - /images/projects/pashto-qaida-5.webp
+  - /images/projects/pashto-qaida-6.webp
+  - /images/projects/pashto-qaida-7.webp
+  - /images/projects/pashto-qaida-8.webp
+---
+
+## 📱 Overview
+
+**Pashto Qaida** is a **beautiful, interactive** Android app designed to help children aged 4-10 learn the Pashto alphabet in a fun and engaging way. With native audio pronunciation, interactive writing practice, and fun quizzes, learning Pashto has never been more enjoyable!
+
+**Perfect for:** Pashtun families, diaspora communities, and educational institutions worldwide.
+
+---
+
+## ✨ Features
+
+### 📚 Learn Pashto Alphabet
+- **44 Pashto letters** with proper pronunciation
+- Native speaker audio for each letter
+- Example words with colorful illustrations
+- Right-to-Left (RTL) layout support
+- Letter formation animations
+
+### ✍️ Writing Practice
+- Interactive letter tracing
+- Visual guides for proper stroke order
+- Finger/stylus drawing on canvas
+- Undo, clear, and complete actions
+- Progress tracking
+
+### 🎮 Fun Quizzes & Games
+- **Letter Match** - Match letters to pictures
+- **Sound Match** - Hear sound, pick the letter
+- **Word Match** - Match words to starting letters
+- Progressive difficulty based on learned letters
+- Score tracking and achievements
+
+### 🎨 Kid-Friendly Design
+- Colorful, engaging interface
+- Fun animations and sound effects
+- Child-lock feature for parent controls
+- No ads or in-app purchases
+- Works completely offline
+
+### 🌍 Bilingual Support
+- Full Pashto interface
+- Full English interface
+- Easy language switching
+- Culturally relevant content
+
+### 📊 Progress Tracking
+- Track learning progress
+- Earn stars and badges
+- Parental dashboard
+- Multiple child profiles
+
+---
+
+## 🛠️ Technical Stack
+
+**Modern Android Development:**
+- **Kotlin** - Modern, concise programming language
+- **Jetpack Compose** - Modern declarative UI framework
+- **MVVM Architecture** - Clean separation of concerns
+- **Clean Architecture** - Maintainable and testable code
+- **Room Database** - Local data persistence
+- **Koin** - Lightweight dependency injection
+- **MediaPlayer** - For audio playback
+- **Lottie** - Beautiful animations
+- **Coil** - Efficient image loading
+- **Coroutines & Flow** - Asynchronous programming
+- **DataStore** - For preferences and settings
+- **AndroidX Security** - Secure data storage
+
+---
+
+## 📥 Download
+
+### Android
+[<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=com.walia.pashtoqaida)
+
+Or download the APK directly from our [GitHub Releases](https://github.com/waliafghan22/Pashto-Qaida/releases/latest)
+
+### iOS
+Coming soon to the App Store
+
+---
+
+## 🛠️ Services
+
+- **Educational app development** for language learning
+- **Interactive learning solutions** for children
+- **Multi-language application development** with RTL support
+- **Technical consulting** for educational technology projects
+
+[Get in touch]({{ '/#contact' | relative_url }}) - We'd love to hear from you!
+
+---
+
+## 🔒 License
+
+This is a closed-source, proprietary application. All rights reserved.
+
+---
+
+<div dir="rtl" align="center">
+  <h3>مننه چې زما اپلیکیشن ته راغلئ!</h3>
+  <p>زما د ملاتړ لپاره مننه</p>
+</div>
