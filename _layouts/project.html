@@ -281,7 +281,7 @@ layout: default
         <h4 style="color: #6c757d; margin-bottom: 15px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">
           <i class="fas fa-user-shield"></i> Admin Only - Download Statistics
         </h4>
-        <div id="download-counter" data-package="{{ page.app_details.package_name }}">
+        <div id="download-counter" data-package="{{ page.app_details.package_name }}" data-aliases='{{ page.app_details.package_name_aliases | jsonify }}'>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
             <div style="background: white; padding: 15px; border-radius: 6px; border-left: 4px solid #007bff;">
               <div style="font-size: 24px; font-weight: bold; color: #007bff;" id="total-downloads">0</div>
@@ -338,6 +338,7 @@ layout: default
 
       const __countApiGet = async (namespace, key) => {
         const res = await fetch(__countApiUrl(`get/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`), { cache: 'no-store' });
+        if (res.status === 404) return 0;
         if (!res.ok) throw new Error(`CountAPI get failed: ${res.status}`);
         const data = await res.json();
         return typeof data.value === 'number' ? data.value : 0;
@@ -358,7 +359,20 @@ layout: default
         if (!counterEl) return;
 
         const packageName = counterEl.dataset.package;
-        const namespace = __countApiNamespace(packageName);
+        const namespaces = [__countApiNamespace(packageName)];
+
+        let aliases = [];
+        try {
+          aliases = counterEl.dataset.aliases ? JSON.parse(counterEl.dataset.aliases) : [];
+        } catch (e) {
+          aliases = [];
+        }
+
+        if (Array.isArray(aliases)) {
+          aliases.forEach((a) => {
+            if (typeof a === 'string' && a.trim()) namespaces.push(__countApiNamespace(a.trim()));
+          });
+        }
         const totalKey = 'download_total';
 
         const now = new Date();
@@ -385,15 +399,21 @@ layout: default
         }
 
         try {
-          const totalPromise = __countApiGet(namespace, totalKey);
-          const todayPromise = __countApiGet(namespace, todayKey);
-          const weekPromises = weekDays.map((k) => __countApiGet(namespace, k).catch(() => 0));
-          const monthPromises = monthDays.map((k) => __countApiGet(namespace, k).catch(() => 0));
+          const totalPerNs = await Promise.all(namespaces.map((ns) => __countApiGet(ns, totalKey)));
+          const todayPerNs = await Promise.all(namespaces.map((ns) => __countApiGet(ns, todayKey)));
 
-          const total = await totalPromise;
-          const today = await todayPromise;
-          const weekVals = await Promise.all(weekPromises);
-          const monthVals = await Promise.all(monthPromises);
+          const weekPerDay = await Promise.all(
+            weekDays.map((k) => Promise.all(namespaces.map((ns) => __countApiGet(ns, k))) )
+          );
+          const monthPerDay = await Promise.all(
+            monthDays.map((k) => Promise.all(namespaces.map((ns) => __countApiGet(ns, k))) )
+          );
+
+          const total = totalPerNs.reduce((a, b) => a + (typeof b === 'number' ? b : 0), 0);
+          const today = todayPerNs.reduce((a, b) => a + (typeof b === 'number' ? b : 0), 0);
+
+          const weekVals = weekPerDay.map(arr => arr.reduce((a, b) => a + (typeof b === 'number' ? b : 0), 0));
+          const monthVals = monthPerDay.map(arr => arr.reduce((a, b) => a + (typeof b === 'number' ? b : 0), 0));
 
           const week = weekVals.reduce((a, b) => a + (typeof b === 'number' ? b : 0), 0);
           const month = monthVals.reduce((a, b) => a + (typeof b === 'number' ? b : 0), 0);
@@ -402,6 +422,7 @@ layout: default
           document.getElementById('today-downloads').textContent = today.toLocaleString();
           document.getElementById('week-downloads').textContent = week.toLocaleString();
           document.getElementById('month-downloads').textContent = month.toLocaleString();
+          return;
         } catch (e) {
           const storageKey = `admin_download_clicks:${packageName}`;
           let clickTimestamps = [];

@@ -30,7 +30,9 @@ app_details:
   rating: "4.8"
   min_sdk: "24"
   target_sdk: "36"
-  package_name: "com.walia.pashtoqaida"
+  package_name: "com.wali.pashtoqaida"
+  package_name_aliases:
+    - "com.walia.pashtoqaida"
   size: "9.17 MB"
   last_updated: "February 2026"
 
