@@ -314,50 +314,67 @@ layout: default
   </section>
 
   <script>
-    // Admin download counter functionality
-    function refreshDownloadStats() {
-      const packageName = document.getElementById('download-counter').dataset.package;
+    // Wait for DOM to be ready
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM loaded, setting up admin counter...');
       
-      // Simulate fetching download stats (replace with actual API call)
-      const stats = {
-        total: Math.floor(Math.random() * 10000) + 500,
-        today: Math.floor(Math.random() * 50) + 5,
-        week: Math.floor(Math.random() * 200) + 20,
-        month: Math.floor(Math.random() * 800) + 100
-      };
-      
-      document.getElementById('total-downloads').textContent = stats.total.toLocaleString();
-      document.getElementById('today-downloads').textContent = stats.today.toLocaleString();
-      document.getElementById('week-downloads').textContent = stats.week.toLocaleString();
-      document.getElementById('month-downloads').textContent = stats.month.toLocaleString();
-    }
-    
-    function toggleAdminCounter() {
-      const counter = document.querySelector('.admin-download-counter');
-      if (counter.style.display === 'none') {
-        counter.style.display = 'block';
-        refreshDownloadStats();
+      // Check if admin counter element exists
+      const adminCounter = document.querySelector('.admin-download-counter');
+      if (adminCounter) {
+        console.log('Admin counter element found!');
       } else {
-        counter.style.display = 'none';
+        console.log('Admin counter element NOT found');
       }
-    }
-    
-    // Show admin counter with keyboard shortcut (Ctrl+Shift+X)
-    document.addEventListener('keydown', function(e) {
-      console.log('Key pressed:', e.key, 'Ctrl:', e.ctrlKey, 'Shift:', e.shiftKey);
-      if (e.ctrlKey && e.shiftKey && e.key === 'X') {
-        console.log('Admin counter shortcut triggered!');
-        e.preventDefault();
-        toggleAdminCounter();
+      
+      // Admin download counter functionality
+      window.refreshDownloadStats = function() {
+        const packageName = document.getElementById('download-counter').dataset.package;
+        console.log('Refreshing stats for package:', packageName);
+        
+        // Simulate fetching download stats (replace with actual API call)
+        const stats = {
+          total: Math.floor(Math.random() * 10000) + 500,
+          today: Math.floor(Math.random() * 50) + 5,
+          week: Math.floor(Math.random() * 200) + 20,
+          month: Math.floor(Math.random() * 800) + 100
+        };
+        
+        document.getElementById('total-downloads').textContent = stats.total.toLocaleString();
+        document.getElementById('today-downloads').textContent = stats.today.toLocaleString();
+        document.getElementById('week-downloads').textContent = stats.week.toLocaleString();
+        document.getElementById('month-downloads').textContent = stats.month.toLocaleString();
       }
+      
+      window.toggleAdminCounter = function() {
+        const counter = document.querySelector('.admin-download-counter');
+        console.log('Toggle called, current display:', counter.style.display);
+        if (counter.style.display === 'none') {
+          counter.style.display = 'block';
+          refreshDownloadStats();
+        } else {
+          counter.style.display = 'none';
+        }
+      }
+      
+      // Show admin counter with keyboard shortcut (Ctrl+Shift+X)
+      document.addEventListener('keydown', function(e) {
+        console.log('Key pressed:', e.key, 'Ctrl:', e.ctrlKey, 'Shift:', e.shiftKey);
+        if (e.ctrlKey && e.shiftKey && e.key === 'X') {
+          console.log('Admin counter shortcut triggered!');
+          e.preventDefault();
+          toggleAdminCounter();
+        }
+      });
+      
+      // Auto-refresh every 5 minutes when visible
+      setInterval(() => {
+        if (document.querySelector('.admin-download-counter').style.display !== 'none') {
+          refreshDownloadStats();
+        }
+      }, 300000);
+      
+      console.log('Admin counter setup complete!');
     });
-    
-    // Auto-refresh every 5 minutes when visible
-    setInterval(() => {
-      if (document.querySelector('.admin-download-counter').style.display !== 'none') {
-        refreshDownloadStats();
-      }
-    }, 300000);
   </script>
   {% endif %}
 
