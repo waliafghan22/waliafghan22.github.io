@@ -327,22 +327,137 @@ layout: default
       }
       
       // Admin download counter functionality
-      window.refreshDownloadStats = function() {
-        const packageName = document.getElementById('download-counter').dataset.package;
-        console.log('Refreshing stats for package:', packageName);
-        
-        // Simulate fetching download stats (replace with actual API call)
-        const stats = {
-          total: Math.floor(Math.random() * 10000) + 500,
-          today: Math.floor(Math.random() * 50) + 5,
-          week: Math.floor(Math.random() * 200) + 20,
-          month: Math.floor(Math.random() * 800) + 100
-        };
-        
-        document.getElementById('total-downloads').textContent = stats.total.toLocaleString();
-        document.getElementById('today-downloads').textContent = stats.today.toLocaleString();
-        document.getElementById('week-downloads').textContent = stats.week.toLocaleString();
-        document.getElementById('month-downloads').textContent = stats.month.toLocaleString();
+      const __pad2 = (n) => String(n).padStart(2, '0');
+      const __formatDay = (d) => `${d.getFullYear()}-${__pad2(d.getMonth() + 1)}-${__pad2(d.getDate())}`;
+
+      const __countApiNamespace = (packageName) => `waliafghan22-githubio-${packageName}`;
+      const __countApiUrl = (path) => `https://api.countapi.xyz/${path}`;
+
+      const __countApiGet = async (namespace, key) => {
+        const res = await fetch(__countApiUrl(`get/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`), { cache: 'no-store' });
+        if (!res.ok) throw new Error(`CountAPI get failed: ${res.status}`);
+        const data = await res.json();
+        return typeof data.value === 'number' ? data.value : 0;
+      };
+
+      const __countApiHit = async (namespace, key) => {
+        const res = await fetch(__countApiUrl(`hit/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`), { cache: 'no-store' });
+        if (!res.ok) throw new Error(`CountAPI hit failed: ${res.status}`);
+        const data = await res.json();
+        return typeof data.value === 'number' ? data.value : 0;
+      };
+
+      window.refreshDownloadStats = async function() {
+        const counterEl = document.getElementById('download-counter');
+        if (!counterEl) return;
+
+        const packageName = counterEl.dataset.package;
+        const namespace = __countApiNamespace(packageName);
+        const totalKey = 'download_total';
+
+        const now = new Date();
+        const todayKey = `download_${__formatDay(now)}`;
+
+        const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+
+        const weekDays = [];
+        for (let i = 0; i < 7; i++) {
+          const d = new Date(startOfToday);
+          d.setDate(d.getDate() - i);
+          weekDays.push(`download_${__formatDay(d)}`);
+        }
+
+        const monthDays = [];
+        {
+          const d = new Date(startOfMonth);
+          while (d.getMonth() === now.getMonth()) {
+            monthDays.push(`download_${__formatDay(d)}`);
+            d.setDate(d.getDate() + 1);
+            if (d > now) break;
+          }
+        }
+
+        try {
+          const totalPromise = __countApiGet(namespace, totalKey);
+          const todayPromise = __countApiGet(namespace, todayKey);
+          const weekPromises = weekDays.map((k) => __countApiGet(namespace, k).catch(() => 0));
+          const monthPromises = monthDays.map((k) => __countApiGet(namespace, k).catch(() => 0));
+
+          const total = await totalPromise;
+          const today = await todayPromise;
+          const weekVals = await Promise.all(weekPromises);
+          const monthVals = await Promise.all(monthPromises);
+
+          const week = weekVals.reduce((a, b) => a + (typeof b === 'number' ? b : 0), 0);
+          const month = monthVals.reduce((a, b) => a + (typeof b === 'number' ? b : 0), 0);
+
+          document.getElementById('total-downloads').textContent = total.toLocaleString();
+          document.getElementById('today-downloads').textContent = today.toLocaleString();
+          document.getElementById('week-downloads').textContent = week.toLocaleString();
+          document.getElementById('month-downloads').textContent = month.toLocaleString();
+        } catch (e) {
+          const storageKey = `admin_download_clicks:${packageName}`;
+          let clickTimestamps = [];
+          try {
+            const raw = localStorage.getItem(storageKey);
+            clickTimestamps = raw ? JSON.parse(raw) : [];
+            if (!Array.isArray(clickTimestamps)) clickTimestamps = [];
+          } catch (e) {
+            clickTimestamps = [];
+          }
+
+          const startOfTodayMs = startOfToday.getTime();
+          const msInDay = 24 * 60 * 60 * 1000;
+          const startOfWeekMs = startOfTodayMs - (6 * msInDay);
+          const startOfMonthMs = startOfMonth.getTime();
+
+          const total = clickTimestamps.length;
+          const today = clickTimestamps.filter(t => typeof t === 'number' && t >= startOfTodayMs).length;
+          const week = clickTimestamps.filter(t => typeof t === 'number' && t >= startOfWeekMs).length;
+          const month = clickTimestamps.filter(t => typeof t === 'number' && t >= startOfMonthMs).length;
+
+          document.getElementById('total-downloads').textContent = total.toLocaleString();
+          document.getElementById('today-downloads').textContent = today.toLocaleString();
+          document.getElementById('week-downloads').textContent = week.toLocaleString();
+          document.getElementById('month-downloads').textContent = month.toLocaleString();
+        }
+      }
+
+      window.__recordAdminDownloadClick = async function() {
+        const counterEl = document.getElementById('download-counter');
+        if (!counterEl) return;
+
+        const packageName = counterEl.dataset.package;
+        const namespace = __countApiNamespace(packageName);
+        const now = new Date();
+        const dayKey = `download_${__formatDay(now)}`;
+
+        try {
+          await Promise.all([
+            __countApiHit(namespace, 'download_total'),
+            __countApiHit(namespace, dayKey),
+          ]);
+        } catch (e) {
+          const storageKey = `admin_download_clicks:${packageName}`;
+          let clickTimestamps = [];
+          try {
+            const raw = localStorage.getItem(storageKey);
+            clickTimestamps = raw ? JSON.parse(raw) : [];
+            if (!Array.isArray(clickTimestamps)) clickTimestamps = [];
+          } catch (e) {
+            clickTimestamps = [];
+          }
+
+          clickTimestamps.push(Date.now());
+
+          try {
+            localStorage.setItem(storageKey, JSON.stringify(clickTimestamps));
+          } catch (e) {
+          }
+        }
+
+        refreshDownloadStats();
       }
       
       window.toggleAdminCounter = function() {
@@ -375,6 +490,16 @@ layout: default
           refreshDownloadStats();
         }
       }, 300000);
+
+      // Track clicks on download/playstore buttons (per-browser via localStorage)
+      const trackedButtons = document.querySelectorAll('a.detail-btn.btn-download, a.detail-btn.btn-playstore');
+      trackedButtons.forEach((a) => {
+        a.addEventListener('click', function() {
+          if (typeof window.__recordAdminDownloadClick === 'function') {
+            window.__recordAdminDownloadClick();
+          }
+        }, { passive: true });
+      });
       
       console.log('Admin counter setup complete!');
     });
