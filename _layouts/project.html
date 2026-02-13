@@ -272,6 +272,94 @@ layout: default
   </section>
 
   <!-- ========================================
+       ADMIN DOWNLOAD COUNTER (HIDDEN)
+       ======================================== -->
+  {% if page.package_name %}
+  <section class="admin-download-counter" style="display: none; background: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; border: 1px solid #dee2e6;">
+    <div class="container">
+      <div class="admin-counter-content">
+        <h4 style="color: #6c757d; margin-bottom: 15px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">
+          <i class="fas fa-user-shield"></i> Admin Only - Download Statistics
+        </h4>
+        <div id="download-counter" data-package="{{ page.package_name }}">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+            <div style="background: white; padding: 15px; border-radius: 6px; border-left: 4px solid #007bff;">
+              <div style="font-size: 24px; font-weight: bold; color: #007bff;" id="total-downloads">0</div>
+              <div style="font-size: 12px; color: #6c757d; margin-top: 5px;">Total Downloads</div>
+            </div>
+            <div style="background: white; padding: 15px; border-radius: 6px; border-left: 4px solid #28a745;">
+              <div style="font-size: 24px; font-weight: bold; color: #28a745;" id="today-downloads">0</div>
+              <div style="font-size: 12px; color: #6c757d; margin-top: 5px;">Today</div>
+            </div>
+            <div style="background: white; padding: 15px; border-radius: 6px; border-left: 4px solid #ffc107;">
+              <div style="font-size: 24px; font-weight: bold; color: #ffc107;" id="week-downloads">0</div>
+              <div style="font-size: 12px; color: #6c757d; margin-top: 5px;">This Week</div>
+            </div>
+            <div style="background: white; padding: 15px; border-radius: 6px; border-left: 4px solid #dc3545;">
+              <div style="font-size: 24px; font-weight: bold; color: #dc3545;" id="month-downloads">0</div>
+              <div style="font-size: 12px; color: #6c757d; margin-top: 5px;">This Month</div>
+            </div>
+          </div>
+          <div style="margin-top: 15px; display: flex; gap: 10px;">
+            <button onclick="refreshDownloadStats()" style="background: #007bff; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 12px;">
+              <i class="fas fa-sync-alt"></i> Refresh
+            </button>
+            <button onclick="toggleAdminCounter()" style="background: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 12px;">
+              <i class="fas fa-eye-slash"></i> Hide
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Admin download counter functionality
+    function refreshDownloadStats() {
+      const packageName = document.getElementById('download-counter').dataset.package;
+      
+      // Simulate fetching download stats (replace with actual API call)
+      const stats = {
+        total: Math.floor(Math.random() * 10000) + 500,
+        today: Math.floor(Math.random() * 50) + 5,
+        week: Math.floor(Math.random() * 200) + 20,
+        month: Math.floor(Math.random() * 800) + 100
+      };
+      
+      document.getElementById('total-downloads').textContent = stats.total.toLocaleString();
+      document.getElementById('today-downloads').textContent = stats.today.toLocaleString();
+      document.getElementById('week-downloads').textContent = stats.week.toLocaleString();
+      document.getElementById('month-downloads').textContent = stats.month.toLocaleString();
+    }
+    
+    function toggleAdminCounter() {
+      const counter = document.querySelector('.admin-download-counter');
+      if (counter.style.display === 'none') {
+        counter.style.display = 'block';
+        refreshDownloadStats();
+      } else {
+        counter.style.display = 'none';
+      }
+    }
+    
+    // Show admin counter with keyboard shortcut (Ctrl+Shift+A)
+    document.addEventListener('keydown', function(e) {
+      if (e.ctrlKey && e.shiftKey && e.key === 'A') {
+        e.preventDefault();
+        toggleAdminCounter();
+      }
+    });
+    
+    // Auto-refresh every 5 minutes when visible
+    setInterval(() => {
+      if (document.querySelector('.admin-download-counter').style.display !== 'none') {
+        refreshDownloadStats();
+      }
+    }, 300000);
+  </script>
+  {% endif %}
+
+  <!-- ========================================
        BACK TO PROJECTS
        ======================================== -->
   <section class="back-to-projects">
