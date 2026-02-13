@@ -8,7 +8,7 @@ sitemap:
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {% for page in site.pages %}
-    {% unless page.sitemap == false %}
+    {% unless page.sitemap == false or page.url == '/sitemap.xml' or page.url == '/robots.txt' or page.url == '/404.html' or page.url contains '/assets/' or page.url contains '/redirects.json' %}
     <url>
       <loc>{{ site.url }}{{ page.url | remove: 'index.html' }}</loc>
       <lastmod>{% if page.last_modified_at %}{{ page.last_modified_at | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}</lastmod>
