@@ -567,13 +567,16 @@ layout: default
       const trackedButtons = document.querySelectorAll('a.detail-btn.btn-download, a.detail-btn.btn-playstore');
       trackedButtons.forEach((a) => {
         const handler = function() {
+          const now = Date.now();
+          const last = Number(a.dataset.adminCountLast || '0');
+          if (now - last < 1200) return;
+          a.dataset.adminCountLast = String(now);
           if (typeof window.__recordAdminDownloadClick === 'function') {
             window.__recordAdminDownloadClick();
           }
         };
         // pointerdown fires before navigation; helps ensure request starts
         a.addEventListener('pointerdown', handler, { passive: true });
-        a.addEventListener('click', handler, { passive: true });
       });
     });
   </script>
