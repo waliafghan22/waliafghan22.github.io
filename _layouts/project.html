@@ -274,14 +274,14 @@ layout: default
   <!-- ========================================
        ADMIN DOWNLOAD COUNTER (HIDDEN)
        ======================================== -->
-  {% if page.package_name %}
+  {% if page.app_details.package_name %}
   <section class="admin-download-counter" style="display: none; background: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; border: 1px solid #dee2e6;">
     <div class="container">
       <div class="admin-counter-content">
         <h4 style="color: #6c757d; margin-bottom: 15px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;">
           <i class="fas fa-user-shield"></i> Admin Only - Download Statistics
         </h4>
-        <div id="download-counter" data-package="{{ page.package_name }}">
+        <div id="download-counter" data-package="{{ page.app_details.package_name }}">
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
             <div style="background: white; padding: 15px; border-radius: 6px; border-left: 4px solid #007bff;">
               <div style="font-size: 24px; font-weight: bold; color: #007bff;" id="total-downloads">0</div>
@@ -393,6 +393,7 @@ layout: default
   <!-- Simple test script - always runs -->
   <script>
     console.log('Project page loaded - Test script running!');
-    console.log('Package name:', '{{ page.package_name }}');
+    console.log('Package name:', '{{ page.app_details.package_name }}');
+    console.log('App details:', '{{ page.app_details }}');
   </script>
 </article>
