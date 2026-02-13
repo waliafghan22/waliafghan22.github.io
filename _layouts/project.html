@@ -319,15 +319,6 @@ layout: default
   <script>
     // Wait for DOM to be ready
     document.addEventListener('DOMContentLoaded', function() {
-      console.log('DOM loaded, setting up admin counter...');
-      
-      // Check if admin counter element exists
-      const adminCounter = document.querySelector('.admin-download-counter');
-      if (adminCounter) {
-        console.log('Admin counter element found!');
-      } else {
-        console.log('Admin counter element NOT found');
-      }
       
       // Admin download counter functionality
       const __pad2 = (n) => String(n).padStart(2, '0');
@@ -546,7 +537,6 @@ layout: default
       
       window.toggleAdminCounter = function() {
         const counter = document.querySelector('.admin-download-counter');
-        console.log('Toggle called, current display:', counter.style.display);
         if (counter.style.display === 'none') {
           counter.style.setProperty('display', 'block', 'important');
           counter.style.setProperty('opacity', '1', 'important');
@@ -560,9 +550,7 @@ layout: default
       
       // Show admin counter with keyboard shortcut (Ctrl+Shift+X)
       document.addEventListener('keydown', function(e) {
-        console.log('Key pressed:', e.key, 'Ctrl:', e.ctrlKey, 'Shift:', e.shiftKey);
         if (e.ctrlKey && e.shiftKey && (e.key === 'X' || e.key === 'x')) {
-          console.log('Admin counter shortcut triggered!');
           e.preventDefault();
           toggleAdminCounter();
         }
@@ -587,8 +575,6 @@ layout: default
         a.addEventListener('pointerdown', handler, { passive: true });
         a.addEventListener('click', handler, { passive: true });
       });
-      
-      console.log('Admin counter setup complete!');
     });
   </script>
   {% endif %}
@@ -604,11 +590,4 @@ layout: default
       </a>
     </div>
   </section>
-
-  <!-- Simple test script - always runs -->
-  <script>
-    console.log('Project page loaded - Test script running!');
-    console.log('Package name:', '{{ page.app_details.package_name }}');
-    console.log('App details:', '{{ page.app_details }}');
-  </script>
 </article>
