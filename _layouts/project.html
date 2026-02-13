@@ -304,6 +304,9 @@ layout: default
             <button onclick="refreshDownloadStats()" style="background: #007bff; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 12px;">
               <i class="fas fa-sync-alt"></i> Refresh
             </button>
+            <button onclick="__recordAdminDownloadClick()" style="background: #28a745; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 12px;">
+              <i class="fas fa-plus"></i> Test +1
+            </button>
             <button onclick="toggleAdminCounter()" style="background: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 12px;">
               <i class="fas fa-eye-slash"></i> Hide
             </button>
@@ -341,7 +344,10 @@ layout: default
       };
 
       const __countApiHit = async (namespace, key) => {
-        const res = await fetch(__countApiUrl(`hit/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`), { cache: 'no-store' });
+        const res = await fetch(
+          __countApiUrl(`hit/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`),
+          { cache: 'no-store', keepalive: true }
+        );
         if (!res.ok) throw new Error(`CountAPI hit failed: ${res.status}`);
         const data = await res.json();
         return typeof data.value === 'number' ? data.value : 0;
@@ -491,14 +497,17 @@ layout: default
         }
       }, 300000);
 
-      // Track clicks on download/playstore buttons (per-browser via localStorage)
+      // Track clicks on download/playstore buttons
       const trackedButtons = document.querySelectorAll('a.detail-btn.btn-download, a.detail-btn.btn-playstore');
       trackedButtons.forEach((a) => {
-        a.addEventListener('click', function() {
+        const handler = function() {
           if (typeof window.__recordAdminDownloadClick === 'function') {
             window.__recordAdminDownloadClick();
           }
-        }, { passive: true });
+        };
+        // pointerdown fires before navigation; helps ensure request starts
+        a.addEventListener('pointerdown', handler, { passive: true });
+        a.addEventListener('click', handler, { passive: true });
       });
       
       console.log('Admin counter setup complete!');
