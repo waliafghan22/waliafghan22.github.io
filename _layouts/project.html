@@ -479,6 +479,11 @@ layout: default
       }
 
       window.__recordAdminDownloadClick = async function() {
+        const nowGuard = Date.now();
+        const lastGuard = Number(window.__adminDownloadClickLast || '0');
+        if (nowGuard - lastGuard < 1200) return;
+        window.__adminDownloadClickLast = String(nowGuard);
+
         const counterEl = document.getElementById('download-counter');
         if (!counterEl) return;
 
