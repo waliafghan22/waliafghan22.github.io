@@ -31,7 +31,7 @@ app_details:
   min_sdk: "24"
   target_sdk: "36"
   package_name: "com.walia.pashtoqaida"
-  size: "9.5 MB"
+  size: "9.17 MB"
   last_updated: "February 2026"
 
 # Technologies used
@@ -50,9 +50,9 @@ technologies:
   - Compottie 2.0.2 (Animations)
 
 # Links
-apk_download: https://example.com/downloads/pashto-qaida/latest
+# github: https://github.com/waliafghan22/PashtoQaida-Apk
+apk_download: https://github.com/waliafghan22/PashtoQaida-Apk/releases/download/v1.2.0/PashtoQaida-v1.2.0-release.apk
 
-demo_video: https://www.youtube.com/watch?v=YOUR_VIDEO_ID
 
 # Categories
 categories:
