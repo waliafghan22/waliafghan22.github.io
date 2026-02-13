@@ -304,7 +304,7 @@ layout: default
             <button onclick="refreshDownloadStats()" style="background: #007bff; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 12px;">
               <i class="fas fa-sync-alt"></i> Refresh
             </button>
-            <button onclick="__recordAdminDownloadClick()" style="background: #28a745; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 12px;">
+            <button onclick="window.__recordAdminDownloadClick && window.__recordAdminDownloadClick()" style="background: #28a745; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 12px;">
               <i class="fas fa-plus"></i> Test +1
             </button>
             <button onclick="toggleAdminCounter()" style="background: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 12px;">
@@ -359,6 +359,7 @@ layout: default
         if (!counterEl) return;
 
         const packageName = counterEl.dataset.package;
+        const unsyncedKey = `admin_download_clicks_unsynced:${packageName}`;
         const namespaces = [__countApiNamespace(packageName)];
 
         let aliases = [];
@@ -398,6 +399,39 @@ layout: default
           }
         }
 
+        const readUnsynced = () => {
+          try {
+            const raw = localStorage.getItem(unsyncedKey);
+            const v = raw ? JSON.parse(raw) : [];
+            return Array.isArray(v) ? v : [];
+          } catch (e) {
+            return [];
+          }
+        };
+
+        const addUnsyncedToUI = (total, today, week, month) => {
+          const unsynced = readUnsynced();
+          if (!unsynced.length) return { total, today, week, month };
+
+          const now = new Date();
+          const startOfTodayMs = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+          const msInDay = 24 * 60 * 60 * 1000;
+          const startOfWeekMs = startOfTodayMs - (6 * msInDay);
+          const startOfMonthMs = new Date(now.getFullYear(), now.getMonth(), 1).getTime();
+
+          const uTotal = unsynced.length;
+          const uToday = unsynced.filter(t => typeof t === 'number' && t >= startOfTodayMs).length;
+          const uWeek = unsynced.filter(t => typeof t === 'number' && t >= startOfWeekMs).length;
+          const uMonth = unsynced.filter(t => typeof t === 'number' && t >= startOfMonthMs).length;
+
+          return {
+            total: total + uTotal,
+            today: today + uToday,
+            week: week + uWeek,
+            month: month + uMonth,
+          };
+        };
+
         try {
           const totalPerNs = await Promise.all(namespaces.map((ns) => __countApiGet(ns, totalKey)));
           const todayPerNs = await Promise.all(namespaces.map((ns) => __countApiGet(ns, todayKey)));
@@ -418,10 +452,11 @@ layout: default
           const week = weekVals.reduce((a, b) => a + (typeof b === 'number' ? b : 0), 0);
           const month = monthVals.reduce((a, b) => a + (typeof b === 'number' ? b : 0), 0);
 
-          document.getElementById('total-downloads').textContent = total.toLocaleString();
-          document.getElementById('today-downloads').textContent = today.toLocaleString();
-          document.getElementById('week-downloads').textContent = week.toLocaleString();
-          document.getElementById('month-downloads').textContent = month.toLocaleString();
+          const merged = addUnsyncedToUI(total, today, week, month);
+          document.getElementById('total-downloads').textContent = merged.total.toLocaleString();
+          document.getElementById('today-downloads').textContent = merged.today.toLocaleString();
+          document.getElementById('week-downloads').textContent = merged.week.toLocaleString();
+          document.getElementById('month-downloads').textContent = merged.month.toLocaleString();
           return;
         } catch (e) {
           const storageKey = `admin_download_clicks:${packageName}`;
@@ -444,10 +479,11 @@ layout: default
           const week = clickTimestamps.filter(t => typeof t === 'number' && t >= startOfWeekMs).length;
           const month = clickTimestamps.filter(t => typeof t === 'number' && t >= startOfMonthMs).length;
 
-          document.getElementById('total-downloads').textContent = total.toLocaleString();
-          document.getElementById('today-downloads').textContent = today.toLocaleString();
-          document.getElementById('week-downloads').textContent = week.toLocaleString();
-          document.getElementById('month-downloads').textContent = month.toLocaleString();
+          const merged = addUnsyncedToUI(total, today, week, month);
+          document.getElementById('total-downloads').textContent = merged.total.toLocaleString();
+          document.getElementById('today-downloads').textContent = merged.today.toLocaleString();
+          document.getElementById('week-downloads').textContent = merged.week.toLocaleString();
+          document.getElementById('month-downloads').textContent = merged.month.toLocaleString();
         }
       }
 
@@ -456,6 +492,7 @@ layout: default
         if (!counterEl) return;
 
         const packageName = counterEl.dataset.package;
+        const unsyncedKey = `admin_download_clicks_unsynced:${packageName}`;
         const namespace = __countApiNamespace(packageName);
         const now = new Date();
         const dayKey = `download_${__formatDay(now)}`;
@@ -465,7 +502,27 @@ layout: default
             __countApiHit(namespace, 'download_total'),
             __countApiHit(namespace, dayKey),
           ]);
+
+          try {
+            localStorage.removeItem(unsyncedKey);
+          } catch (e) {
+          }
         } catch (e) {
+          // Save locally so admin can still see increments even if CountAPI is blocked.
+          let unsynced = [];
+          try {
+            const raw = localStorage.getItem(unsyncedKey);
+            unsynced = raw ? JSON.parse(raw) : [];
+            if (!Array.isArray(unsynced)) unsynced = [];
+          } catch (e) {
+            unsynced = [];
+          }
+          unsynced.push(Date.now());
+          try {
+            localStorage.setItem(unsyncedKey, JSON.stringify(unsynced));
+          } catch (e) {
+          }
+
           const storageKey = `admin_download_clicks:${packageName}`;
           let clickTimestamps = [];
           try {
