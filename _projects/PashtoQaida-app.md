@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "Pashto Qaida - Learn Pashto Alphabet"
-description: "An interactive educational app that helps children learn the Pashto alphabet through engaging activities, writing practice, and fun quizzes. Perfect for kids aged 4-10 to learn Pashto in an enjoyable way."
+description: "Interactive Pashto learning app for kids aged 4-10. Teaches Pashto alphabet through fun activities, writing practice, and quizzes. Makes learning Pashto enjoyable!"
 date: 2026-02-12
 image: /images/projects/pashto-qaida-1.webp
 thumb: /images/projects/pashto-qaida-1.webp
