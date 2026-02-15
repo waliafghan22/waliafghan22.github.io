@@ -1,8 +1,8 @@
 # ========================================
 # SITE SETTINGS
 # ========================================
-title: Mohammed Wali - Android Developer
-tagline: Building Beautiful Android Apps with Jetpack Compose
+title: Mohammed Wali
+tagline: Android Developer
 description: >-
   Android Developer from Afghanistan specializing in Jetpack Compose and Kotlin.
   Self-taught developer with 2+ years of experience building modern, performant 
@@ -28,10 +28,10 @@ seo:
   og_image: "/images/og-image.jpg"  # Add your Open Graph image
   twitter_card: "summary_large_image"
 
-# Verification
-google_site_verification: ""  # Add your Google Search Console verification code
-bing_site_verification: ""     # Add your Bing Webmaster Tools verification code
-yandex_verification: ""        # Add Yandex Webmaster verification code
+# Verification (HTML file google709d2a2e0a98756b.html is in repo root for GSC)
+google_site_verification: "google709d2a2e0a98756b"  # Google Search Console meta tag
+bing_site_verification: "F9DFDA30E5D939637F76B4ED44998BE8"  # Bing Webmaster Tools
+yandex_verification: ""        # Optional: Yandex Webmaster verification code
 
 # Sitemap
 sitemap:
@@ -138,8 +138,7 @@ keywords:
 # Set to your Measurement ID to enable tracking in production
 google_analytics: "G-PERZ6PGN07"
 
-# Google Search Console (Optional)
-google_site_verification: "google709d2a2e0a98756b.html"
+# Google Search Console (verification code set in Verification section above)
 
 # Disqus Comments (Optional)
 # disqus:

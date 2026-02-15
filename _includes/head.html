@@ -26,9 +26,6 @@
   <meta name="twitter:description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
   <meta name="twitter:image" content="{{ page.image | default: site.seo.og_image | absolute_url }}">
   
-  <!-- Canonical URL -->
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-  
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="{{ '/favicon.ico' | relative_url }}">
   
