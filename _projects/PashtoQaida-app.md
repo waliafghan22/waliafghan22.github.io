@@ -107,9 +107,7 @@ screenshots:
   - /images/projects/pashto-qaida-7.webp
 
 # Additional SEO
-canonical_url: "https://waliafghan22.github.io/projects/pashto-qaida/"
-lang: "en"
-alternate_lang: "ps"
+
 ---
 
 ## 📱 Pashto Qaida - Learn Pashto Alphabet | پښتو قاعده
