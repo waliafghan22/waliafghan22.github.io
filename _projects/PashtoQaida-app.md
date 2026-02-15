@@ -9,50 +9,23 @@ app_icon: /images/projects/icons/pashto-qaida-icon.webp
 open_source: false
 featured: true
 
-# SEO Keywords - English & Pashto
+# SEO Keywords for this specific project
 keywords:
-  # Primary Keywords (High Priority)
   - "Pashto Qaida"
   - "پښتو قاعده"
   - "Pashto Alphabet"
   - "پښتو الفبا"
   - "Learn Pashto"
-  - "پښتو زده کړه"
-  
-  # Secondary Keywords
   - "Pashto for Kids"
   - "Pashto Letters"
   - "Pashto Learning App"
+  - "Free Pashto App"
   - "Pashto Writing"
-  - "Pashto Pronunciation"
-  - "Pashto Language"
-  - "د پښتو توري"
-  - "ماشومانو لپاره پښتو"
-  
-  # Long-tail Keywords
-  - "Learn Pashto Alphabet for Kids"
-  - "Free Pashto Learning App"
-  - "Pashto Alphabet with Audio"
-  - "Pashto Letters with Pronunciation"
-  - "Teach Kids Pashto"
-  - "Pashto Writing Practice App"
-  - "Pashto Educational App"
-  - "د پښتو الفبې زده کړه"
-  
-  # Community Keywords
+  - "Pashto Audio"
+  - "Kids Education"
   - "Afghan Kids App"
-  - "Pashtun Children Learning"
-  - "Pashto Diaspora"
+  - "Pashtun Children"
   - "Mother Tongue Learning"
-  - "مورنۍ ژبه"
-  - "پښتانه ماشومان"
-  
-  # App Store Keywords
-  - "Kids Education App"
-  - "Language Learning App"
-  - "Alphabet Learning"
-  - "Educational Games for Kids"
-  - "Free Kids App"
 
 # App Details
 app_details:
@@ -83,18 +56,16 @@ technologies:
   - Compottie 2.0.2 (Animations)
 
 # Links
+# github: https://github.com/waliafghan22/PashtoQaida-Apk
 apk_download: https://github.com/waliafghan22/PashtoQaida-Apk/releases/download/v1.2.0/PashtoQaida-v1.2.0-release.apk
 
-# Categories (Expanded)
+
+# Categories
 categories:
   - Education
   - Kids
   - Language Learning
   - Pashto
-  - Alphabet Learning
-  - Free Educational Apps
-  - Afghan Apps
-  - Kids Learning Games
 
 # Screenshots
 screenshots:
@@ -105,182 +76,93 @@ screenshots:
   - /images/projects/pashto-qaida-5.webp
   - /images/projects/pashto-qaida-6.webp
   - /images/projects/pashto-qaida-7.webp
+---
 
-# Additional SEO
+## 📱 Overview
+
+**Pashto Qaida** is a **beautiful, interactive** Android app designed to help children aged 4-10 learn the Pashto alphabet in a fun and engaging way. With native audio pronunciation, interactive writing practice, and fun quizzes, learning Pashto has never been more enjoyable!
+
+**Perfect for:** Pashtun families, diaspora communities, and educational institutions worldwide.
 
 ---
 
-## 📱 Pashto Qaida - Learn Pashto Alphabet | پښتو قاعده
+## ✨ Features
 
-**Pashto Qaida** (پښتو قاعده) is a **free, interactive** Android app designed to help children aged 4-10 **learn the Pashto alphabet** in a fun and engaging way. With native audio pronunciation, interactive writing practice, and fun quizzes, **learning Pashto** has never been more enjoyable!
-
-### Who is this app for?
-
-- 👨‍👩‍👧 **Pashtun families** wanting to teach children their mother tongue
-- 🌍 **Diaspora communities** in USA, UK, Germany, UAE, and worldwide
-- 🏫 **Schools and madrassas** teaching Pashto language
-- 👶 **Kids aged 4-10** learning to read and write Pashto
-
----
-
-## ✨ Key Features | ځانګړتیاوې
-
-### 📚 Learn All 44 Pashto Letters | د پښتو توري زده کړئ
-
-- Complete **Pashto alphabet** from ا (Alif) to ی (Ye)
-- **Native speaker audio** for correct pronunciation
+### 📚 Learn Pashto Alphabet
+- **44 Pashto letters** with proper pronunciation
+- Native speaker audio for each letter
 - Example words with colorful illustrations
 - Right-to-Left (RTL) layout support
 - Letter formation animations
 
-### ✍️ Pashto Writing Practice | د لیکلو تمرین
-
-- Interactive **letter tracing** for kids
+### ✍️ Writing Practice
+- Interactive letter tracing
 - Visual guides for proper stroke order
-- Finger and stylus support
-- Multiple colors for fun writing
-- Undo, clear, and save options
+- Finger/stylus drawing on canvas
+- Undo, clear, and complete actions
+- Progress tracking
 
-### 🎮 Fun Quizzes & Learning Games | خوندورې ازموینې
-
-- **Letter Match** - Match Pashto letters to pictures
-- **Sound Match** - Hear pronunciation, pick the letter
+### 🎮 Fun Quizzes & Games
+- **Letter Match** - Match letters to pictures
+- **Sound Match** - Hear sound, pick the letter
 - **Word Match** - Match words to starting letters
-- Progressive difficulty levels
-- Earn stars and rewards
+- Progressive difficulty based on learned letters
+- Score tracking and achievements
 
-### 🎨 Kid-Friendly Design | د ماشومانو دوستانه
-
+### 🎨 Kid-Friendly Design
 - Colorful, engaging interface
 - Fun animations and sound effects
-- **No ads** - completely safe for kids
-- **Works offline** - no internet required
-- Parent controls included
+- Child-lock feature for parent controls
+- No ads or in-app purchases
+- Works completely offline
 
-### 🌍 Bilingual Support | دوه ژبی
-
-- Full **Pashto** interface (پښتو)
-- Full **English** interface
+### 🌍 Bilingual Support
+- Full Pashto interface
+- Full English interface
 - Easy language switching
+- Culturally relevant content
 
-### 📊 Track Learning Progress | پرمختګ
-
-- Monitor your child's learning journey
+### 📊 Progress Tracking
+- Track learning progress
 - Earn stars and badges
-- See completed lessons
-- Multiple child profiles supported
+- Parental dashboard
+- Multiple child profiles
 
 ---
 
-## 📥 Download Pashto Qaida | ډاونلوډ
+## 🛠️ Technical Stack
 
-<div align="center">
-
-### 🆓 FREE Download - No Ads!
-
-[**⬇️ Download APK (v1.2.0)**](https://github.com/waliafghan22/PashtoQaida-Apk/releases/download/v1.2.0/PashtoQaida-v1.2.0-release.apk)
-
-**Size:** 9.17 MB | **Android:** 7.0+ | **Price:** FREE
-
-</div>
-
----
-
-## 📸 Screenshots | سکرین شاټونه
-
-See how children learn Pashto alphabet with our beautiful, interactive app!
+**Modern Android Development:**
+- **Kotlin** - Modern, concise programming language
+- **Jetpack Compose** - Modern declarative UI framework
+- **MVVM Architecture** - Clean separation of concerns
+- **Clean Architecture** - Maintainable and testable code
+- **Koin** - Lightweight dependency injection
+- **MediaPlayer** - For audio playback
+- **Lottie** - Beautiful animations
+- **Coroutines & Flow** - Asynchronous programming
 
 ---
 
-## 🛠️ Built With Modern Technology
 
-Pashto Qaida is built using the latest Android development technologies:
+## 🛠️ Services
 
-| Technology | Purpose |
-|------------|---------|
-| **Kotlin** | Modern programming language |
-| **Jetpack Compose** | Beautiful, native UI |
-| **MVVM + Clean Architecture** | Maintainable code |
-| **SQLDelight** | Offline database |
-| **Koin** | Dependency injection |
-| **Compottie** | Smooth animations |
+- **Educational app development** for language learning
+- **Interactive learning solutions** for children
+- **Multi-language application development** with RTL support
+- **Technical consulting** for educational technology projects
+
+[Get in touch]({{ '/#contact' | relative_url }}) - We'd love to hear from you!
 
 ---
 
-## 🌟 Why Choose Pashto Qaida?
-
-| Feature | Pashto Qaida | Other Apps |
-|---------|--------------|------------|
-| All 44 Pashto letters | ✅ | ❌ Incomplete |
-| Native audio pronunciation | ✅ | ❌ Robotic voice |
-| Writing practice | ✅ | ❌ Missing |
-| Fun quizzes | ✅ | ⚠️ Limited |
-| No ads | ✅ | ❌ Full of ads |
-| Works offline | ✅ | ❌ Needs internet |
-| 100% FREE | ✅ | ❌ Paid features |
-
----
-
-## 🗣️ For Pashto Community | د پښتو ټولنې لپاره
-
-<div dir="rtl">
-
-### پښتو قاعده - ستاسو ماشومانو لپاره غوره اپلیکیشن!
-
-که تاسو غواړئ چې ستاسو ماشومان پښتو زده کړي، نو دا اپلیکیشن ستاسو لپاره دی.
-
-**ځانګړتیاوې:**
-- ۴۴ پښتو توري د غږ سره
-- د لیکلو تمرینونه
-- خوندورې ازموینې
-- بالکل وړیا
-- بې اعلاناتو
-
-</div>
-
----
-
-## 📞 Contact & Support | اړیکه
-
-Have questions or feedback about Pashto Qaida?
-
-- 📧 **Email:** [Contact Us]({{ '/#contact' | relative_url }})
-- 🐛 **Report Bug:** [GitHub Issues](https://github.com/waliafghan22/PashtoQaida-Apk/issues)
-
----
-
-## 🔒 Privacy & Safety
-
-- ✅ **No ads** - Safe for children
-- ✅ **No data collection** - Privacy first
-- ✅ **No internet required** - Works offline
-- ✅ **No in-app purchases** - Everything free
-
----
-
-## 📄 License
+## 🔒 License
 
 This is a closed-source, proprietary application. All rights reserved.
-
-© 2026 Wali Afghan - Pashto Qaida
-
----
-
-<div align="center">
-
-### 🙏 Support Pashto Language | پښتو ژبې ملاتړ وکړئ
-
-**Share this app with Pashto families!**
-
-**نورو پښتنو کورنیو سره یې شریک کړئ!**
-
-[⬇️ Download Now](https://github.com/waliafghan22/PashtoQaida-Apk/releases/download/v1.2.0/PashtoQaida-v1.2.0-release.apk)
-
-</div>
 
 ---
 
 <div dir="rtl" align="center">
   <h3>مننه چې زما اپلیکیشن ته راغلئ!</h3>
-  <p>زموږ ژبه، زموږ هویت، زموږ میراث 💚</p>
+  <p>زما د ملاتړ لپاره مننه</p>
 </div>
