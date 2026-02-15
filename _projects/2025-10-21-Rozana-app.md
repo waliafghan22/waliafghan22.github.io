@@ -1,6 +1,6 @@
 ---
 layout: project
-title: "Rozana - Daily Wage Worker & Contractor Management App | روزانه"
+title: "Rozana - Daily Wage Worker & Contractor Management App"
 description: "Free app for contractors to manage daily wage workers. Track attendance, calculate wages, record payments & generate PDF reports. Works offline. Download now!"
 date: 2025-12-08
 image: /images/projects/rozana-home.webp
