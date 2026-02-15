@@ -1,7 +1,7 @@
 ---
 layout: project
-title: "Rozana - Daily Wage Worker Management App"
-description: "Android app for contractors to manage daily wage workers with attendance tracking, wage calculations, and payment recording. Replaces pen-and-paper records."
+title: "Rozana - Daily Wage Worker & Contractor Management App | روزانه"
+description: "Free app for contractors to manage daily wage workers. Track attendance, calculate wages, record payments & generate PDF reports. Works offline. Download now!"
 date: 2025-12-08
 image: /images/projects/rozana-home.webp
 thumb: /images/projects/rozana-home.webp
@@ -9,19 +9,67 @@ app_icon: /images/projects/icons/rozana-icon.webp
 open_source: false
 featured: true
 
-# SEO Keywords for this specific project
+# SEO Keywords for Rozana
 keywords:
-  - "rozana"
-  - "Rozana_App"
+  # App Name
+  - "Rozana"
+  - "Rozana App"
+  - "روزانه"
+  - "روزانه اپ"
+  - "روزانه اپلیکیشن"
+  
+  # Worker Management
   - "Daily Wage Worker Management"
-  - "Contractor Management App"
-  - "Attendance Tracking Android"
-  - "Wage Calculation App"
-  - "Worker Payment System"
-  - "Construction Site Management"
-  - "Mobile Payroll App"
-  - "Afghanistan Contractor Tools"
-  - "Pashto_Business_App"
+  - "Worker Attendance App"
+  - "Daily Labor Tracker"
+  - "Mazdoor Attendance App"
+  - "د کارګر حاضري"
+  - "مزدور حاضری اپ"
+  - "کارګر مدیریت"
+  
+  # Wage & Payment
+  - "Wage Calculator App"
+  - "Worker Payment Tracker"
+  - "Daily Wage Calculator"
+  - "د معاش حساب"
+  - "تنخواه حساب"
+  
+  # Contractor & Construction
+  - "Contractor App"
+  - "Construction Worker Management"
+  - "Building Contractor App"
+  - "Site Worker Attendance"
+  - "پیمانکار اپ"
+  
+  # Location Based
+  - "Afghanistan Contractor App"
+  - "Pakistan Daily Wage App"
+  - "Afghan Worker Management"
+  - "د افغانستان کارګر اپ"
+  
+  # Features
+  - "Attendance Tracking App"
+  - "Offline Payroll App"
+  - "PDF Report Worker App"
+  - "Worker Payment Record"
+  - "Google Drive Backup App"
+  
+  # Problem/Solution
+  - "Digital Worker Register"
+  - "Paperless Attendance"
+  - "Worker Ledger App"
+  - "Replace Pen Paper Attendance"
+  
+  # Download Intent
+  - "Download Rozana App"
+  - "Free Worker Management App"
+  - "Best Contractor App"
+  - "روزانه اپ ډاونلوډ"
+  
+  # Language
+  - "Pashto Business App"
+  - "Dari Worker App"
+  - "پښتو بزنس اپ"
 
 # App Details
 app_details:

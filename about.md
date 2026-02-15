@@ -6,18 +6,38 @@ description: "Learn about Mohammed Wali, a passionate Android Developer from Afg
 
 # SEO Keywords for About page
 keywords:
-  - "About Mohammed Wali"
-  - "wali afghan"
+  # Personal
+  - "Mohammed Wali"
+  - "محمد ولي"
+  - "Wali Afghan"
+  - "ولي افغان"
   - "waliafghan22"
-  - "Android Developer Biography"
+  - "About Mohammed Wali"
+  
+  # Job + Location
+  - "Android Developer Afghanistan"
+  - "د افغانستان اندرويد ډېولپر"
+  - "Afghan Android Developer"
+  - "افغان پروګرامر"
   - "Kotlin Developer Afghanistan"
-  - "Jetpack Compose Expert Profile"
-  - "Mobile App Developer Portfolio"
+  - "Software Developer Kabul"
+  
+  # Hiring Intent
+  - "Hire Android Developer"
+  - "Freelance Android Developer"
+  - "Remote Android Developer"
+  - "فریلانس پروګرامر"
+  
+  # Skills
+  - "Jetpack Compose Developer"
+  - "Mobile App Developer"
+  - "Modern Android Development"
+  - "Firebase Developer"
+  
+  # Story
   - "Self-taught Android Developer"
-  - "Afghanistan Software Developer"
-  - "Modern Android Development Skills"
-  - "Portfolio Developer Experience"
-  - "Android Development Journey"
+  - "Afghan Tech Professional"
+  - "Android Developer Portfolio"
 ---
 
 <div class="about-hero">

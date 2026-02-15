@@ -109,30 +109,67 @@ twitter:
 #   app_id: your-facebook-app-id
 #   publisher: your-facebook-page-url
 
-# Keywords for SEO
-keywords: 
-  - "Mohammed_Wali"
-  - "waliafghan"
+# Keywords for SEO - Bilingual (English + Pashto)
+keywords:
+  # === Personal Brand ===
+  - "Mohammed Wali"
+  - "محمد ولي"
+  - "Wali Afghan"
+  - "ولي افغان"
   - "waliafghan22"
-  - "Android Developer Afghanistan"
+  
+  # === Job Titles ===
+  - "Android Developer"
+  - "اندرويد ډېولپر"
   - "Kotlin Developer"
+  - "Mobile App Developer"
+  - "موبايل اپ ډېولپر"
+  - "Jetpack Compose Developer"
+  - "سافټویر انجنیر"
+  - "پروګرامر"
+  
+  # === Location Based ===
+  - "Android Developer Afghanistan"
+  - "د افغانستان اندرويد ډېولپر"
+  - "Afghan Android Developer"
+  - "افغان پروګرامر"
+  - "App Developer Kabul"
+  - "د کابل ډېولپر"
+  - "افغان ډېولپر"
+  
+  # === Hiring Intent ===
+  - "Hire Android Developer"
+  - "Freelance Android Developer"
+  - "فریلانس پروګرامر"
+  - "Remote Android Developer"
+  - "Android Developer for Hire"
+  
+  # === Services ===
+  - "Android App Development"
+  - "د اندرويد اپلیکیشن جوړول"
+  - "Mobile App Development Services"
+  - "موبايل اپ جوړول"
+  - "Custom Android App Development"
+  
+  # === Technical Skills ===
   - "Jetpack Compose Expert"
-  - "Android App Developer"
-  - "Mobile App Development"
-  - "MVVM Architecture"
-  - "Material Design 3"
-  - "Firebase Developer"
-  - "Android Studio Expert"
-  - "Pashto Language Apps"
-  - "Dari Language Technology"
-  - "Afghanistan Developer Portfolio"
-  - "Self-taught Android Developer"
   - "Modern Android Development"
+  - "Firebase Developer"
   - "Clean Architecture Android"
-  - "Room Database Expert"
-  - "Coroutines Flow Kotlin"
-  - "Hilt Dependency Injection"
-  - "Koin DI Framework"
+  - "Material Design 3"
+  
+  # === Your Niche ===
+  - "Pashto Language Apps"
+  - "پښتو ژبې اپلیکیشنونه"
+  - "Dari Language Apps"
+  - "دري ژبې اپلیکیشنونه"
+  - "RTL App Development"
+  - "Multilingual Android Apps"
+  - "پښتو قاعده"
+  
+  # === Portfolio ===
+  - "Android Developer Portfolio"
+  - "Self-taught Android Developer"
 
 # Google Analytics (GA4)
 # Set to your Measurement ID to enable tracking in production
