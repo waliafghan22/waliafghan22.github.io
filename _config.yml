@@ -25,7 +25,7 @@ seo:
   locale: "en_US"
   type: "website"
   twitter_username: "waliafghan22"
-  og_image: "/images/og-image.jpg"  # Add your Open Graph image
+  og_image: "/images/profile.webp"  # Using profile image for social previews
   twitter_card: "summary_large_image"
 
 # Verification (HTML file google709d2a2e0a98756b.html is in repo root for GSC)

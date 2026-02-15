@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "Rozana - Daily Wage Worker Management App"
-description: "An Android app that helps contractors and site managers replace pen-and-paper records for daily wage workers. Streamlined worker management, attendance tracking, wage calculations, and payment recording."
+description: "Android app for contractors to manage daily wage workers with attendance tracking, wage calculations, and payment recording. Replaces pen-and-paper records."
 date: 2025-12-08
 image: /images/projects/rozana-home.webp
 thumb: /images/projects/rozana-home.webp
