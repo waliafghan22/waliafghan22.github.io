@@ -7,9 +7,10 @@ description: "Learn about Mohammed Wali, a passionate Android Developer from Afg
 # SEO Keywords for About page
 keywords:
   # Personal
+  - "Mohammed Wali dev"
   - "Mohammed Wali"
   - "محمد ولي"
-  - "Wali Afghan"
+  - "Wali Afghan dev"
   - "ولي افغان"
   - "waliafghan22"
   - "About Mohammed Wali"
