@@ -2,7 +2,7 @@
 layout: project
 title: "Rozana - Daily Wage Worker & Contractor Management App"
 description: "Free app for contractors to manage daily wage workers. Track attendance, calculate wages, record payments & generate PDF reports. Works offline. Download now!"
-date: 2025-12-08
+date: 2026-3-22
 image: /images/projects/rozana-home.webp
 thumb: /images/projects/rozana-home.webp
 app_icon: /images/projects/icons/rozana-icon.webp
@@ -73,14 +73,14 @@ keywords:
 
 # App Details
 app_details:
-  version: "1.4.4"
+  version: "1.4.5"
   downloads: "New"
   rating: "New"
   min_sdk: "26"
   target_sdk: "36"
   package_name: "com.wali.rozana"
   size: "5 MB"
-  last_updated: "December 2025"
+  last_updated: "March 2026"
 
 # Technologies used
 technologies:
@@ -105,7 +105,7 @@ technologies:
 
 # Links
 # github: https://github.com/waliafghan22/Rozana-Apk
-apk_download: https://github.com/waliafghan22/Rozana-Apk/releases/download/v1.4.4/Rozana-v1.4.4-release.apk
+apk_download: https://github.com/waliafghan22/Rozana-Apk/releases/download/v1.4.5/Rozana-v1.4.5-release.apk
 demo_video: https://www.youtube.com/playlist?list=PLtq-YE0HHyLGizrBVNzaZjUo_u0d7QS8N
 
 # Categories
@@ -135,7 +135,7 @@ Rozana is a **simple and fast** Android app that helps contractors, site manager
 
 ---
 
-## ✨ What's New in v1.4.4
+## ✨ What's New in v1.4.5
 
 ### ☁️ Cloud Backup
 - **Backup to Google Drive** - Never lose your data
