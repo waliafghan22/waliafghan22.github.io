@@ -2,7 +2,7 @@
 layout: project
 title: "Pashto Qaida - Free Pashto Alphabet App for Kids"
 description: "Free Pashto alphabet app for kids ages 4-10. Learn 44 letters with audio, writing practice & quizzes. No ads, works offline. Download now!"
-date: 2026-02-12
+date: 2026-03-29
 image: /images/projects/pashto-qaida-1.webp
 thumb: /images/projects/pashto-qaida-1.webp
 app_icon: /images/projects/icons/pashto-qaida-icon.webp
@@ -29,7 +29,7 @@ keywords:
 
 # App Details
 app_details:
-  version: "1.2.0"
+  version: "1.2.6"
   downloads: "New"
   rating: "4.8"
   min_sdk: "24"
@@ -37,8 +37,8 @@ app_details:
   package_name: "com.wali.pashtoqaida"
   package_name_aliases:
     - "com.walia.pashtoqaida"
-  size: "9.17 MB"
-  last_updated: "February 2026"
+  size: "10.2 MB"
+  last_updated: "March 2026"
 
 # Technologies used
 technologies:
@@ -57,7 +57,7 @@ technologies:
 
 # Links
 # github: https://github.com/waliafghan22/PashtoQaida-Apk
-apk_download: https://github.com/waliafghan22/PashtoQaida-Apk/releases/download/v1.2.0/PashtoQaida-v1.2.0-release.apk
+apk_download: https://github.com/waliafghan22/PashtoQaida-Apk/releases/download/v1.2.6/PashtoQaida-v1.2.6-release.apk
 
 
 # Categories
